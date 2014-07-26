@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Connections
+Bundle-SymbolicName: net.mmyumu.docdoc.connections
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: net.mmyumu.docdoc.connections.Activator
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Import-Package: javax.inject,
+ org.osgi.framework;version="1.3.0"
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.e4.core.services,
+ org.eclipse.e4.core.di,
+ org.eclipse.e4.core.contexts
+Export-Package: net.mmyumu.docdoc.connections,
+ net.mmyumu.docdoc.connections.exceptions

@@ -11,12 +11,23 @@
  *******************************************************************************/
 package net.mmyumu.docdoc.ui.handlers;
 
+import javax.inject.Inject;
+
+import net.mmyumu.docdoc.connections.AirMediaConnection;
+import net.mmyumu.docdoc.connections.AirMediaConnectionFactory;
+import net.mmyumu.docdoc.connections.exceptions.AirMediaConnectionException;
 import net.mmyumu.docdoc.ui.dialogs.ImageFileDialog;
 
 import org.eclipse.e4.core.di.annotations.Execute;
+import org.eclipse.e4.core.services.log.Logger;
 import org.eclipse.swt.widgets.Shell;
 
 public class AirMediaOpenHandler {
+	@Inject
+	private Logger logger;
+
+	@Inject
+	private AirMediaConnectionFactory airMediaConnectionFactory;
 
 	private Shell shell;
 
@@ -29,12 +40,20 @@ public class AirMediaOpenHandler {
 	private void openImageToSendToAirMediaServer() {
 		String filePath = getFilePathFromDialog();
 		if (filePath != null) {
-			sendImageToAirMediaServer();
+			sendImageToAirMediaServer(filePath);
 		}
 	}
 
-	private void sendImageToAirMediaServer() {
-
+	private void sendImageToAirMediaServer(String filePath) {
+		AirMediaConnection airMediaConnection = airMediaConnectionFactory
+				.instance();
+		try {
+			airMediaConnection.send(filePath);
+			String response = airMediaConnection.readResponse();
+			System.out.println(response);
+		} catch (AirMediaConnectionException e) {
+			logger.error(e, "Error while sending image to Air Media Server");
+		}
 	}
 
 	private String getFilePathFromDialog() {
