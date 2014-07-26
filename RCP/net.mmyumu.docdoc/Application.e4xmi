@@ -1,19 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_LI57MBNkEeSIjYTP9w9y5w" elementId="org.eclipse.e4.ide.application" bindingContexts="_LI6iQBNkEeSIjYTP9w9y5w">
+<application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_LI57MBNkEeSIjYTP9w9y5w" elementId="net.mmyumu.docdoc.application" bindingContexts="_LI6iQBNkEeSIjYTP9w9y5w">
   <children xsi:type="basic:TrimmedWindow" xmi:id="_LI57MRNkEeSIjYTP9w9y5w" label="net.mmyumu.docdoc" width="500" height="400">
     <children xsi:type="advanced:PerspectiveStack" xmi:id="_LI6iVxNkEeSIjYTP9w9y5w">
       <children xsi:type="advanced:Perspective" xmi:id="_LI6iWBNkEeSIjYTP9w9y5w">
         <children xsi:type="basic:PartSashContainer" xmi:id="_LI6iWRNkEeSIjYTP9w9y5w">
-          <children xsi:type="basic:PartStack" xmi:id="_LI6iWhNkEeSIjYTP9w9y5w">
-            <children xsi:type="basic:Part" xmi:id="_LI7JUBNkEeSIjYTP9w9y5w" contributionURI="bundleclass://net.mmyumu.docdoc/net.mmyumu.docdoc.parts.SamplePart" label="Sample Part"/>
-          </children>
+          <children xsi:type="basic:PartStack" xmi:id="_LI6iWhNkEeSIjYTP9w9y5w" elementId="net.mmyumu.docdoc.partstack.main"/>
         </children>
       </children>
     </children>
     <mainMenu xmi:id="_LI6iUBNkEeSIjYTP9w9y5w" elementId="menu:org.eclipse.ui.main.menu">
-      <children xsi:type="menu:Menu" xmi:id="_LI6iURNkEeSIjYTP9w9y5w" label="File">
-        <children xsi:type="menu:HandledMenuItem" xmi:id="_LI6iUhNkEeSIjYTP9w9y5w" label="Open" iconURI="platform:/plugin/net.mmyumu.docdoc/icons/sample.png" command="_LI6iRxNkEeSIjYTP9w9y5w"/>
-        <children xsi:type="menu:HandledMenuItem" xmi:id="_LI6iUxNkEeSIjYTP9w9y5w" label="Save" iconURI="platform:/plugin/net.mmyumu.docdoc/icons/save_edit.png" command="_LI6iShNkEeSIjYTP9w9y5w"/>
+      <children xsi:type="menu:Menu" xmi:id="_LI6iURNkEeSIjYTP9w9y5w" elementId="net.mmyumu.docdoc.menu.file" label="File">
         <children xsi:type="menu:HandledMenuItem" xmi:id="_LI6iVBNkEeSIjYTP9w9y5w" label="Quit" command="_LI6iQxNkEeSIjYTP9w9y5w"/>
       </children>
       <children xsi:type="menu:Menu" xmi:id="_LI6iVRNkEeSIjYTP9w9y5w" label="Help">
@@ -21,29 +17,24 @@
       </children>
     </mainMenu>
     <trimBars xmi:id="_LI7JURNkEeSIjYTP9w9y5w">
-      <children xsi:type="menu:ToolBar" xmi:id="_LI7JUhNkEeSIjYTP9w9y5w" elementId="toolbar:org.eclipse.ui.main.toolbar">
-        <children xsi:type="menu:HandledToolItem" xmi:id="_LI7JUxNkEeSIjYTP9w9y5w" iconURI="platform:/plugin/net.mmyumu.docdoc/icons/sample.png" command="_LI6iRxNkEeSIjYTP9w9y5w"/>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_LI7JVBNkEeSIjYTP9w9y5w" iconURI="platform:/plugin/net.mmyumu.docdoc/icons/save_edit.png" command="_LI6iShNkEeSIjYTP9w9y5w"/>
-      </children>
+      <children xsi:type="menu:ToolBar" xmi:id="_LI7JUhNkEeSIjYTP9w9y5w" elementId="toolbar:org.eclipse.ui.main.toolbar"/>
     </trimBars>
   </children>
   <handlers xmi:id="_LI6iRBNkEeSIjYTP9w9y5w" elementId="net.mmyumu.docdoc.handler.quitCommand" contributionURI="bundleclass://net.mmyumu.docdoc/net.mmyumu.docdoc.handlers.QuitHandler" command="_LI6iQxNkEeSIjYTP9w9y5w"/>
-  <handlers xmi:id="_LI6iSBNkEeSIjYTP9w9y5w" elementId="net.mmyumu.docdoc.handler.openCommand" contributionURI="bundleclass://net.mmyumu.docdoc/net.mmyumu.docdoc.handlers.OpenHandler" command="_LI6iRxNkEeSIjYTP9w9y5w"/>
-  <handlers xmi:id="_LI6iSxNkEeSIjYTP9w9y5w" elementId="net.mmyumu.docdoc.handler.saveCommand" contributionURI="bundleclass://net.mmyumu.docdoc/net.mmyumu.docdoc.handlers.SaveHandler" command="_LI6iShNkEeSIjYTP9w9y5w"/>
   <handlers xmi:id="_LI6iThNkEeSIjYTP9w9y5w" elementId="net.mmyumu.docdoc.handler.aboutCommand" contributionURI="bundleclass://net.mmyumu.docdoc/net.mmyumu.docdoc.handlers.AboutHandler" command="_LI6iTRNkEeSIjYTP9w9y5w"/>
   <bindingTables xmi:id="_LI6iRRNkEeSIjYTP9w9y5w" bindingContext="_LI6iQBNkEeSIjYTP9w9y5w">
-    <bindings xmi:id="_LI6iRhNkEeSIjYTP9w9y5w" keySequence="M1+Q" command="_LI6iQxNkEeSIjYTP9w9y5w"/>
-    <bindings xmi:id="_LI6iSRNkEeSIjYTP9w9y5w" keySequence="M1+O" command="_LI6iRxNkEeSIjYTP9w9y5w"/>
-    <bindings xmi:id="_LI6iTBNkEeSIjYTP9w9y5w" keySequence="M1+S" command="_LI6iShNkEeSIjYTP9w9y5w"/>
-    <bindings xmi:id="_LI6iTxNkEeSIjYTP9w9y5w" keySequence="M1+A" command="_LI6iTRNkEeSIjYTP9w9y5w"/>
+    <bindings xmi:id="_LI6iRhNkEeSIjYTP9w9y5w" elementId="net.mmyumu.docdoc.keybinding.quit" keySequence="M1+Q" command="_LI6iQxNkEeSIjYTP9w9y5w">
+      <tags>type:user</tags>
+    </bindings>
+    <bindings xmi:id="_LI6iTxNkEeSIjYTP9w9y5w" elementId="net.mmyumu.docdoc.keybinding.about" keySequence="M1+A" command="_LI6iTRNkEeSIjYTP9w9y5w">
+      <tags>type:user</tags>
+    </bindings>
   </bindingTables>
   <rootContext xmi:id="_LI6iQBNkEeSIjYTP9w9y5w" elementId="org.eclipse.ui.contexts.dialogAndWindow" name="In Dialog and Windows">
     <children xmi:id="_LI6iQRNkEeSIjYTP9w9y5w" elementId="org.eclipse.ui.contexts.window" name="In Windows"/>
     <children xmi:id="_LI6iQhNkEeSIjYTP9w9y5w" elementId="org.eclipse.ui.contexts.dialog" name="In Dialogs"/>
   </rootContext>
   <commands xmi:id="_LI6iQxNkEeSIjYTP9w9y5w" elementId="org.eclipse.ui.file.exit" commandName="quitCommand"/>
-  <commands xmi:id="_LI6iRxNkEeSIjYTP9w9y5w" elementId="net.mmyumu.docdoc.open" commandName="openCommand"/>
-  <commands xmi:id="_LI6iShNkEeSIjYTP9w9y5w" elementId="org.eclipse.ui.file.save" commandName="saveCommand"/>
   <commands xmi:id="_LI6iTRNkEeSIjYTP9w9y5w" elementId="org.eclipse.ui.help.aboutAction" commandName="aboutCommand"/>
   <addons xmi:id="_LI57MhNkEeSIjYTP9w9y5w" elementId="org.eclipse.e4.core.commands.service" contributionURI="bundleclass://org.eclipse.e4.core.commands/org.eclipse.e4.core.commands.CommandServiceAddon"/>
   <addons xmi:id="_LI57MxNkEeSIjYTP9w9y5w" elementId="org.eclipse.e4.ui.contexts.service" contributionURI="bundleclass://org.eclipse.e4.ui.services/org.eclipse.e4.ui.services.ContextServiceAddon"/>

@@ -1,0 +1,6 @@
+Allowed values are:
+
+* first
+* index:$theindex$
+* before:$theotherelementsid$
+* after:$theotherelementsid$
