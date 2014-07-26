@@ -5,11 +5,15 @@
          id="product"
          point="org.eclipse.core.runtime.products">
       <product
-            name="net.mmyumu.docdoc"
-            application="org.eclipse.e4.ui.workbench.swt.E4Application">
+            application="org.eclipse.e4.ui.workbench.swt.E4Application"
+            name="Doc doc">
          <property
                name="applicationCSS"
                value="platform:/plugin/net.mmyumu.docdoc/css/default.css">
+         </property>
+         <property
+               name="appName"
+               value="Doc doc">
          </property>
       </product>
    </extension>

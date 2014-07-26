@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/net.mmyumu.docdoc.feature_1.0.0.qualifier.jar" id="net.mmyumu.docdoc.feature" version="1.0.0.qualifier">
+      <category name="docdoc.category"/>
+   </feature>
+   <category-def name="docdoc.category" label="Doc doc category">
+      <description>
+         Doc doc category
+      </description>
+   </category-def>
+</site>
