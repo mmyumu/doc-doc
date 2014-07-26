@@ -11,14 +11,36 @@
  *******************************************************************************/
 package net.mmyumu.docdoc.ui.handlers;
 
+import net.mmyumu.docdoc.ui.dialogs.ImageFileDialog;
+
 import org.eclipse.e4.core.di.annotations.Execute;
-import org.eclipse.swt.widgets.FileDialog;
 import org.eclipse.swt.widgets.Shell;
+
 public class AirMediaOpenHandler {
 
+	private Shell shell;
+
 	@Execute
-	public void execute(Shell shell){
-		FileDialog dialog = new FileDialog(shell);
-		dialog.open();
+	public void execute(Shell shell) {
+		this.shell = shell;
+		openImageToSendToAirMediaServer();
+	}
+
+	private void openImageToSendToAirMediaServer() {
+		String filePath = getFilePathFromDialog();
+		if (filePath != null) {
+			sendImageToAirMediaServer();
+		}
+	}
+
+	private void sendImageToAirMediaServer() {
+
+	}
+
+	private String getFilePathFromDialog() {
+		ImageFileDialog dialog = new ImageFileDialog(shell);
+		String filePath = dialog.open();
+
+		return filePath;
 	}
 }
