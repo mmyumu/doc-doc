@@ -50,7 +50,7 @@ public class AirMediaOpenHandler {
 		try {
 			airMediaConnection.send(filePath);
 			String response = airMediaConnection.readResponse();
-			System.out.println(response);
+			logger.info(response);
 		} catch (AirMediaConnectionException e) {
 			logger.error(e, "Error while sending image to Air Media Server");
 		}

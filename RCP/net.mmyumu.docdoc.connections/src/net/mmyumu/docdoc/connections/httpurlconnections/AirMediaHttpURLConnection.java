@@ -11,6 +11,7 @@ import java.net.ProtocolException;
 import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.Base64;
 
 import javax.inject.Inject;
 
@@ -30,7 +31,7 @@ public abstract class AirMediaHttpURLConnection implements AirMediaConnection {
 
 	private HttpURLConnection httpURLConnection;
 
-	private byte[] fileContent;
+	private byte[] data;
 
 	@Override
 	public void send(String filePath) throws AirMediaConnectionException {
@@ -44,7 +45,7 @@ public abstract class AirMediaHttpURLConnection implements AirMediaConnection {
 	private void readFileContent(String filePath)
 			throws AirMediaConnectionException {
 		try {
-			fileContent = Files.readAllBytes(Paths.get(filePath));
+			data = Files.readAllBytes(Paths.get(filePath));
 		} catch (IOException e) {
 			throw new AirMediaConnectionException(
 					"Error while getting the content of the file to send", e);
@@ -98,7 +99,7 @@ public abstract class AirMediaHttpURLConnection implements AirMediaConnection {
 		httpURLConnection.setRequestProperty("X-Apple-Transition", "None");
 		httpURLConnection.setRequestProperty("Connection", "keep-alive");
 		httpURLConnection.setRequestProperty(
-				"Content-Length", String.valueOf(fileContent.length));
+				"Content-Length", String.valueOf(data.length));
 	}
 
 	private void sendContent() throws AirMediaConnectionException {
@@ -118,7 +119,7 @@ public abstract class AirMediaHttpURLConnection implements AirMediaConnection {
 	private OutputStream writeToOutputStream() throws IOException {
 		OutputStream outputStream = httpURLConnection.getOutputStream();
 
-		outputStream.write(fileContent);
+		outputStream.write(data);
 		outputStream.flush();
 		return outputStream;
 	}
@@ -180,5 +181,14 @@ public abstract class AirMediaHttpURLConnection implements AirMediaConnection {
 		}
 
 		return responseBody.toString();
+	}
+
+	@Override
+	public void send(byte[] data) throws AirMediaConnectionException {
+		URL url = getURL();
+
+		this.data = Base64.getDecoder().decode(data);
+		initHttpURLConnection(url);
+		sendContent();
 	}
 }

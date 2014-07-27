@@ -5,12 +5,15 @@
   </fragments>
   <fragments xsi:type="fragment:StringModelFragment" xmi:id="_GVGlQBN1EeSIjYTP9w9y5w" featurename="commands" parentElementId="net.mmyumu.docdoc.application">
     <elements xsi:type="commands:Command" xmi:id="_I8kWwBN1EeSIjYTP9w9y5w" elementId="net.mmyumu.docdoc.ui.command.airmedia" commandName="AirMedia command"/>
+    <elements xsi:type="commands:Command" xmi:id="_Vo7kcBUREeSprfDkWBcP9w" elementId="net.mmyumu.docdoc.ui.command.captureairmedia" commandName="Capture AirMedia command"/>
   </fragments>
   <fragments xsi:type="fragment:StringModelFragment" xmi:id="__MduoBN0EeSIjYTP9w9y5w" featurename="handlers" parentElementId="net.mmyumu.docdoc.application">
     <elements xsi:type="commands:Handler" xmi:id="__qXyoBN0EeSIjYTP9w9y5w" elementId="net.mmyumu.docdoc.ui.handler.airmedia" contributionURI="bundleclass://net.mmyumu.docdoc.ui/net.mmyumu.docdoc.ui.handlers.AirMediaOpenHandler" command="_I8kWwBN1EeSIjYTP9w9y5w"/>
+    <elements xsi:type="commands:Handler" xmi:id="_TnClMBUREeSprfDkWBcP9w" elementId="net.mmyumu.docdoc.ui.handler.captureairmedia" contributionURI="bundleclass://net.mmyumu.docdoc.ui/net.mmyumu.docdoc.ui.handlers.CaptureToAirMediaHandler" command="_Vo7kcBUREeSprfDkWBcP9w"/>
   </fragments>
   <fragments xsi:type="fragment:StringModelFragment" xmi:id="_ajjbkBN1EeSIjYTP9w9y5w" featurename="children" parentElementId="net.mmyumu.docdoc.menu.file" positionInList="first">
-    <elements xsi:type="menu:HandledMenuItem" xmi:id="_f-30wBN1EeSIjYTP9w9y5w" elementId="net.mmyumu.docdoc.ui.handledmenuitem.airmedia" label="Send image to Air Media Server" iconURI="platform:/plugin/net.mmyumu.docdoc.ui/icons/sample.png" mnemonics="" command="_I8kWwBN1EeSIjYTP9w9y5w"/>
+    <elements xsi:type="menu:HandledMenuItem" xmi:id="_f-30wBN1EeSIjYTP9w9y5w" elementId="net.mmyumu.docdoc.ui.handledmenuitem.captureairmedia" label="Send image to Air Media Server" iconURI="platform:/plugin/net.mmyumu.docdoc.ui/icons/sample.png" mnemonics="" command="_I8kWwBN1EeSIjYTP9w9y5w"/>
+    <elements xsi:type="menu:HandledMenuItem" xmi:id="_Zy978BUREeSprfDkWBcP9w" elementId="net.mmyumu.docdoc.ui.handledmenuitem.airmedia" label="Send capture to Air Media Server" iconURI="platform:/plugin/net.mmyumu.docdoc.ui/icons/sample.png" mnemonics="" command="_Vo7kcBUREeSprfDkWBcP9w"/>
   </fragments>
   <fragments xsi:type="fragment:StringModelFragment" xmi:id="_5eZ1wBTLEeSprfDkWBcP9w" featurename="children" parentElementId="toolbar:org.eclipse.ui.main.toolbar" positionInList="first">
     <elements xsi:type="menu:HandledToolItem" xmi:id="_HScX8BTNEeSprfDkWBcP9w" elementId="net.mmyumu.docdoc.ui.handledtoolitem.airmedia" label="Send image to Air Media Server" iconURI="platform:/plugin/net.mmyumu.docdoc.ui/icons/sample.png" command="_I8kWwBN1EeSIjYTP9w9y5w"/>
