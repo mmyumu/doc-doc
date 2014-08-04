@@ -10,6 +10,8 @@ Import-Package: javax.inject,
 Bundle-ActivationPolicy: lazy
 Require-Bundle: org.eclipse.e4.core.services,
  org.eclipse.e4.core.di,
- org.eclipse.e4.core.contexts
+ org.eclipse.e4.core.contexts,
+ org.eclipse.e4.core.di.extensions;bundle-version="0.12.0",
+ org.eclipse.osgi
 Export-Package: net.mmyumu.docdoc.connections,
  net.mmyumu.docdoc.connections.exceptions

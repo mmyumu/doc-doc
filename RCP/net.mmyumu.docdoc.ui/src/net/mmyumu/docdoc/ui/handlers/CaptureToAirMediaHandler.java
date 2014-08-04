@@ -76,7 +76,7 @@ public class CaptureToAirMediaHandler {
 									.getImageData() };
 							ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
 							loader.save(byteArrayOutputStream, SWT.IMAGE_PNG);
-							loader.save("E:\\swttest.png", SWT.IMAGE_PNG);
+//							loader.save("E:\\swttest.png", SWT.IMAGE_PNG);
 
 							try {
 								airMediaConnection.send(Base64
