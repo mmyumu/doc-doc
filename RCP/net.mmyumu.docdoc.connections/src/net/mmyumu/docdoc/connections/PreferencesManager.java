@@ -26,8 +26,6 @@ public class PreferencesManager {
 
 		logService.log(LogService.LOG_DEBUG, "Air Media Type changed to "
 				+ airMediaType);
-		// logger.log(LogService.LOG_DEBUG, "Air Media Type changed to "
-		// + airMediaType);
 		InjectorFactory.getDefault()
 				.addBinding(AirMediaConnectionFactory.class)
 				.implementedBy(airMediaType.getFactoryClass());

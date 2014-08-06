@@ -15,14 +15,10 @@ import javax.inject.Inject;
 
 import net.mmyumu.docdoc.connections.AirMediaConnection;
 import net.mmyumu.docdoc.connections.AirMediaConnectionFactory;
-import net.mmyumu.docdoc.connections.AirMediaType;
-import net.mmyumu.docdoc.connections.PreferencesManager;
 import net.mmyumu.docdoc.connections.exceptions.AirMediaConnectionException;
 import net.mmyumu.docdoc.ui.dialogs.ImageFileDialog;
 
-import org.eclipse.core.runtime.preferences.IEclipsePreferences;
 import org.eclipse.e4.core.di.annotations.Execute;
-import org.eclipse.e4.core.di.extensions.Preference;
 import org.eclipse.e4.core.services.log.Logger;
 import org.eclipse.swt.widgets.Shell;
 
@@ -30,18 +26,16 @@ public class AirMediaOpenHandler {
 	@Inject
 	private Logger logger;
 
-	@Inject
 	private AirMediaConnectionFactory airMediaConnectionFactory;
 
 	private Shell shell;
 
 	@Execute
 	public void execute(Shell shell,
-			@Preference(nodePath = PreferencesManager.SCOPE
-					+ PreferencesManager.ID) IEclipsePreferences prefs) {
+			AirMediaConnectionFactory airMediaConnectionFactory) {
 		this.shell = shell;
-		prefs.put(PreferencesManager.AIRMEDIA_TYPE,
-				AirMediaType.BBOX.toString());
+		airMediaConnectionFactory.instance();
+		this.airMediaConnectionFactory = airMediaConnectionFactory;
 		openImageToSendToAirMediaServer();
 	}
 

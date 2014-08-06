@@ -20,6 +20,7 @@ import org.eclipse.core.runtime.jobs.Job;
 import org.eclipse.e4.core.di.annotations.Execute;
 import org.eclipse.e4.core.services.log.Logger;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.SWTException;
 import org.eclipse.swt.graphics.GC;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.graphics.ImageData;
@@ -53,44 +54,48 @@ public class CaptureToAirMediaHandler {
 		Job job = new Job("Sending capture to Air Media Server") {
 			@Override
 			protected IStatus run(IProgressMonitor monitor) {
-				while (true) {
+				final boolean error = false;
+
+				while (!error) {
 					System.out.println("job while");
-					Display.getDefault().syncExec(new Runnable() {
+					try {
+						Display.getDefault().syncExec(new Runnable() {
 
-						@Override
-						public void run() {
-							System.out.println("display exec");
-							/*
-							 * Widget capturing logic
-							 */
-							GC gc = new GC(shell.getDisplay());
-							final Image image = new Image(
-									shell.getDisplay(), shell.getBounds());
-							gc.copyArea(
-									image, shell.getBounds().x,
-									shell.getBounds().y);
-							gc.dispose();
+							@Override
+							public void run() {
+								System.out.println("display exec");
+								/*
+								 * Widget capturing logic
+								 */
+								GC gc = new GC(shell.getDisplay());
+								final Image image = new Image(shell
+										.getDisplay(), shell.getBounds());
+								gc.copyArea(image, shell.getBounds().x,
+										shell.getBounds().y);
+								gc.dispose();
 
-							ImageLoader loader = new ImageLoader();
-							loader.data = new ImageData[] { image
-									.getImageData() };
-							ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-							loader.save(byteArrayOutputStream, SWT.IMAGE_PNG);
-//							loader.save("E:\\swttest.png", SWT.IMAGE_PNG);
+								ImageLoader loader = new ImageLoader();
+								loader.data = new ImageData[] { image
+										.getImageData() };
+								ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+								loader.save(byteArrayOutputStream,
+										SWT.IMAGE_PNG);
+								// loader.save("E:\\swttest.png",
+								// SWT.IMAGE_PNG);
 
-							try {
-								airMediaConnection.send(Base64
-										.getEncoder().encode(
-												byteArrayOutputStream
-														.toByteArray()));
-							} catch (AirMediaConnectionException e) {
-								logger
-										.error(
-												e,
-												"Error while sending screenshot to Air Media server");
+								try {
+									airMediaConnection.send(Base64.getEncoder()
+											.encode(byteArrayOutputStream
+													.toByteArray()));
+								} catch (AirMediaConnectionException e) {
+									logger.error(e,
+											"Error while sending screenshot to Air Media server");
+								}
 							}
-						}
-					});
+						});
+					} catch (SWTException e) {
+						System.out.println("swt exception");
+					}
 				}
 			}
 		};
