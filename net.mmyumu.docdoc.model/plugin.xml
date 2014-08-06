@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated cards -->
+      <package
+            uri="platform:/resource/net.mmyumu.docdoc.xml/resources/xsd/cards.xsd"
+            class="net.mmyumu.docdoc.model.Cards.CardsPackage"
+            genModel="model/cards.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated cards -->
+      <parser
+            type="cards"
+            class="net.mmyumu.docdoc.model.Cards.util.CardsResourceFactoryImpl"/>
+   </extension>
+
+</plugin>

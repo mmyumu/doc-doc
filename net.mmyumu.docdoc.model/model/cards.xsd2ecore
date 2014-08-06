@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd2ecore:XSD2EcoreMappingRoot xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsd2ecore="http://www.eclipse.org/emf/2002/XSD2Ecore" inputs="../../net.mmyumu.docdoc.xml/resources/xsd/cards.xsd#/"
+    outputs="Cards.ecore#/" topToBottom="true">
+  <nested inputs="bundleentry://454.fwk1730595945/cache/www.w3.org/2001/XMLSchema.xsd#//string;XSDSimpleTypeDefinition=9"
+      outputs="http://www.eclipse.org/emf/2003/XMLType#//String"/>
+  <nested inputs="../../net.mmyumu.docdoc.xml/resources/xsd/cards.xsd#//Cards;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/Card;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/Variable;XSDElementDeclaration/XSDComplexTypeDefinition"
+      outputs="Cards.ecore#//VariableType">
+    <nested inputs="../../net.mmyumu.docdoc.xml/resources/xsd/cards.xsd#//Cards;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/Card;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/Variable;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse=1"
+        outputs="Cards.ecore#//VariableType/side"/>
+    <nested inputs="../../net.mmyumu.docdoc.xml/resources/xsd/cards.xsd#//Cards;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/Card;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/Variable;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse"
+        outputs="Cards.ecore#//VariableType/type"/>
+  </nested>
+  <nested inputs="bundleentry://454.fwk1730595945/cache/www.w3.org/2001/XMLSchema.xsd#//int;XSDSimpleTypeDefinition=44"
+      outputs="http://www.eclipse.org/emf/2003/XMLType#//Int"/>
+  <nested inputs="../../net.mmyumu.docdoc.xml/resources/xsd/cards.xsd#//Cards;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/Card;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=1/PlayabilityCondition;XSDElementDeclaration/XSDComplexTypeDefinition"
+      outputs="Cards.ecore#//PlayabilityConditionType">
+    <nested inputs="../../net.mmyumu.docdoc.xml/resources/xsd/cards.xsd#//Cards;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/Card;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=1/PlayabilityCondition;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse"
+        outputs="Cards.ecore#//PlayabilityConditionType/operator"/>
+    <nested inputs="../../net.mmyumu.docdoc.xml/resources/xsd/cards.xsd#//Cards;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/Card;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=1/PlayabilityCondition;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse=1"
+        outputs="Cards.ecore#//PlayabilityConditionType/valueA"/>
+    <nested inputs="../../net.mmyumu.docdoc.xml/resources/xsd/cards.xsd#//Cards;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/Card;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=1/PlayabilityCondition;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse=2"
+        outputs="Cards.ecore#//PlayabilityConditionType/valueB"/>
+  </nested>
+  <nested inputs="../../net.mmyumu.docdoc.xml/resources/xsd/cards.xsd#//Cards;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/Card;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=2/Target;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/Effect;XSDElementDeclaration/XSDComplexTypeDefinition"
+      outputs="Cards.ecore#//EffectType">
+    <nested inputs="../../net.mmyumu.docdoc.xml/resources/xsd/cards.xsd#//Cards;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/Card;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=2/Target;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/Effect;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse"
+        outputs="Cards.ecore#//EffectType/type"/>
+    <nested inputs="../../net.mmyumu.docdoc.xml/resources/xsd/cards.xsd#//Cards;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/Card;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=2/Target;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/Effect;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse=1"
+        outputs="Cards.ecore#//EffectType/value"/>
+  </nested>
+  <nested inputs="../../net.mmyumu.docdoc.xml/resources/xsd/cards.xsd#//Cards;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/Card;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=2/Target;XSDElementDeclaration/XSDComplexTypeDefinition"
+      outputs="Cards.ecore#//TargetType">
+    <nested inputs="../../net.mmyumu.docdoc.xml/resources/xsd/cards.xsd#//Cards;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/Card;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=2/Target;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="Cards.ecore#//TargetType/effect"/>
+    <nested inputs="../../net.mmyumu.docdoc.xml/resources/xsd/cards.xsd#//Cards;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/Card;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=2/Target;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse=1"
+        outputs="Cards.ecore#//TargetType/amount"/>
+    <nested inputs="../../net.mmyumu.docdoc.xml/resources/xsd/cards.xsd#//Cards;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/Card;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=2/Target;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse=2"
+        outputs="Cards.ecore#//TargetType/side"/>
+    <nested inputs="../../net.mmyumu.docdoc.xml/resources/xsd/cards.xsd#//Cards;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/Card;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=2/Target;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse"
+        outputs="Cards.ecore#//TargetType/zone"/>
+  </nested>
+  <nested inputs="../../net.mmyumu.docdoc.xml/resources/xsd/cards.xsd#//Cards;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/Card;XSDElementDeclaration/XSDComplexTypeDefinition"
+      outputs="Cards.ecore#//CardType">
+    <nested inputs="../../net.mmyumu.docdoc.xml/resources/xsd/cards.xsd#//Cards;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/Card;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="Cards.ecore#//CardType/variable"/>
+    <nested inputs="../../net.mmyumu.docdoc.xml/resources/xsd/cards.xsd#//Cards;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/Card;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=1"
+        outputs="Cards.ecore#//CardType/playabilityCondition"/>
+    <nested inputs="../../net.mmyumu.docdoc.xml/resources/xsd/cards.xsd#//Cards;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/Card;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=2"
+        outputs="Cards.ecore#//CardType/target"/>
+    <nested inputs="../../net.mmyumu.docdoc.xml/resources/xsd/cards.xsd#//Cards;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/Card;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=3"
+        outputs="Cards.ecore#//CardType/description"/>
+    <nested inputs="../../net.mmyumu.docdoc.xml/resources/xsd/cards.xsd#//Cards;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/Card;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse=5"
+        outputs="Cards.ecore#//CardType/cost"/>
+    <nested inputs="../../net.mmyumu.docdoc.xml/resources/xsd/cards.xsd#//Cards;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/Card;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse=6"
+        outputs="Cards.ecore#//CardType/destinyLevel"/>
+    <nested inputs="../../net.mmyumu.docdoc.xml/resources/xsd/cards.xsd#//Cards;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/Card;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse=3"
+        outputs="Cards.ecore#//CardType/displayName"/>
+    <nested inputs="../../net.mmyumu.docdoc.xml/resources/xsd/cards.xsd#//Cards;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/Card;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse=4"
+        outputs="Cards.ecore#//CardType/faction"/>
+    <nested inputs="../../net.mmyumu.docdoc.xml/resources/xsd/cards.xsd#//Cards;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/Card;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse=7"
+        outputs="Cards.ecore#//CardType/iD"/>
+    <nested inputs="../../net.mmyumu.docdoc.xml/resources/xsd/cards.xsd#//Cards;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/Card;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse=2"
+        outputs="Cards.ecore#//CardType/name"/>
+    <nested inputs="../../net.mmyumu.docdoc.xml/resources/xsd/cards.xsd#//Cards;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/Card;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse"
+        outputs="Cards.ecore#//CardType/rarity"/>
+    <nested inputs="../../net.mmyumu.docdoc.xml/resources/xsd/cards.xsd#//Cards;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/Card;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse=1"
+        outputs="Cards.ecore#//CardType/type"/>
+  </nested>
+  <nested inputs="../../net.mmyumu.docdoc.xml/resources/xsd/cards.xsd#//Cards;XSDElementDeclaration/XSDComplexTypeDefinition"
+      outputs="Cards.ecore#//CardsType">
+    <nested inputs="../../net.mmyumu.docdoc.xml/resources/xsd/cards.xsd#//Cards;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="Cards.ecore#//CardsType/card"/>
+  </nested>
+  <nested inputs="../../net.mmyumu.docdoc.xml/resources/xsd/cards.xsd#//Cards;XSDElementDeclaration"
+      outputs="Cards.ecore#//DocumentRoot/cards"/>
+</xsd2ecore:XSD2EcoreMappingRoot>
