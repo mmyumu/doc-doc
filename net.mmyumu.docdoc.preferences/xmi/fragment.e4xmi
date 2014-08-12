@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ASCII"?>
+<fragment:ModelFragments xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:commands="http://www.eclipse.org/ui/2010/UIModel/application/commands" xmlns:fragment="http://www.eclipse.org/ui/2010/UIModel/fragment" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_lXLk8BNvEeSIjYTP9w9y5w">
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_GVGlQBN1EeSIjYTP9w9y5w" featurename="commands" parentElementId="net.mmyumu.docdoc.application">
+    <elements xsi:type="commands:Command" xmi:id="_I8kWwBN1EeSIjYTP9w9y5w" elementId="net.mmyumu.docdoc.preferences.command.preferences" commandName="Preferences command"/>
+  </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="__MduoBN0EeSIjYTP9w9y5w" featurename="handlers" parentElementId="net.mmyumu.docdoc.application">
+    <elements xsi:type="commands:Handler" xmi:id="__qXyoBN0EeSIjYTP9w9y5w" elementId="net.mmyumu.docdoc.preferences.handler.preferences" contributionURI="bundleclass://com.opcoach.e4.preferences/com.opcoach.e4.preferences.handlers.E4PreferencesHandler" command="_I8kWwBN1EeSIjYTP9w9y5w"/>
+  </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_ajjbkBN1EeSIjYTP9w9y5w" featurename="children" parentElementId="net.mmyumu.docdoc.menu.window" positionInList="first">
+    <elements xsi:type="menu:HandledMenuItem" xmi:id="_f-30wBN1EeSIjYTP9w9y5w" elementId="net.mmyumu.docdoc.preferences.handledmenuitem.preferences" label="Open preferences" iconURI="" mnemonics="" command="_I8kWwBN1EeSIjYTP9w9y5w"/>
+  </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_5eZ1wBTLEeSprfDkWBcP9w" featurename="children" parentElementId="toolbar:org.eclipse.ui.main.toolbar" positionInList="first">
+    <elements xsi:type="menu:HandledToolItem" xmi:id="_HScX8BTNEeSprfDkWBcP9w" elementId="net.mmyumu.docdoc.preferences.handledtoolitem.preferences" label="Open preferences" iconURI="" command="_I8kWwBN1EeSIjYTP9w9y5w"/>
+  </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_jd4rQBTTEeSprfDkWBcP9w" featurename="bindingContext" parentElementId="net.mmyumu.docdoc.application">
+    <elements xsi:type="commands:BindingContext" xmi:id="_d7GYIBTTEeSprfDkWBcP9w" elementId="org.eclipse.ui.contexts.dialogAndWindow" name="In UI Windows And Dialog"/>
+  </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_Nc2xcKBlEeKWE8rOHgFS-g" featurename="bindingTables" parentElementId="net.mmyumu.docdoc.application">
+    <elements xsi:type="commands:BindingTable" xmi:id="_RmxNIKBlEeKWE8rOHgFS-g" elementId="net.mmyumu.docdoc.preferences.bindingtable.preferences" bindingContext="_d7GYIBTTEeSprfDkWBcP9w">
+      <bindings xmi:id="_t9kysBTSEeSprfDkWBcP9w" elementId="net.mmyumu.docdoc.ui.keybinding.airmedia" keySequence="M1+P" command="_I8kWwBN1EeSIjYTP9w9y5w">
+        <tags>type:user</tags>
+      </bindings>
+    </elements>
+  </fragments>
+</fragment:ModelFragments>

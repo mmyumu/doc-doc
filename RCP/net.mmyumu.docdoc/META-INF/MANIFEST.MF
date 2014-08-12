@@ -16,3 +16,4 @@ Require-Bundle: javax.inject;bundle-version="1.0.0",
  org.eclipse.e4.core.di.extensions,
  net.mmyumu.docdoc.connections
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-Activator: net.mmyumu.docdoc.Activator

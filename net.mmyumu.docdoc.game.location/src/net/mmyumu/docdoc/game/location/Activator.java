@@ -1,4 +1,4 @@
-package net.mmyumu.docdoc.connections;
+package net.mmyumu.docdoc.game.location;
 
 import org.eclipse.e4.core.contexts.ContextInjectionFactory;
 import org.eclipse.e4.core.contexts.EclipseContextFactory;
@@ -7,9 +7,9 @@ import org.osgi.framework.BundleContext;
 
 public class Activator implements BundleActivator {
 
-	private static BundleContext context;
+	public static final String PLUGIN_ID = "net.mmyumu.docdoc.game.location";
 
-	public static final String PLUGIN_ID = "net.mmyumu.docdoc.connections";
+	private static BundleContext context;
 
 	static BundleContext getContext() {
 		return context;
@@ -18,12 +18,17 @@ public class Activator implements BundleActivator {
 	@Override
 	public void start(BundleContext bundleContext) throws Exception {
 		Activator.context = bundleContext;
-		System.out.println("test start connections");
+		System.out.println("test start");
 		ContextInjectionFactory.make(PreferencesManager.class,
 				EclipseContextFactory.getServiceContext(bundleContext));
 	}
 
-	@Override
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * org.osgi.framework.BundleActivator#stop(org.osgi.framework.BundleContext)
+	 */
 	public void stop(BundleContext bundleContext) throws Exception {
 		Activator.context = null;
 	}

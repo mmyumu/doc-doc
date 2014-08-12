@@ -1,7 +1,5 @@
-package net.mmyumu.docdoc.connections;
+package net.mmyumu.docdoc.preferences;
 
-import org.eclipse.e4.core.contexts.ContextInjectionFactory;
-import org.eclipse.e4.core.contexts.EclipseContextFactory;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 
@@ -9,21 +7,22 @@ public class Activator implements BundleActivator {
 
 	private static BundleContext context;
 
-	public static final String PLUGIN_ID = "net.mmyumu.docdoc.connections";
-
 	static BundleContext getContext() {
 		return context;
 	}
 
-	@Override
+	/*
+	 * (non-Javadoc)
+	 * @see org.osgi.framework.BundleActivator#start(org.osgi.framework.BundleContext)
+	 */
 	public void start(BundleContext bundleContext) throws Exception {
 		Activator.context = bundleContext;
-		System.out.println("test start connections");
-		ContextInjectionFactory.make(PreferencesManager.class,
-				EclipseContextFactory.getServiceContext(bundleContext));
 	}
 
-	@Override
+	/*
+	 * (non-Javadoc)
+	 * @see org.osgi.framework.BundleActivator#stop(org.osgi.framework.BundleContext)
+	 */
 	public void stop(BundleContext bundleContext) throws Exception {
 		Activator.context = null;
 	}

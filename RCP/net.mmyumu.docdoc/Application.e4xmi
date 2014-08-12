@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_LI57MBNkEeSIjYTP9w9y5w" elementId="net.mmyumu.docdoc.application" bindingContexts="_LI6iQBNkEeSIjYTP9w9y5w">
-  <children xsi:type="basic:TrimmedWindow" xmi:id="_LI57MRNkEeSIjYTP9w9y5w" label="net.mmyumu.docdoc" width="500" height="400">
+  <children xsi:type="basic:TrimmedWindow" xmi:id="_LI57MRNkEeSIjYTP9w9y5w" label="Doc doc" width="500" height="400">
     <children xsi:type="advanced:PerspectiveStack" xmi:id="_LI6iVxNkEeSIjYTP9w9y5w">
       <children xsi:type="advanced:Perspective" xmi:id="_LI6iWBNkEeSIjYTP9w9y5w">
         <children xsi:type="basic:PartSashContainer" xmi:id="_LI6iWRNkEeSIjYTP9w9y5w">
@@ -12,6 +12,7 @@
       <children xsi:type="menu:Menu" xmi:id="_LI6iURNkEeSIjYTP9w9y5w" elementId="net.mmyumu.docdoc.menu.file" label="File">
         <children xsi:type="menu:HandledMenuItem" xmi:id="_LI6iVBNkEeSIjYTP9w9y5w" label="Quit" command="_LI6iQxNkEeSIjYTP9w9y5w"/>
       </children>
+      <children xsi:type="menu:Menu" xmi:id="_VTM0cB22EeSFxKED0k8MVw" elementId="net.mmyumu.docdoc.menu.window" label="Window"/>
       <children xsi:type="menu:Menu" xmi:id="_LI6iVRNkEeSIjYTP9w9y5w" label="Help">
         <children xsi:type="menu:HandledMenuItem" xmi:id="_LI6iVhNkEeSIjYTP9w9y5w" label="About" command="_LI6iTRNkEeSIjYTP9w9y5w"/>
       </children>

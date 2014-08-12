@@ -27,11 +27,13 @@
       <import plugin="org.eclipse.e4.core.di" version="1.4.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.e4.ui.di" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.e4.core.contexts" version="1.3.100" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.e4.core.services"/>
+      <import plugin="org.eclipse.e4.core.di.extensions"/>
       <import plugin="org.eclipse.e4.core.di.extensions" version="0.12.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.osgi"/>
+      <import plugin="org.eclipse.e4.core.services"/>
       <import plugin="org.eclipse.e4.ui.model.workbench" version="1.1.0.v20140512-1820" match="greaterOrEqual"/>
       <import plugin="org.eclipse.core.jobs"/>
+      <import plugin="com.opcoach.e4.preferences"/>
    </requires>
 
    <plugin
@@ -53,5 +55,19 @@
          download-size="0"
          install-size="0"
          version="0.0.0"/>
+
+   <plugin
+         id="net.mmyumu.docdoc.game.location"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="net.mmyumu.docdoc.preferences"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
 
 </feature>
