@@ -11,22 +11,13 @@
  *******************************************************************************/
 package net.mmyumu.docdoc.handlers;
 
-import net.mmyumu.docdoc.connections.AirMediaType;
-import net.mmyumu.docdoc.connections.PreferencesManager;
-
-import org.eclipse.core.runtime.preferences.IEclipsePreferences;
 import org.eclipse.e4.core.di.annotations.Execute;
-import org.eclipse.e4.core.di.extensions.Preference;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.swt.widgets.Shell;
 
 public class AboutHandler {
 	@Execute
-	public void execute(Shell shell,
-			@Preference(nodePath = PreferencesManager.SCOPE
-					+ PreferencesManager.ID) IEclipsePreferences prefs) {
-		prefs.put(PreferencesManager.AIRMEDIA_TYPE,
-				AirMediaType.BBOX.toString());
+	public void execute(Shell shell) {
 		MessageDialog.openInformation(shell, "About",
 				"Eclipse 4 Application example.");
 	}

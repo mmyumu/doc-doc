@@ -9,7 +9,7 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated cards -->
       <package
-            uri="platform:/resource/net.mmyumu.docdoc.xml/resources/xsd/cards.xsd"
+            uri="platform:/resource/net.mmyumu.docdoc.model/resources/xsd/cards.xsd"
             class="net.mmyumu.docdoc.model.Cards.CardsPackage"
             genModel="model/cards.genmodel"/>
    </extension>
@@ -20,5 +20,4 @@
             type="cards"
             class="net.mmyumu.docdoc.model.Cards.util.CardsResourceFactoryImpl"/>
    </extension>
-
 </plugin>

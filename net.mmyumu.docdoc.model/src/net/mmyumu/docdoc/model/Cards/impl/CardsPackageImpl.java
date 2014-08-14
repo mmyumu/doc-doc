@@ -2,15 +2,20 @@
  */
 package net.mmyumu.docdoc.model.Cards.impl;
 
-import net.mmyumu.docdoc.model.Cards.CardType;
+import net.mmyumu.docdoc.model.Cards.Card;
+import net.mmyumu.docdoc.model.Cards.CardFilter;
+import net.mmyumu.docdoc.model.Cards.Cards;
 import net.mmyumu.docdoc.model.Cards.CardsFactory;
 import net.mmyumu.docdoc.model.Cards.CardsPackage;
-import net.mmyumu.docdoc.model.Cards.CardsType;
 import net.mmyumu.docdoc.model.Cards.DocumentRoot;
-import net.mmyumu.docdoc.model.Cards.EffectType;
-import net.mmyumu.docdoc.model.Cards.PlayabilityConditionType;
-import net.mmyumu.docdoc.model.Cards.TargetType;
-import net.mmyumu.docdoc.model.Cards.VariableType;
+import net.mmyumu.docdoc.model.Cards.Effect;
+import net.mmyumu.docdoc.model.Cards.OnGoing;
+import net.mmyumu.docdoc.model.Cards.Option;
+import net.mmyumu.docdoc.model.Cards.School;
+import net.mmyumu.docdoc.model.Cards.Subgroup;
+import net.mmyumu.docdoc.model.Cards.Target;
+import net.mmyumu.docdoc.model.Cards.TemplateEffect;
+import net.mmyumu.docdoc.model.Cards.Trigger;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -33,14 +38,21 @@ public class CardsPackageImpl extends EPackageImpl implements CardsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass cardsTypeEClass = null;
+	private EClass cardEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass cardTypeEClass = null;
+	private EClass cardFilterEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass cardsEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -54,28 +66,56 @@ public class CardsPackageImpl extends EPackageImpl implements CardsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass effectTypeEClass = null;
+	private EClass effectEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass playabilityConditionTypeEClass = null;
+	private EClass onGoingEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass targetTypeEClass = null;
+	private EClass optionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass variableTypeEClass = null;
+	private EClass schoolEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass subgroupEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass targetEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass templateEffectEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass triggerEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -146,8 +186,8 @@ public class CardsPackageImpl extends EPackageImpl implements CardsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getCardsType() {
-		return cardsTypeEClass;
+	public EClass getCard() {
+		return cardEClass;
 	}
 
 	/**
@@ -155,8 +195,8 @@ public class CardsPackageImpl extends EPackageImpl implements CardsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getCardsType_Card() {
-		return (EReference)cardsTypeEClass.getEStructuralFeatures().get(0);
+	public EReference getCard_School() {
+		return (EReference)cardEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -164,8 +204,8 @@ public class CardsPackageImpl extends EPackageImpl implements CardsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getCardType() {
-		return cardTypeEClass;
+	public EAttribute getCard_Description() {
+		return (EAttribute)cardEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -173,8 +213,8 @@ public class CardsPackageImpl extends EPackageImpl implements CardsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getCardType_Variable() {
-		return (EReference)cardTypeEClass.getEStructuralFeatures().get(0);
+	public EReference getCard_Ongoing() {
+		return (EReference)cardEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -182,8 +222,8 @@ public class CardsPackageImpl extends EPackageImpl implements CardsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getCardType_PlayabilityCondition() {
-		return (EReference)cardTypeEClass.getEStructuralFeatures().get(1);
+	public EReference getCard_Target() {
+		return (EReference)cardEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -191,8 +231,8 @@ public class CardsPackageImpl extends EPackageImpl implements CardsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getCardType_Target() {
-		return (EReference)cardTypeEClass.getEStructuralFeatures().get(2);
+	public EAttribute getCard_DestinyLevel() {
+		return (EAttribute)cardEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -200,8 +240,8 @@ public class CardsPackageImpl extends EPackageImpl implements CardsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCardType_Description() {
-		return (EAttribute)cardTypeEClass.getEStructuralFeatures().get(3);
+	public EAttribute getCard_DisplayName() {
+		return (EAttribute)cardEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -209,8 +249,8 @@ public class CardsPackageImpl extends EPackageImpl implements CardsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCardType_Cost() {
-		return (EAttribute)cardTypeEClass.getEStructuralFeatures().get(4);
+	public EAttribute getCard_Faction() {
+		return (EAttribute)cardEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -218,8 +258,8 @@ public class CardsPackageImpl extends EPackageImpl implements CardsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCardType_DestinyLevel() {
-		return (EAttribute)cardTypeEClass.getEStructuralFeatures().get(5);
+	public EAttribute getCard_HP() {
+		return (EAttribute)cardEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -227,8 +267,8 @@ public class CardsPackageImpl extends EPackageImpl implements CardsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCardType_DisplayName() {
-		return (EAttribute)cardTypeEClass.getEStructuralFeatures().get(6);
+	public EAttribute getCard_ID() {
+		return (EAttribute)cardEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -236,8 +276,8 @@ public class CardsPackageImpl extends EPackageImpl implements CardsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCardType_Faction() {
-		return (EAttribute)cardTypeEClass.getEStructuralFeatures().get(7);
+	public EAttribute getCard_MagicLevel() {
+		return (EAttribute)cardEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -245,8 +285,8 @@ public class CardsPackageImpl extends EPackageImpl implements CardsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCardType_ID() {
-		return (EAttribute)cardTypeEClass.getEStructuralFeatures().get(8);
+	public EAttribute getCard_MightLevel() {
+		return (EAttribute)cardEClass.getEStructuralFeatures().get(10);
 	}
 
 	/**
@@ -254,8 +294,8 @@ public class CardsPackageImpl extends EPackageImpl implements CardsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCardType_Name() {
-		return (EAttribute)cardTypeEClass.getEStructuralFeatures().get(9);
+	public EAttribute getCard_Name() {
+		return (EAttribute)cardEClass.getEStructuralFeatures().get(11);
 	}
 
 	/**
@@ -263,8 +303,8 @@ public class CardsPackageImpl extends EPackageImpl implements CardsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCardType_Rarity() {
-		return (EAttribute)cardTypeEClass.getEStructuralFeatures().get(10);
+	public EAttribute getCard_Rarity() {
+		return (EAttribute)cardEClass.getEStructuralFeatures().get(12);
 	}
 
 	/**
@@ -272,8 +312,53 @@ public class CardsPackageImpl extends EPackageImpl implements CardsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCardType_Type() {
-		return (EAttribute)cardTypeEClass.getEStructuralFeatures().get(11);
+	public EAttribute getCard_Type() {
+		return (EAttribute)cardEClass.getEStructuralFeatures().get(13);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getCardFilter() {
+		return cardFilterEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getCardFilter_IncludeUnitType() {
+		return (EAttribute)cardFilterEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getCardFilter_Side() {
+		return (EAttribute)cardFilterEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getCards() {
+		return cardsEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getCards_Card() {
+		return (EReference)cardsEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -326,8 +411,8 @@ public class CardsPackageImpl extends EPackageImpl implements CardsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getEffectType() {
-		return effectTypeEClass;
+	public EClass getEffect() {
+		return effectEClass;
 	}
 
 	/**
@@ -335,8 +420,8 @@ public class CardsPackageImpl extends EPackageImpl implements CardsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getEffectType_Type() {
-		return (EAttribute)effectTypeEClass.getEStructuralFeatures().get(0);
+	public EAttribute getEffect_Duration() {
+		return (EAttribute)effectEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -344,8 +429,8 @@ public class CardsPackageImpl extends EPackageImpl implements CardsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getEffectType_Value() {
-		return (EAttribute)effectTypeEClass.getEStructuralFeatures().get(1);
+	public EAttribute getEffect_Type() {
+		return (EAttribute)effectEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -353,8 +438,8 @@ public class CardsPackageImpl extends EPackageImpl implements CardsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getPlayabilityConditionType() {
-		return playabilityConditionTypeEClass;
+	public EAttribute getEffect_Value() {
+		return (EAttribute)effectEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -362,8 +447,8 @@ public class CardsPackageImpl extends EPackageImpl implements CardsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPlayabilityConditionType_Operator() {
-		return (EAttribute)playabilityConditionTypeEClass.getEStructuralFeatures().get(0);
+	public EClass getOnGoing() {
+		return onGoingEClass;
 	}
 
 	/**
@@ -371,8 +456,8 @@ public class CardsPackageImpl extends EPackageImpl implements CardsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPlayabilityConditionType_ValueA() {
-		return (EAttribute)playabilityConditionTypeEClass.getEStructuralFeatures().get(1);
+	public EAttribute getOnGoing_Duration() {
+		return (EAttribute)onGoingEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -380,8 +465,8 @@ public class CardsPackageImpl extends EPackageImpl implements CardsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPlayabilityConditionType_ValueB() {
-		return (EAttribute)playabilityConditionTypeEClass.getEStructuralFeatures().get(2);
+	public EClass getOption() {
+		return optionEClass;
 	}
 
 	/**
@@ -389,8 +474,8 @@ public class CardsPackageImpl extends EPackageImpl implements CardsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getTargetType() {
-		return targetTypeEClass;
+	public EAttribute getOption_DisplayText() {
+		return (EAttribute)optionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -398,8 +483,8 @@ public class CardsPackageImpl extends EPackageImpl implements CardsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getTargetType_Effect() {
-		return (EReference)targetTypeEClass.getEStructuralFeatures().get(0);
+	public EAttribute getOption_Value() {
+		return (EAttribute)optionEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -407,8 +492,8 @@ public class CardsPackageImpl extends EPackageImpl implements CardsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getTargetType_Amount() {
-		return (EAttribute)targetTypeEClass.getEStructuralFeatures().get(1);
+	public EClass getSchool() {
+		return schoolEClass;
 	}
 
 	/**
@@ -416,8 +501,8 @@ public class CardsPackageImpl extends EPackageImpl implements CardsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getTargetType_Side() {
-		return (EAttribute)targetTypeEClass.getEStructuralFeatures().get(2);
+	public EAttribute getSchool_Name() {
+		return (EAttribute)schoolEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -425,8 +510,8 @@ public class CardsPackageImpl extends EPackageImpl implements CardsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getTargetType_Zone() {
-		return (EAttribute)targetTypeEClass.getEStructuralFeatures().get(3);
+	public EClass getSubgroup() {
+		return subgroupEClass;
 	}
 
 	/**
@@ -434,8 +519,8 @@ public class CardsPackageImpl extends EPackageImpl implements CardsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getVariableType() {
-		return variableTypeEClass;
+	public EReference getSubgroup_TemplateEffect() {
+		return (EReference)subgroupEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -443,8 +528,8 @@ public class CardsPackageImpl extends EPackageImpl implements CardsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getVariableType_Side() {
-		return (EAttribute)variableTypeEClass.getEStructuralFeatures().get(0);
+	public EReference getSubgroup_Target() {
+		return (EReference)subgroupEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -452,8 +537,125 @@ public class CardsPackageImpl extends EPackageImpl implements CardsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getVariableType_Type() {
-		return (EAttribute)variableTypeEClass.getEStructuralFeatures().get(1);
+	public EClass getTarget() {
+		return targetEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getTarget_Option() {
+		return (EReference)targetEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getTarget_Trigger() {
+		return (EReference)targetEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getTarget_Effect() {
+		return (EReference)targetEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getTarget_Subgroup() {
+		return (EReference)targetEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getTarget_Amount() {
+		return (EAttribute)targetEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getTarget_Side() {
+		return (EAttribute)targetEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getTarget_Zone() {
+		return (EAttribute)targetEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getTemplateEffect() {
+		return templateEffectEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getTemplateEffect_Name() {
+		return (EAttribute)templateEffectEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getTrigger() {
+		return triggerEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getTrigger_CardFilter() {
+		return (EReference)triggerEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getTrigger_Target() {
+		return (EReference)triggerEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getTrigger_Type() {
+		return (EAttribute)triggerEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -484,22 +686,28 @@ public class CardsPackageImpl extends EPackageImpl implements CardsPackage {
 		isCreated = true;
 
 		// Create classes and their features
-		cardsTypeEClass = createEClass(CARDS_TYPE);
-		createEReference(cardsTypeEClass, CARDS_TYPE__CARD);
+		cardEClass = createEClass(CARD);
+		createEReference(cardEClass, CARD__SCHOOL);
+		createEAttribute(cardEClass, CARD__DESCRIPTION);
+		createEReference(cardEClass, CARD__ONGOING);
+		createEReference(cardEClass, CARD__TARGET);
+		createEAttribute(cardEClass, CARD__DESTINY_LEVEL);
+		createEAttribute(cardEClass, CARD__DISPLAY_NAME);
+		createEAttribute(cardEClass, CARD__FACTION);
+		createEAttribute(cardEClass, CARD__HP);
+		createEAttribute(cardEClass, CARD__ID);
+		createEAttribute(cardEClass, CARD__MAGIC_LEVEL);
+		createEAttribute(cardEClass, CARD__MIGHT_LEVEL);
+		createEAttribute(cardEClass, CARD__NAME);
+		createEAttribute(cardEClass, CARD__RARITY);
+		createEAttribute(cardEClass, CARD__TYPE);
 
-		cardTypeEClass = createEClass(CARD_TYPE);
-		createEReference(cardTypeEClass, CARD_TYPE__VARIABLE);
-		createEReference(cardTypeEClass, CARD_TYPE__PLAYABILITY_CONDITION);
-		createEReference(cardTypeEClass, CARD_TYPE__TARGET);
-		createEAttribute(cardTypeEClass, CARD_TYPE__DESCRIPTION);
-		createEAttribute(cardTypeEClass, CARD_TYPE__COST);
-		createEAttribute(cardTypeEClass, CARD_TYPE__DESTINY_LEVEL);
-		createEAttribute(cardTypeEClass, CARD_TYPE__DISPLAY_NAME);
-		createEAttribute(cardTypeEClass, CARD_TYPE__FACTION);
-		createEAttribute(cardTypeEClass, CARD_TYPE__ID);
-		createEAttribute(cardTypeEClass, CARD_TYPE__NAME);
-		createEAttribute(cardTypeEClass, CARD_TYPE__RARITY);
-		createEAttribute(cardTypeEClass, CARD_TYPE__TYPE);
+		cardFilterEClass = createEClass(CARD_FILTER);
+		createEAttribute(cardFilterEClass, CARD_FILTER__INCLUDE_UNIT_TYPE);
+		createEAttribute(cardFilterEClass, CARD_FILTER__SIDE);
+
+		cardsEClass = createEClass(CARDS);
+		createEReference(cardsEClass, CARDS__CARD);
 
 		documentRootEClass = createEClass(DOCUMENT_ROOT);
 		createEAttribute(documentRootEClass, DOCUMENT_ROOT__MIXED);
@@ -507,24 +715,41 @@ public class CardsPackageImpl extends EPackageImpl implements CardsPackage {
 		createEReference(documentRootEClass, DOCUMENT_ROOT__XSI_SCHEMA_LOCATION);
 		createEReference(documentRootEClass, DOCUMENT_ROOT__CARDS);
 
-		effectTypeEClass = createEClass(EFFECT_TYPE);
-		createEAttribute(effectTypeEClass, EFFECT_TYPE__TYPE);
-		createEAttribute(effectTypeEClass, EFFECT_TYPE__VALUE);
+		effectEClass = createEClass(EFFECT);
+		createEAttribute(effectEClass, EFFECT__DURATION);
+		createEAttribute(effectEClass, EFFECT__TYPE);
+		createEAttribute(effectEClass, EFFECT__VALUE);
 
-		playabilityConditionTypeEClass = createEClass(PLAYABILITY_CONDITION_TYPE);
-		createEAttribute(playabilityConditionTypeEClass, PLAYABILITY_CONDITION_TYPE__OPERATOR);
-		createEAttribute(playabilityConditionTypeEClass, PLAYABILITY_CONDITION_TYPE__VALUE_A);
-		createEAttribute(playabilityConditionTypeEClass, PLAYABILITY_CONDITION_TYPE__VALUE_B);
+		onGoingEClass = createEClass(ON_GOING);
+		createEAttribute(onGoingEClass, ON_GOING__DURATION);
 
-		targetTypeEClass = createEClass(TARGET_TYPE);
-		createEReference(targetTypeEClass, TARGET_TYPE__EFFECT);
-		createEAttribute(targetTypeEClass, TARGET_TYPE__AMOUNT);
-		createEAttribute(targetTypeEClass, TARGET_TYPE__SIDE);
-		createEAttribute(targetTypeEClass, TARGET_TYPE__ZONE);
+		optionEClass = createEClass(OPTION);
+		createEAttribute(optionEClass, OPTION__DISPLAY_TEXT);
+		createEAttribute(optionEClass, OPTION__VALUE);
 
-		variableTypeEClass = createEClass(VARIABLE_TYPE);
-		createEAttribute(variableTypeEClass, VARIABLE_TYPE__SIDE);
-		createEAttribute(variableTypeEClass, VARIABLE_TYPE__TYPE);
+		schoolEClass = createEClass(SCHOOL);
+		createEAttribute(schoolEClass, SCHOOL__NAME);
+
+		subgroupEClass = createEClass(SUBGROUP);
+		createEReference(subgroupEClass, SUBGROUP__TEMPLATE_EFFECT);
+		createEReference(subgroupEClass, SUBGROUP__TARGET);
+
+		targetEClass = createEClass(TARGET);
+		createEReference(targetEClass, TARGET__OPTION);
+		createEReference(targetEClass, TARGET__TRIGGER);
+		createEReference(targetEClass, TARGET__EFFECT);
+		createEReference(targetEClass, TARGET__SUBGROUP);
+		createEAttribute(targetEClass, TARGET__AMOUNT);
+		createEAttribute(targetEClass, TARGET__SIDE);
+		createEAttribute(targetEClass, TARGET__ZONE);
+
+		templateEffectEClass = createEClass(TEMPLATE_EFFECT);
+		createEAttribute(templateEffectEClass, TEMPLATE_EFFECT__NAME);
+
+		triggerEClass = createEClass(TRIGGER);
+		createEReference(triggerEClass, TRIGGER__CARD_FILTER);
+		createEReference(triggerEClass, TRIGGER__TARGET);
+		createEAttribute(triggerEClass, TRIGGER__TYPE);
 	}
 
 	/**
@@ -560,47 +785,70 @@ public class CardsPackageImpl extends EPackageImpl implements CardsPackage {
 		// Add supertypes to classes
 
 		// Initialize classes, features, and operations; add parameters
-		initEClass(cardsTypeEClass, CardsType.class, "CardsType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getCardsType_Card(), this.getCardType(), null, "card", null, 1, -1, CardsType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(cardEClass, Card.class, "Card", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getCard_School(), ecorePackage.getEObject(), null, "school", null, 1, -1, Card.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCard_Description(), theXMLTypePackage.getString(), "description", null, 1, 1, Card.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCard_Ongoing(), ecorePackage.getEObject(), null, "ongoing", null, 0, 1, Card.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCard_Target(), ecorePackage.getEObject(), null, "target", null, 1, -1, Card.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCard_DestinyLevel(), theXMLTypePackage.getInt(), "destinyLevel", null, 0, 1, Card.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCard_DisplayName(), theXMLTypePackage.getString(), "displayName", null, 0, 1, Card.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCard_Faction(), theXMLTypePackage.getString(), "faction", null, 0, 1, Card.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCard_HP(), theXMLTypePackage.getInt(), "hP", null, 0, 1, Card.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCard_ID(), theXMLTypePackage.getInt(), "iD", null, 0, 1, Card.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCard_MagicLevel(), theXMLTypePackage.getInt(), "magicLevel", null, 0, 1, Card.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCard_MightLevel(), theXMLTypePackage.getInt(), "mightLevel", null, 0, 1, Card.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCard_Name(), theXMLTypePackage.getString(), "name", null, 0, 1, Card.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCard_Rarity(), theXMLTypePackage.getString(), "rarity", null, 0, 1, Card.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCard_Type(), theXMLTypePackage.getString(), "type", null, 0, 1, Card.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(cardTypeEClass, CardType.class, "CardType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getCardType_Variable(), this.getVariableType(), null, "variable", null, 1, 1, CardType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getCardType_PlayabilityCondition(), this.getPlayabilityConditionType(), null, "playabilityCondition", null, 1, 1, CardType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getCardType_Target(), this.getTargetType(), null, "target", null, 1, 1, CardType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCardType_Description(), theXMLTypePackage.getString(), "description", null, 1, 1, CardType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCardType_Cost(), theXMLTypePackage.getInt(), "cost", null, 0, 1, CardType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCardType_DestinyLevel(), theXMLTypePackage.getInt(), "destinyLevel", null, 0, 1, CardType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCardType_DisplayName(), theXMLTypePackage.getString(), "displayName", null, 0, 1, CardType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCardType_Faction(), theXMLTypePackage.getString(), "faction", null, 0, 1, CardType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCardType_ID(), theXMLTypePackage.getInt(), "iD", null, 0, 1, CardType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCardType_Name(), theXMLTypePackage.getString(), "name", null, 0, 1, CardType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCardType_Rarity(), theXMLTypePackage.getString(), "rarity", null, 0, 1, CardType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCardType_Type(), theXMLTypePackage.getString(), "type", null, 0, 1, CardType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(cardFilterEClass, CardFilter.class, "CardFilter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getCardFilter_IncludeUnitType(), theXMLTypePackage.getString(), "includeUnitType", null, 0, 1, CardFilter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCardFilter_Side(), theXMLTypePackage.getString(), "side", null, 0, 1, CardFilter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(cardsEClass, Cards.class, "Cards", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getCards_Card(), this.getCard(), null, "card", null, 1, -1, Cards.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(documentRootEClass, DocumentRoot.class, "DocumentRoot", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDocumentRoot_Mixed(), ecorePackage.getEFeatureMapEntry(), "mixed", null, 0, -1, null, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDocumentRoot_XMLNSPrefixMap(), ecorePackage.getEStringToStringMapEntry(), null, "xMLNSPrefixMap", null, 0, -1, null, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDocumentRoot_XSISchemaLocation(), ecorePackage.getEStringToStringMapEntry(), null, "xSISchemaLocation", null, 0, -1, null, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDocumentRoot_Cards(), this.getCardsType(), null, "cards", null, 0, -2, null, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getDocumentRoot_Cards(), this.getCards(), null, "cards", null, 0, -2, null, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
-		initEClass(effectTypeEClass, EffectType.class, "EffectType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getEffectType_Type(), theXMLTypePackage.getString(), "type", null, 0, 1, EffectType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEffectType_Value(), theXMLTypePackage.getInt(), "value", null, 0, 1, EffectType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(effectEClass, Effect.class, "Effect", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getEffect_Duration(), theXMLTypePackage.getString(), "duration", null, 0, 1, Effect.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEffect_Type(), theXMLTypePackage.getString(), "type", null, 0, 1, Effect.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEffect_Value(), theXMLTypePackage.getInt(), "value", null, 0, 1, Effect.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(playabilityConditionTypeEClass, PlayabilityConditionType.class, "PlayabilityConditionType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getPlayabilityConditionType_Operator(), theXMLTypePackage.getString(), "operator", null, 0, 1, PlayabilityConditionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPlayabilityConditionType_ValueA(), theXMLTypePackage.getString(), "valueA", null, 0, 1, PlayabilityConditionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPlayabilityConditionType_ValueB(), theXMLTypePackage.getInt(), "valueB", null, 0, 1, PlayabilityConditionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(onGoingEClass, OnGoing.class, "OnGoing", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getOnGoing_Duration(), theXMLTypePackage.getString(), "duration", null, 0, 1, OnGoing.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(targetTypeEClass, TargetType.class, "TargetType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getTargetType_Effect(), this.getEffectType(), null, "effect", null, 1, 1, TargetType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTargetType_Amount(), theXMLTypePackage.getString(), "amount", null, 0, 1, TargetType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTargetType_Side(), theXMLTypePackage.getString(), "side", null, 0, 1, TargetType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTargetType_Zone(), theXMLTypePackage.getString(), "zone", null, 0, 1, TargetType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(optionEClass, Option.class, "Option", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getOption_DisplayText(), theXMLTypePackage.getString(), "displayText", null, 0, 1, Option.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getOption_Value(), theXMLTypePackage.getInt(), "value", null, 0, 1, Option.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(variableTypeEClass, VariableType.class, "VariableType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getVariableType_Side(), theXMLTypePackage.getString(), "side", null, 0, 1, VariableType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getVariableType_Type(), theXMLTypePackage.getString(), "type", null, 0, 1, VariableType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(schoolEClass, School.class, "School", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getSchool_Name(), theXMLTypePackage.getString(), "name", null, 0, 1, School.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(subgroupEClass, Subgroup.class, "Subgroup", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getSubgroup_TemplateEffect(), ecorePackage.getEObject(), null, "templateEffect", null, 1, 1, Subgroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSubgroup_Target(), ecorePackage.getEObject(), null, "target", null, 0, 1, Subgroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(targetEClass, Target.class, "Target", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getTarget_Option(), ecorePackage.getEObject(), null, "option", null, 1, 1, Target.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTarget_Trigger(), ecorePackage.getEObject(), null, "trigger", null, 1, 1, Target.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTarget_Effect(), ecorePackage.getEObject(), null, "effect", null, 1, 1, Target.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTarget_Subgroup(), ecorePackage.getEObject(), null, "subgroup", null, 1, 1, Target.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTarget_Amount(), theXMLTypePackage.getString(), "amount", null, 0, 1, Target.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTarget_Side(), theXMLTypePackage.getString(), "side", null, 0, 1, Target.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTarget_Zone(), theXMLTypePackage.getString(), "zone", null, 0, 1, Target.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(templateEffectEClass, TemplateEffect.class, "TemplateEffect", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getTemplateEffect_Name(), theXMLTypePackage.getString(), "name", null, 0, 1, TemplateEffect.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(triggerEClass, Trigger.class, "Trigger", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getTrigger_CardFilter(), ecorePackage.getEObject(), null, "cardFilter", null, 1, 1, Trigger.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTrigger_Target(), ecorePackage.getEObject(), null, "target", null, 1, 1, Trigger.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTrigger_Type(), theXMLTypePackage.getString(), "type", null, 0, 1, Trigger.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
@@ -625,53 +873,22 @@ public class CardsPackageImpl extends EPackageImpl implements CardsPackage {
 			 "qualified", "false"
 		   });	
 		addAnnotation
-		  (cardsTypeEClass, 
+		  (cardEClass, 
 		   source, 
 		   new String[] {
-			 "name", "Cards_._type",
-			 "kind", "elementOnly"
-		   });	
-		addAnnotation
-		  (getCardsType_Card(), 
-		   source, 
-		   new String[] {
-			 "kind", "element",
 			 "name", "Card",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (cardTypeEClass, 
-		   source, 
-		   new String[] {
-			 "name", "Card_._type",
 			 "kind", "elementOnly"
 		   });	
 		addAnnotation
-		  (getCardType_Variable(), 
+		  (getCard_School(), 
 		   source, 
 		   new String[] {
 			 "kind", "element",
-			 "name", "Variable",
+			 "name", "School",
 			 "namespace", "##targetNamespace"
 		   });	
 		addAnnotation
-		  (getCardType_PlayabilityCondition(), 
-		   source, 
-		   new String[] {
-			 "kind", "element",
-			 "name", "PlayabilityCondition",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getCardType_Target(), 
-		   source, 
-		   new String[] {
-			 "kind", "element",
-			 "name", "Target",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getCardType_Description(), 
+		  (getCard_Description(), 
 		   source, 
 		   new String[] {
 			 "kind", "element",
@@ -679,15 +896,23 @@ public class CardsPackageImpl extends EPackageImpl implements CardsPackage {
 			 "namespace", "##targetNamespace"
 		   });	
 		addAnnotation
-		  (getCardType_Cost(), 
+		  (getCard_Ongoing(), 
 		   source, 
 		   new String[] {
-			 "kind", "attribute",
-			 "name", "Cost",
+			 "kind", "element",
+			 "name", "Ongoing",
 			 "namespace", "##targetNamespace"
 		   });	
 		addAnnotation
-		  (getCardType_DestinyLevel(), 
+		  (getCard_Target(), 
+		   source, 
+		   new String[] {
+			 "kind", "element",
+			 "name", "Target",
+			 "namespace", "##targetNamespace"
+		   });	
+		addAnnotation
+		  (getCard_DestinyLevel(), 
 		   source, 
 		   new String[] {
 			 "kind", "attribute",
@@ -695,7 +920,7 @@ public class CardsPackageImpl extends EPackageImpl implements CardsPackage {
 			 "namespace", "##targetNamespace"
 		   });	
 		addAnnotation
-		  (getCardType_DisplayName(), 
+		  (getCard_DisplayName(), 
 		   source, 
 		   new String[] {
 			 "kind", "attribute",
@@ -703,7 +928,7 @@ public class CardsPackageImpl extends EPackageImpl implements CardsPackage {
 			 "namespace", "##targetNamespace"
 		   });	
 		addAnnotation
-		  (getCardType_Faction(), 
+		  (getCard_Faction(), 
 		   source, 
 		   new String[] {
 			 "kind", "attribute",
@@ -711,7 +936,15 @@ public class CardsPackageImpl extends EPackageImpl implements CardsPackage {
 			 "namespace", "##targetNamespace"
 		   });	
 		addAnnotation
-		  (getCardType_ID(), 
+		  (getCard_HP(), 
+		   source, 
+		   new String[] {
+			 "kind", "attribute",
+			 "name", "HP",
+			 "namespace", "##targetNamespace"
+		   });	
+		addAnnotation
+		  (getCard_ID(), 
 		   source, 
 		   new String[] {
 			 "kind", "attribute",
@@ -719,7 +952,23 @@ public class CardsPackageImpl extends EPackageImpl implements CardsPackage {
 			 "namespace", "##targetNamespace"
 		   });	
 		addAnnotation
-		  (getCardType_Name(), 
+		  (getCard_MagicLevel(), 
+		   source, 
+		   new String[] {
+			 "kind", "attribute",
+			 "name", "MagicLevel",
+			 "namespace", "##targetNamespace"
+		   });	
+		addAnnotation
+		  (getCard_MightLevel(), 
+		   source, 
+		   new String[] {
+			 "kind", "attribute",
+			 "name", "MightLevel",
+			 "namespace", "##targetNamespace"
+		   });	
+		addAnnotation
+		  (getCard_Name(), 
 		   source, 
 		   new String[] {
 			 "kind", "attribute",
@@ -727,7 +976,7 @@ public class CardsPackageImpl extends EPackageImpl implements CardsPackage {
 			 "namespace", "##targetNamespace"
 		   });	
 		addAnnotation
-		  (getCardType_Rarity(), 
+		  (getCard_Rarity(), 
 		   source, 
 		   new String[] {
 			 "kind", "attribute",
@@ -735,11 +984,49 @@ public class CardsPackageImpl extends EPackageImpl implements CardsPackage {
 			 "namespace", "##targetNamespace"
 		   });	
 		addAnnotation
-		  (getCardType_Type(), 
+		  (getCard_Type(), 
 		   source, 
 		   new String[] {
 			 "kind", "attribute",
 			 "name", "Type",
+			 "namespace", "##targetNamespace"
+		   });	
+		addAnnotation
+		  (cardFilterEClass, 
+		   source, 
+		   new String[] {
+			 "name", "CardFilter",
+			 "kind", "empty"
+		   });	
+		addAnnotation
+		  (getCardFilter_IncludeUnitType(), 
+		   source, 
+		   new String[] {
+			 "kind", "attribute",
+			 "name", "IncludeUnitType",
+			 "namespace", "##targetNamespace"
+		   });	
+		addAnnotation
+		  (getCardFilter_Side(), 
+		   source, 
+		   new String[] {
+			 "kind", "attribute",
+			 "name", "Side",
+			 "namespace", "##targetNamespace"
+		   });	
+		addAnnotation
+		  (cardsEClass, 
+		   source, 
+		   new String[] {
+			 "name", "Cards",
+			 "kind", "elementOnly"
+		   });	
+		addAnnotation
+		  (getCards_Card(), 
+		   source, 
+		   new String[] {
+			 "kind", "element",
+			 "name", "Card",
 			 "namespace", "##targetNamespace"
 		   });	
 		addAnnotation
@@ -779,14 +1066,22 @@ public class CardsPackageImpl extends EPackageImpl implements CardsPackage {
 			 "namespace", "##targetNamespace"
 		   });	
 		addAnnotation
-		  (effectTypeEClass, 
+		  (effectEClass, 
 		   source, 
 		   new String[] {
-			 "name", "Effect_._type",
+			 "name", "Effect",
 			 "kind", "empty"
 		   });	
 		addAnnotation
-		  (getEffectType_Type(), 
+		  (getEffect_Duration(), 
+		   source, 
+		   new String[] {
+			 "kind", "attribute",
+			 "name", "Duration",
+			 "namespace", "##targetNamespace"
+		   });	
+		addAnnotation
+		  (getEffect_Type(), 
 		   source, 
 		   new String[] {
 			 "kind", "attribute",
@@ -794,7 +1089,7 @@ public class CardsPackageImpl extends EPackageImpl implements CardsPackage {
 			 "namespace", "##targetNamespace"
 		   });	
 		addAnnotation
-		  (getEffectType_Value(), 
+		  (getEffect_Value(), 
 		   source, 
 		   new String[] {
 			 "kind", "attribute",
@@ -802,45 +1097,106 @@ public class CardsPackageImpl extends EPackageImpl implements CardsPackage {
 			 "namespace", "##targetNamespace"
 		   });	
 		addAnnotation
-		  (playabilityConditionTypeEClass, 
+		  (onGoingEClass, 
 		   source, 
 		   new String[] {
-			 "name", "PlayabilityCondition_._type",
+			 "name", "OnGoing",
 			 "kind", "empty"
 		   });	
 		addAnnotation
-		  (getPlayabilityConditionType_Operator(), 
+		  (getOnGoing_Duration(), 
 		   source, 
 		   new String[] {
 			 "kind", "attribute",
-			 "name", "Operator",
+			 "name", "Duration",
 			 "namespace", "##targetNamespace"
 		   });	
 		addAnnotation
-		  (getPlayabilityConditionType_ValueA(), 
+		  (optionEClass, 
+		   source, 
+		   new String[] {
+			 "name", "Option",
+			 "kind", "empty"
+		   });	
+		addAnnotation
+		  (getOption_DisplayText(), 
 		   source, 
 		   new String[] {
 			 "kind", "attribute",
-			 "name", "ValueA",
+			 "name", "DisplayText",
 			 "namespace", "##targetNamespace"
 		   });	
 		addAnnotation
-		  (getPlayabilityConditionType_ValueB(), 
+		  (getOption_Value(), 
 		   source, 
 		   new String[] {
 			 "kind", "attribute",
-			 "name", "ValueB",
+			 "name", "Value",
 			 "namespace", "##targetNamespace"
 		   });	
 		addAnnotation
-		  (targetTypeEClass, 
+		  (schoolEClass, 
 		   source, 
 		   new String[] {
-			 "name", "Target_._type",
+			 "name", "School",
+			 "kind", "empty"
+		   });	
+		addAnnotation
+		  (getSchool_Name(), 
+		   source, 
+		   new String[] {
+			 "kind", "attribute",
+			 "name", "Name",
+			 "namespace", "##targetNamespace"
+		   });	
+		addAnnotation
+		  (subgroupEClass, 
+		   source, 
+		   new String[] {
+			 "name", "Subgroup",
 			 "kind", "elementOnly"
 		   });	
 		addAnnotation
-		  (getTargetType_Effect(), 
+		  (getSubgroup_TemplateEffect(), 
+		   source, 
+		   new String[] {
+			 "kind", "element",
+			 "name", "TemplateEffect",
+			 "namespace", "##targetNamespace"
+		   });	
+		addAnnotation
+		  (getSubgroup_Target(), 
+		   source, 
+		   new String[] {
+			 "kind", "element",
+			 "name", "Target",
+			 "namespace", "##targetNamespace"
+		   });	
+		addAnnotation
+		  (targetEClass, 
+		   source, 
+		   new String[] {
+			 "name", "Target",
+			 "kind", "elementOnly"
+		   });	
+		addAnnotation
+		  (getTarget_Option(), 
+		   source, 
+		   new String[] {
+			 "kind", "element",
+			 "name", "Option",
+			 "namespace", "##targetNamespace"
+		   });	
+		addAnnotation
+		  (getTarget_Trigger(), 
+		   source, 
+		   new String[] {
+			 "kind", "element",
+			 "name", "Trigger",
+			 "namespace", "##targetNamespace"
+		   });	
+		addAnnotation
+		  (getTarget_Effect(), 
 		   source, 
 		   new String[] {
 			 "kind", "element",
@@ -848,7 +1204,15 @@ public class CardsPackageImpl extends EPackageImpl implements CardsPackage {
 			 "namespace", "##targetNamespace"
 		   });	
 		addAnnotation
-		  (getTargetType_Amount(), 
+		  (getTarget_Subgroup(), 
+		   source, 
+		   new String[] {
+			 "kind", "element",
+			 "name", "Subgroup",
+			 "namespace", "##targetNamespace"
+		   });	
+		addAnnotation
+		  (getTarget_Amount(), 
 		   source, 
 		   new String[] {
 			 "kind", "attribute",
@@ -856,7 +1220,7 @@ public class CardsPackageImpl extends EPackageImpl implements CardsPackage {
 			 "namespace", "##targetNamespace"
 		   });	
 		addAnnotation
-		  (getTargetType_Side(), 
+		  (getTarget_Side(), 
 		   source, 
 		   new String[] {
 			 "kind", "attribute",
@@ -864,7 +1228,7 @@ public class CardsPackageImpl extends EPackageImpl implements CardsPackage {
 			 "namespace", "##targetNamespace"
 		   });	
 		addAnnotation
-		  (getTargetType_Zone(), 
+		  (getTarget_Zone(), 
 		   source, 
 		   new String[] {
 			 "kind", "attribute",
@@ -872,22 +1236,45 @@ public class CardsPackageImpl extends EPackageImpl implements CardsPackage {
 			 "namespace", "##targetNamespace"
 		   });	
 		addAnnotation
-		  (variableTypeEClass, 
+		  (templateEffectEClass, 
 		   source, 
 		   new String[] {
-			 "name", "Variable_._type",
+			 "name", "TemplateEffect",
 			 "kind", "empty"
 		   });	
 		addAnnotation
-		  (getVariableType_Side(), 
+		  (getTemplateEffect_Name(), 
 		   source, 
 		   new String[] {
 			 "kind", "attribute",
-			 "name", "Side",
+			 "name", "Name",
 			 "namespace", "##targetNamespace"
 		   });	
 		addAnnotation
-		  (getVariableType_Type(), 
+		  (triggerEClass, 
+		   source, 
+		   new String[] {
+			 "name", "Trigger",
+			 "kind", "elementOnly"
+		   });	
+		addAnnotation
+		  (getTrigger_CardFilter(), 
+		   source, 
+		   new String[] {
+			 "kind", "element",
+			 "name", "CardFilter",
+			 "namespace", "##targetNamespace"
+		   });	
+		addAnnotation
+		  (getTrigger_Target(), 
+		   source, 
+		   new String[] {
+			 "kind", "element",
+			 "name", "Target",
+			 "namespace", "##targetNamespace"
+		   });	
+		addAnnotation
+		  (getTrigger_Type(), 
 		   source, 
 		   new String[] {
 			 "kind", "attribute",

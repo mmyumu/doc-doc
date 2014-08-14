@@ -16,3 +16,4 @@ Require-Bundle: org.eclipse.osgi,
  org.eclipse.equinox.preferences,
  org.eclipse.core.runtime
 Bundle-ActivationPolicy: lazy
+Export-Package: net.mmyumu.docdoc.game.location

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<!-- XML Schema Generated from XML Document on Wed Aug 13 2014 23:42:07 
+		GMT+0200 (Paris, Madrid (heure d’été)) -->
+	<!-- with XmlGrid.net Free Online Service http://xmlgrid.net -->
+	<xs:element name="Cards">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Card" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="School" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:attribute name="Name" type="xs:string"></xs:attribute>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="Description" type="xs:string"></xs:element>
+							<xs:element name="Ongoing" minOccurs="0">
+								<xs:complexType>
+									<xs:attribute name="Duration" type="xs:string"></xs:attribute>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="Target">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Effect">
+											<xs:complexType>
+												<xs:attribute name="Type" type="xs:string"></xs:attribute>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="Subgroup">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="TemplateEffect">
+														<xs:complexType>
+															<xs:attribute name="Name" type="xs:string"></xs:attribute>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="Target" minOccurs="0">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="Option">
+																	<xs:complexType>
+																		<xs:attribute name="Value" type="xs:int"></xs:attribute>
+																		<xs:attribute name="DisplayText" type="xs:string"></xs:attribute>
+																	</xs:complexType>
+																</xs:element>
+																<xs:element name="Trigger">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="CardFilter">
+																				<xs:complexType>
+																					<xs:attribute name="IncludeUnitType"
+																						type="xs:string"></xs:attribute>
+																					<xs:attribute name="Side" type="xs:string"></xs:attribute>
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element name="Target">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element name="Effect">
+																							<xs:complexType>
+																								<xs:attribute name="Type" type="xs:string"></xs:attribute>
+																								<xs:attribute name="Value" type="xs:int"></xs:attribute>
+																								<xs:attribute name="Duration" type="xs:string"></xs:attribute>
+																							</xs:complexType>
+																						</xs:element>
+																					</xs:sequence>
+																					<xs:attribute name="Zone" type="xs:string"></xs:attribute>
+																					<xs:attribute name="CardType" type="xs:string"></xs:attribute>
+																					<xs:attribute name="Amount" type="xs:string"></xs:attribute>
+																					<xs:attribute name="Side" type="xs:string"></xs:attribute>
+																				</xs:complexType>
+																			</xs:element>
+																		</xs:sequence>
+																		<xs:attribute name="Type" type="xs:string"></xs:attribute>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+															<xs:attribute name="Amount" type="xs:string"></xs:attribute>
+															<xs:attribute name="Zone" type="xs:string"></xs:attribute>
+															<xs:attribute name="Side" type="xs:string"></xs:attribute>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+									<xs:attribute name="Amount" type="xs:string"></xs:attribute>
+									<xs:attribute name="Zone" type="xs:string"></xs:attribute>
+									<xs:attribute name="Side" type="xs:string"></xs:attribute>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute name="Rarity" type="xs:string"></xs:attribute>
+						<xs:attribute name="Type" type="xs:string"></xs:attribute>
+						<xs:attribute name="Name" type="xs:string"></xs:attribute>
+						<xs:attribute name="DisplayName" type="xs:string"></xs:attribute>
+						<xs:attribute name="Faction" type="xs:string"></xs:attribute>
+						<xs:attribute name="MightLevel" type="xs:int"></xs:attribute>
+						<xs:attribute name="MagicLevel" type="xs:int"></xs:attribute>
+						<xs:attribute name="DestinyLevel" type="xs:int"></xs:attribute>
+						<xs:attribute name="HP" type="xs:int"></xs:attribute>
+						<xs:attribute name="ID" type="xs:int"></xs:attribute>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

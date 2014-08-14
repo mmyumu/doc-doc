@@ -22,22 +22,31 @@ public interface CardsFactory extends EFactory {
 	CardsFactory eINSTANCE = net.mmyumu.docdoc.model.Cards.impl.CardsFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>Type</em>'.
+	 * Returns a new object of class '<em>Card</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Type</em>'.
+	 * @return a new object of class '<em>Card</em>'.
 	 * @generated
 	 */
-	CardsType createCardsType();
+	Card createCard();
 
 	/**
-	 * Returns a new object of class '<em>Card Type</em>'.
+	 * Returns a new object of class '<em>Card Filter</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Card Type</em>'.
+	 * @return a new object of class '<em>Card Filter</em>'.
 	 * @generated
 	 */
-	CardType createCardType();
+	CardFilter createCardFilter();
+
+	/**
+	 * Returns a new object of class '<em>Cards</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Cards</em>'.
+	 * @generated
+	 */
+	Cards createCards();
 
 	/**
 	 * Returns a new object of class '<em>Document Root</em>'.
@@ -49,40 +58,76 @@ public interface CardsFactory extends EFactory {
 	DocumentRoot createDocumentRoot();
 
 	/**
-	 * Returns a new object of class '<em>Effect Type</em>'.
+	 * Returns a new object of class '<em>Effect</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Effect Type</em>'.
+	 * @return a new object of class '<em>Effect</em>'.
 	 * @generated
 	 */
-	EffectType createEffectType();
+	Effect createEffect();
 
 	/**
-	 * Returns a new object of class '<em>Playability Condition Type</em>'.
+	 * Returns a new object of class '<em>On Going</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Playability Condition Type</em>'.
+	 * @return a new object of class '<em>On Going</em>'.
 	 * @generated
 	 */
-	PlayabilityConditionType createPlayabilityConditionType();
+	OnGoing createOnGoing();
 
 	/**
-	 * Returns a new object of class '<em>Target Type</em>'.
+	 * Returns a new object of class '<em>Option</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Target Type</em>'.
+	 * @return a new object of class '<em>Option</em>'.
 	 * @generated
 	 */
-	TargetType createTargetType();
+	Option createOption();
 
 	/**
-	 * Returns a new object of class '<em>Variable Type</em>'.
+	 * Returns a new object of class '<em>School</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Variable Type</em>'.
+	 * @return a new object of class '<em>School</em>'.
 	 * @generated
 	 */
-	VariableType createVariableType();
+	School createSchool();
+
+	/**
+	 * Returns a new object of class '<em>Subgroup</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Subgroup</em>'.
+	 * @generated
+	 */
+	Subgroup createSubgroup();
+
+	/**
+	 * Returns a new object of class '<em>Target</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Target</em>'.
+	 * @generated
+	 */
+	Target createTarget();
+
+	/**
+	 * Returns a new object of class '<em>Template Effect</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Template Effect</em>'.
+	 * @generated
+	 */
+	TemplateEffect createTemplateEffect();
+
+	/**
+	 * Returns a new object of class '<em>Trigger</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Trigger</em>'.
+	 * @generated
+	 */
+	Trigger createTrigger();
 
 	/**
 	 * Returns the package supported by this factory.

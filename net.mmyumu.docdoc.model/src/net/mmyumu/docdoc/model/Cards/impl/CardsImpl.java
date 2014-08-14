@@ -4,9 +4,9 @@ package net.mmyumu.docdoc.model.Cards.impl;
 
 import java.util.Collection;
 
-import net.mmyumu.docdoc.model.Cards.CardType;
+import net.mmyumu.docdoc.model.Cards.Card;
+import net.mmyumu.docdoc.model.Cards.Cards;
 import net.mmyumu.docdoc.model.Cards.CardsPackage;
-import net.mmyumu.docdoc.model.Cards.CardsType;
 
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -22,18 +22,18 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Type</b></em>'.
+ * An implementation of the model object '<em><b>Cards</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link net.mmyumu.docdoc.model.Cards.impl.CardsTypeImpl#getCard <em>Card</em>}</li>
+ *   <li>{@link net.mmyumu.docdoc.model.Cards.impl.CardsImpl#getCard <em>Card</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class CardsTypeImpl extends MinimalEObjectImpl.Container implements CardsType {
+public class CardsImpl extends MinimalEObjectImpl.Container implements Cards {
 	/**
 	 * The cached value of the '{@link #getCard() <em>Card</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -42,14 +42,14 @@ public class CardsTypeImpl extends MinimalEObjectImpl.Container implements Cards
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<CardType> card;
+	protected EList<Card> card;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected CardsTypeImpl() {
+	protected CardsImpl() {
 		super();
 	}
 
@@ -60,7 +60,7 @@ public class CardsTypeImpl extends MinimalEObjectImpl.Container implements Cards
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CardsPackage.Literals.CARDS_TYPE;
+		return CardsPackage.Literals.CARDS;
 	}
 
 	/**
@@ -68,9 +68,9 @@ public class CardsTypeImpl extends MinimalEObjectImpl.Container implements Cards
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<CardType> getCard() {
+	public EList<Card> getCard() {
 		if (card == null) {
-			card = new EObjectContainmentEList<CardType>(CardType.class, this, CardsPackage.CARDS_TYPE__CARD);
+			card = new EObjectContainmentEList<Card>(Card.class, this, CardsPackage.CARDS__CARD);
 		}
 		return card;
 	}
@@ -83,7 +83,7 @@ public class CardsTypeImpl extends MinimalEObjectImpl.Container implements Cards
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case CardsPackage.CARDS_TYPE__CARD:
+			case CardsPackage.CARDS__CARD:
 				return ((InternalEList<?>)getCard()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -97,7 +97,7 @@ public class CardsTypeImpl extends MinimalEObjectImpl.Container implements Cards
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CardsPackage.CARDS_TYPE__CARD:
+			case CardsPackage.CARDS__CARD:
 				return getCard();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -112,9 +112,9 @@ public class CardsTypeImpl extends MinimalEObjectImpl.Container implements Cards
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CardsPackage.CARDS_TYPE__CARD:
+			case CardsPackage.CARDS__CARD:
 				getCard().clear();
-				getCard().addAll((Collection<? extends CardType>)newValue);
+				getCard().addAll((Collection<? extends Card>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -128,7 +128,7 @@ public class CardsTypeImpl extends MinimalEObjectImpl.Container implements Cards
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CardsPackage.CARDS_TYPE__CARD:
+			case CardsPackage.CARDS__CARD:
 				getCard().clear();
 				return;
 		}
@@ -143,10 +143,10 @@ public class CardsTypeImpl extends MinimalEObjectImpl.Container implements Cards
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CardsPackage.CARDS_TYPE__CARD:
+			case CardsPackage.CARDS__CARD:
 				return card != null && !card.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //CardsTypeImpl
+} //CardsImpl

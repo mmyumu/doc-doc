@@ -2,8 +2,8 @@
  */
 package net.mmyumu.docdoc.model.Cards.impl;
 
+import net.mmyumu.docdoc.model.Cards.CardFilter;
 import net.mmyumu.docdoc.model.Cards.CardsPackage;
-import net.mmyumu.docdoc.model.Cards.VariableType;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -14,19 +14,39 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Variable Type</b></em>'.
+ * An implementation of the model object '<em><b>Card Filter</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link net.mmyumu.docdoc.model.Cards.impl.VariableTypeImpl#getSide <em>Side</em>}</li>
- *   <li>{@link net.mmyumu.docdoc.model.Cards.impl.VariableTypeImpl#getType <em>Type</em>}</li>
+ *   <li>{@link net.mmyumu.docdoc.model.Cards.impl.CardFilterImpl#getIncludeUnitType <em>Include Unit Type</em>}</li>
+ *   <li>{@link net.mmyumu.docdoc.model.Cards.impl.CardFilterImpl#getSide <em>Side</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class VariableTypeImpl extends MinimalEObjectImpl.Container implements VariableType {
+public class CardFilterImpl extends MinimalEObjectImpl.Container implements CardFilter {
+	/**
+	 * The default value of the '{@link #getIncludeUnitType() <em>Include Unit Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIncludeUnitType()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String INCLUDE_UNIT_TYPE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getIncludeUnitType() <em>Include Unit Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIncludeUnitType()
+	 * @generated
+	 * @ordered
+	 */
+	protected String includeUnitType = INCLUDE_UNIT_TYPE_EDEFAULT;
+
 	/**
 	 * The default value of the '{@link #getSide() <em>Side</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -48,31 +68,11 @@ public class VariableTypeImpl extends MinimalEObjectImpl.Container implements Va
 	protected String side = SIDE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getType() <em>Type</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getType()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String TYPE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getType()
-	 * @generated
-	 * @ordered
-	 */
-	protected String type = TYPE_EDEFAULT;
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected VariableTypeImpl() {
+	protected CardFilterImpl() {
 		super();
 	}
 
@@ -83,7 +83,28 @@ public class VariableTypeImpl extends MinimalEObjectImpl.Container implements Va
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CardsPackage.Literals.VARIABLE_TYPE;
+		return CardsPackage.Literals.CARD_FILTER;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getIncludeUnitType() {
+		return includeUnitType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setIncludeUnitType(String newIncludeUnitType) {
+		String oldIncludeUnitType = includeUnitType;
+		includeUnitType = newIncludeUnitType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CardsPackage.CARD_FILTER__INCLUDE_UNIT_TYPE, oldIncludeUnitType, includeUnitType));
 	}
 
 	/**
@@ -104,28 +125,7 @@ public class VariableTypeImpl extends MinimalEObjectImpl.Container implements Va
 		String oldSide = side;
 		side = newSide;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CardsPackage.VARIABLE_TYPE__SIDE, oldSide, side));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getType() {
-		return type;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setType(String newType) {
-		String oldType = type;
-		type = newType;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CardsPackage.VARIABLE_TYPE__TYPE, oldType, type));
+			eNotify(new ENotificationImpl(this, Notification.SET, CardsPackage.CARD_FILTER__SIDE, oldSide, side));
 	}
 
 	/**
@@ -136,10 +136,10 @@ public class VariableTypeImpl extends MinimalEObjectImpl.Container implements Va
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CardsPackage.VARIABLE_TYPE__SIDE:
+			case CardsPackage.CARD_FILTER__INCLUDE_UNIT_TYPE:
+				return getIncludeUnitType();
+			case CardsPackage.CARD_FILTER__SIDE:
 				return getSide();
-			case CardsPackage.VARIABLE_TYPE__TYPE:
-				return getType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -152,11 +152,11 @@ public class VariableTypeImpl extends MinimalEObjectImpl.Container implements Va
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CardsPackage.VARIABLE_TYPE__SIDE:
-				setSide((String)newValue);
+			case CardsPackage.CARD_FILTER__INCLUDE_UNIT_TYPE:
+				setIncludeUnitType((String)newValue);
 				return;
-			case CardsPackage.VARIABLE_TYPE__TYPE:
-				setType((String)newValue);
+			case CardsPackage.CARD_FILTER__SIDE:
+				setSide((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -170,11 +170,11 @@ public class VariableTypeImpl extends MinimalEObjectImpl.Container implements Va
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CardsPackage.VARIABLE_TYPE__SIDE:
-				setSide(SIDE_EDEFAULT);
+			case CardsPackage.CARD_FILTER__INCLUDE_UNIT_TYPE:
+				setIncludeUnitType(INCLUDE_UNIT_TYPE_EDEFAULT);
 				return;
-			case CardsPackage.VARIABLE_TYPE__TYPE:
-				setType(TYPE_EDEFAULT);
+			case CardsPackage.CARD_FILTER__SIDE:
+				setSide(SIDE_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -188,10 +188,10 @@ public class VariableTypeImpl extends MinimalEObjectImpl.Container implements Va
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CardsPackage.VARIABLE_TYPE__SIDE:
+			case CardsPackage.CARD_FILTER__INCLUDE_UNIT_TYPE:
+				return INCLUDE_UNIT_TYPE_EDEFAULT == null ? includeUnitType != null : !INCLUDE_UNIT_TYPE_EDEFAULT.equals(includeUnitType);
+			case CardsPackage.CARD_FILTER__SIDE:
 				return SIDE_EDEFAULT == null ? side != null : !SIDE_EDEFAULT.equals(side);
-			case CardsPackage.VARIABLE_TYPE__TYPE:
-				return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -206,12 +206,12 @@ public class VariableTypeImpl extends MinimalEObjectImpl.Container implements Va
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (side: ");
+		result.append(" (includeUnitType: ");
+		result.append(includeUnitType);
+		result.append(", side: ");
 		result.append(side);
-		result.append(", type: ");
-		result.append(type);
 		result.append(')');
 		return result.toString();
 	}
 
-} //VariableTypeImpl
+} //CardFilterImpl

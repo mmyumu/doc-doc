@@ -66,15 +66,21 @@ public class CardsSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case CardsPackage.CARDS_TYPE: {
-				CardsType cardsType = (CardsType)theEObject;
-				T result = caseCardsType(cardsType);
+			case CardsPackage.CARD: {
+				Card card = (Card)theEObject;
+				T result = caseCard(card);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case CardsPackage.CARD_TYPE: {
-				CardType cardType = (CardType)theEObject;
-				T result = caseCardType(cardType);
+			case CardsPackage.CARD_FILTER: {
+				CardFilter cardFilter = (CardFilter)theEObject;
+				T result = caseCardFilter(cardFilter);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CardsPackage.CARDS: {
+				Cards cards = (Cards)theEObject;
+				T result = caseCards(cards);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -84,27 +90,51 @@ public class CardsSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case CardsPackage.EFFECT_TYPE: {
-				EffectType effectType = (EffectType)theEObject;
-				T result = caseEffectType(effectType);
+			case CardsPackage.EFFECT: {
+				Effect effect = (Effect)theEObject;
+				T result = caseEffect(effect);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case CardsPackage.PLAYABILITY_CONDITION_TYPE: {
-				PlayabilityConditionType playabilityConditionType = (PlayabilityConditionType)theEObject;
-				T result = casePlayabilityConditionType(playabilityConditionType);
+			case CardsPackage.ON_GOING: {
+				OnGoing onGoing = (OnGoing)theEObject;
+				T result = caseOnGoing(onGoing);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case CardsPackage.TARGET_TYPE: {
-				TargetType targetType = (TargetType)theEObject;
-				T result = caseTargetType(targetType);
+			case CardsPackage.OPTION: {
+				Option option = (Option)theEObject;
+				T result = caseOption(option);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case CardsPackage.VARIABLE_TYPE: {
-				VariableType variableType = (VariableType)theEObject;
-				T result = caseVariableType(variableType);
+			case CardsPackage.SCHOOL: {
+				School school = (School)theEObject;
+				T result = caseSchool(school);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CardsPackage.SUBGROUP: {
+				Subgroup subgroup = (Subgroup)theEObject;
+				T result = caseSubgroup(subgroup);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CardsPackage.TARGET: {
+				Target target = (Target)theEObject;
+				T result = caseTarget(target);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CardsPackage.TEMPLATE_EFFECT: {
+				TemplateEffect templateEffect = (TemplateEffect)theEObject;
+				T result = caseTemplateEffect(templateEffect);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CardsPackage.TRIGGER: {
+				Trigger trigger = (Trigger)theEObject;
+				T result = caseTrigger(trigger);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -113,32 +143,47 @@ public class CardsSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Type</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Card</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Type</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Card</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseCardsType(CardsType object) {
+	public T caseCard(Card object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Card Type</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Card Filter</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Card Type</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Card Filter</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseCardType(CardType object) {
+	public T caseCardFilter(CardFilter object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Cards</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Cards</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCards(Cards object) {
 		return null;
 	}
 
@@ -158,62 +203,122 @@ public class CardsSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Effect Type</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Effect</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Effect Type</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Effect</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseEffectType(EffectType object) {
+	public T caseEffect(Effect object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Playability Condition Type</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>On Going</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Playability Condition Type</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>On Going</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T casePlayabilityConditionType(PlayabilityConditionType object) {
+	public T caseOnGoing(OnGoing object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Target Type</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Option</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Target Type</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Option</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseTargetType(TargetType object) {
+	public T caseOption(Option object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Variable Type</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>School</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Variable Type</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>School</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseVariableType(VariableType object) {
+	public T caseSchool(School object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Subgroup</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Subgroup</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSubgroup(Subgroup object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Target</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Target</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTarget(Target object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Template Effect</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Template Effect</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTemplateEffect(TemplateEffect object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Trigger</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Trigger</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTrigger(Trigger object) {
 		return null;
 	}
 

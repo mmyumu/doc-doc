@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         id="id3"
+         point="org.eclipse.e4.workbench.model">
+      <fragment
+            apply="always"
+            uri="xmi/fragment.e4xmi">
+      </fragment>
+   </extension>
+
+</plugin>

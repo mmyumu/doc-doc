@@ -3,7 +3,7 @@
 package net.mmyumu.docdoc.model.Cards.impl;
 
 import net.mmyumu.docdoc.model.Cards.CardsPackage;
-import net.mmyumu.docdoc.model.Cards.EffectType;
+import net.mmyumu.docdoc.model.Cards.Option;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -14,38 +14,38 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Effect Type</b></em>'.
+ * An implementation of the model object '<em><b>Option</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link net.mmyumu.docdoc.model.Cards.impl.EffectTypeImpl#getType <em>Type</em>}</li>
- *   <li>{@link net.mmyumu.docdoc.model.Cards.impl.EffectTypeImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link net.mmyumu.docdoc.model.Cards.impl.OptionImpl#getDisplayText <em>Display Text</em>}</li>
+ *   <li>{@link net.mmyumu.docdoc.model.Cards.impl.OptionImpl#getValue <em>Value</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class EffectTypeImpl extends MinimalEObjectImpl.Container implements EffectType {
+public class OptionImpl extends MinimalEObjectImpl.Container implements Option {
 	/**
-	 * The default value of the '{@link #getType() <em>Type</em>}' attribute.
+	 * The default value of the '{@link #getDisplayText() <em>Display Text</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getType()
+	 * @see #getDisplayText()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String TYPE_EDEFAULT = null;
+	protected static final String DISPLAY_TEXT_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
+	 * The cached value of the '{@link #getDisplayText() <em>Display Text</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getType()
+	 * @see #getDisplayText()
 	 * @generated
 	 * @ordered
 	 */
-	protected String type = TYPE_EDEFAULT;
+	protected String displayText = DISPLAY_TEXT_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
@@ -81,7 +81,7 @@ public class EffectTypeImpl extends MinimalEObjectImpl.Container implements Effe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected EffectTypeImpl() {
+	protected OptionImpl() {
 		super();
 	}
 
@@ -92,7 +92,7 @@ public class EffectTypeImpl extends MinimalEObjectImpl.Container implements Effe
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CardsPackage.Literals.EFFECT_TYPE;
+		return CardsPackage.Literals.OPTION;
 	}
 
 	/**
@@ -100,8 +100,8 @@ public class EffectTypeImpl extends MinimalEObjectImpl.Container implements Effe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getType() {
-		return type;
+	public String getDisplayText() {
+		return displayText;
 	}
 
 	/**
@@ -109,11 +109,11 @@ public class EffectTypeImpl extends MinimalEObjectImpl.Container implements Effe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setType(String newType) {
-		String oldType = type;
-		type = newType;
+	public void setDisplayText(String newDisplayText) {
+		String oldDisplayText = displayText;
+		displayText = newDisplayText;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CardsPackage.EFFECT_TYPE__TYPE, oldType, type));
+			eNotify(new ENotificationImpl(this, Notification.SET, CardsPackage.OPTION__DISPLAY_TEXT, oldDisplayText, displayText));
 	}
 
 	/**
@@ -136,7 +136,7 @@ public class EffectTypeImpl extends MinimalEObjectImpl.Container implements Effe
 		boolean oldValueESet = valueESet;
 		valueESet = true;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CardsPackage.EFFECT_TYPE__VALUE, oldValue, value, !oldValueESet));
+			eNotify(new ENotificationImpl(this, Notification.SET, CardsPackage.OPTION__VALUE, oldValue, value, !oldValueESet));
 	}
 
 	/**
@@ -150,7 +150,7 @@ public class EffectTypeImpl extends MinimalEObjectImpl.Container implements Effe
 		value = VALUE_EDEFAULT;
 		valueESet = false;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, CardsPackage.EFFECT_TYPE__VALUE, oldValue, VALUE_EDEFAULT, oldValueESet));
+			eNotify(new ENotificationImpl(this, Notification.UNSET, CardsPackage.OPTION__VALUE, oldValue, VALUE_EDEFAULT, oldValueESet));
 	}
 
 	/**
@@ -170,9 +170,9 @@ public class EffectTypeImpl extends MinimalEObjectImpl.Container implements Effe
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CardsPackage.EFFECT_TYPE__TYPE:
-				return getType();
-			case CardsPackage.EFFECT_TYPE__VALUE:
+			case CardsPackage.OPTION__DISPLAY_TEXT:
+				return getDisplayText();
+			case CardsPackage.OPTION__VALUE:
 				return getValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -186,10 +186,10 @@ public class EffectTypeImpl extends MinimalEObjectImpl.Container implements Effe
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CardsPackage.EFFECT_TYPE__TYPE:
-				setType((String)newValue);
+			case CardsPackage.OPTION__DISPLAY_TEXT:
+				setDisplayText((String)newValue);
 				return;
-			case CardsPackage.EFFECT_TYPE__VALUE:
+			case CardsPackage.OPTION__VALUE:
 				setValue((Integer)newValue);
 				return;
 		}
@@ -204,10 +204,10 @@ public class EffectTypeImpl extends MinimalEObjectImpl.Container implements Effe
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CardsPackage.EFFECT_TYPE__TYPE:
-				setType(TYPE_EDEFAULT);
+			case CardsPackage.OPTION__DISPLAY_TEXT:
+				setDisplayText(DISPLAY_TEXT_EDEFAULT);
 				return;
-			case CardsPackage.EFFECT_TYPE__VALUE:
+			case CardsPackage.OPTION__VALUE:
 				unsetValue();
 				return;
 		}
@@ -222,9 +222,9 @@ public class EffectTypeImpl extends MinimalEObjectImpl.Container implements Effe
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CardsPackage.EFFECT_TYPE__TYPE:
-				return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
-			case CardsPackage.EFFECT_TYPE__VALUE:
+			case CardsPackage.OPTION__DISPLAY_TEXT:
+				return DISPLAY_TEXT_EDEFAULT == null ? displayText != null : !DISPLAY_TEXT_EDEFAULT.equals(displayText);
+			case CardsPackage.OPTION__VALUE:
 				return isSetValue();
 		}
 		return super.eIsSet(featureID);
@@ -240,12 +240,12 @@ public class EffectTypeImpl extends MinimalEObjectImpl.Container implements Effe
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (type: ");
-		result.append(type);
+		result.append(" (displayText: ");
+		result.append(displayText);
 		result.append(", value: ");
 		if (valueESet) result.append(value); else result.append("<unset>");
 		result.append(')');
 		return result.toString();
 	}
 
-} //EffectTypeImpl
+} //OptionImpl

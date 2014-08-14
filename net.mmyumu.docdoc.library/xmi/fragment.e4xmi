@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ASCII"?>
+<fragment:ModelFragments xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:commands="http://www.eclipse.org/ui/2010/UIModel/application/commands" xmlns:fragment="http://www.eclipse.org/ui/2010/UIModel/fragment" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_lXLk8BNvEeSIjYTP9w9y5w">
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_kQAnACMREeSFxKED0k8MVw" featurename="commands" parentElementId="net.mmyumu.docdoc.application">
+    <elements xsi:type="commands:Command" xmi:id="_nKHAoCMREeSFxKED0k8MVw" elementId="net.mmyumu.docdoc.library.command.refresh" commandName="Refresh command"/>
+  </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_45fMcCMREeSFxKED0k8MVw" featurename="handlers" parentElementId="net.mmyumu.docdoc.application">
+    <elements xsi:type="commands:Handler" xmi:id="_7xDPcCMREeSFxKED0k8MVw" elementId="net.mmyumu.docdoc.library.handler.0" contributionURI="bundleclass://net.mmyumu.docdoc.library/net.mmyumu.docdoc.library.handlers.RefreshHandler" command="_nKHAoCMREeSFxKED0k8MVw"/>
+  </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_QPThYBNxEeSIjYTP9w9y5w" featurename="children" parentElementId="net.mmyumu.docdoc.partstack.left">
+    <elements xsi:type="basic:Part" xmi:id="_RKQtwBNxEeSIjYTP9w9y5w" elementId="net.mmyumu.docdoc.library.part.cards" containerData="" contributionURI="bundleclass://net.mmyumu.docdoc.library/net.mmyumu.docdoc.library.parts.CardsPart" label="Cards">
+      <toolbar xmi:id="_UaKakCMPEeSFxKED0k8MVw" elementId="net.mmyumu.docdoc.library.toolbar.0">
+        <children xsi:type="menu:HandledToolItem" xmi:id="_VhrcQCMPEeSFxKED0k8MVw" elementId="net.mmyumu.docdoc.library.handledtoolitem.0" accessibilityPhrase="Refresh the library" label="Refresh" command="_nKHAoCMREeSFxKED0k8MVw"/>
+      </toolbar>
+    </elements>
+  </fragments>
+</fragment:ModelFragments>

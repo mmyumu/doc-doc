@@ -56,13 +56,18 @@ public class CardsFactoryImpl extends EFactoryImpl implements CardsFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case CardsPackage.CARDS_TYPE: return createCardsType();
-			case CardsPackage.CARD_TYPE: return createCardType();
+			case CardsPackage.CARD: return createCard();
+			case CardsPackage.CARD_FILTER: return createCardFilter();
+			case CardsPackage.CARDS: return createCards();
 			case CardsPackage.DOCUMENT_ROOT: return createDocumentRoot();
-			case CardsPackage.EFFECT_TYPE: return createEffectType();
-			case CardsPackage.PLAYABILITY_CONDITION_TYPE: return createPlayabilityConditionType();
-			case CardsPackage.TARGET_TYPE: return createTargetType();
-			case CardsPackage.VARIABLE_TYPE: return createVariableType();
+			case CardsPackage.EFFECT: return createEffect();
+			case CardsPackage.ON_GOING: return createOnGoing();
+			case CardsPackage.OPTION: return createOption();
+			case CardsPackage.SCHOOL: return createSchool();
+			case CardsPackage.SUBGROUP: return createSubgroup();
+			case CardsPackage.TARGET: return createTarget();
+			case CardsPackage.TEMPLATE_EFFECT: return createTemplateEffect();
+			case CardsPackage.TRIGGER: return createTrigger();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -73,9 +78,9 @@ public class CardsFactoryImpl extends EFactoryImpl implements CardsFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CardsType createCardsType() {
-		CardsTypeImpl cardsType = new CardsTypeImpl();
-		return cardsType;
+	public Card createCard() {
+		CardImpl card = new CardImpl();
+		return card;
 	}
 
 	/**
@@ -83,9 +88,19 @@ public class CardsFactoryImpl extends EFactoryImpl implements CardsFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CardType createCardType() {
-		CardTypeImpl cardType = new CardTypeImpl();
-		return cardType;
+	public CardFilter createCardFilter() {
+		CardFilterImpl cardFilter = new CardFilterImpl();
+		return cardFilter;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Cards createCards() {
+		CardsImpl cards = new CardsImpl();
+		return cards;
 	}
 
 	/**
@@ -103,9 +118,9 @@ public class CardsFactoryImpl extends EFactoryImpl implements CardsFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EffectType createEffectType() {
-		EffectTypeImpl effectType = new EffectTypeImpl();
-		return effectType;
+	public Effect createEffect() {
+		EffectImpl effect = new EffectImpl();
+		return effect;
 	}
 
 	/**
@@ -113,9 +128,9 @@ public class CardsFactoryImpl extends EFactoryImpl implements CardsFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PlayabilityConditionType createPlayabilityConditionType() {
-		PlayabilityConditionTypeImpl playabilityConditionType = new PlayabilityConditionTypeImpl();
-		return playabilityConditionType;
+	public OnGoing createOnGoing() {
+		OnGoingImpl onGoing = new OnGoingImpl();
+		return onGoing;
 	}
 
 	/**
@@ -123,9 +138,9 @@ public class CardsFactoryImpl extends EFactoryImpl implements CardsFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TargetType createTargetType() {
-		TargetTypeImpl targetType = new TargetTypeImpl();
-		return targetType;
+	public Option createOption() {
+		OptionImpl option = new OptionImpl();
+		return option;
 	}
 
 	/**
@@ -133,9 +148,49 @@ public class CardsFactoryImpl extends EFactoryImpl implements CardsFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public VariableType createVariableType() {
-		VariableTypeImpl variableType = new VariableTypeImpl();
-		return variableType;
+	public School createSchool() {
+		SchoolImpl school = new SchoolImpl();
+		return school;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Subgroup createSubgroup() {
+		SubgroupImpl subgroup = new SubgroupImpl();
+		return subgroup;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Target createTarget() {
+		TargetImpl target = new TargetImpl();
+		return target;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TemplateEffect createTemplateEffect() {
+		TemplateEffectImpl templateEffect = new TemplateEffectImpl();
+		return templateEffect;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Trigger createTrigger() {
+		TriggerImpl trigger = new TriggerImpl();
+		return trigger;
 	}
 
 	/**

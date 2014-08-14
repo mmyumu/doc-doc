@@ -68,32 +68,52 @@ public class CardsAdapterFactory extends AdapterFactoryImpl {
 	protected CardsSwitch<Adapter> modelSwitch =
 		new CardsSwitch<Adapter>() {
 			@Override
-			public Adapter caseCardsType(CardsType object) {
-				return createCardsTypeAdapter();
+			public Adapter caseCard(Card object) {
+				return createCardAdapter();
 			}
 			@Override
-			public Adapter caseCardType(CardType object) {
-				return createCardTypeAdapter();
+			public Adapter caseCardFilter(CardFilter object) {
+				return createCardFilterAdapter();
+			}
+			@Override
+			public Adapter caseCards(Cards object) {
+				return createCardsAdapter();
 			}
 			@Override
 			public Adapter caseDocumentRoot(DocumentRoot object) {
 				return createDocumentRootAdapter();
 			}
 			@Override
-			public Adapter caseEffectType(EffectType object) {
-				return createEffectTypeAdapter();
+			public Adapter caseEffect(Effect object) {
+				return createEffectAdapter();
 			}
 			@Override
-			public Adapter casePlayabilityConditionType(PlayabilityConditionType object) {
-				return createPlayabilityConditionTypeAdapter();
+			public Adapter caseOnGoing(OnGoing object) {
+				return createOnGoingAdapter();
 			}
 			@Override
-			public Adapter caseTargetType(TargetType object) {
-				return createTargetTypeAdapter();
+			public Adapter caseOption(Option object) {
+				return createOptionAdapter();
 			}
 			@Override
-			public Adapter caseVariableType(VariableType object) {
-				return createVariableTypeAdapter();
+			public Adapter caseSchool(School object) {
+				return createSchoolAdapter();
+			}
+			@Override
+			public Adapter caseSubgroup(Subgroup object) {
+				return createSubgroupAdapter();
+			}
+			@Override
+			public Adapter caseTarget(Target object) {
+				return createTargetAdapter();
+			}
+			@Override
+			public Adapter caseTemplateEffect(TemplateEffect object) {
+				return createTemplateEffectAdapter();
+			}
+			@Override
+			public Adapter caseTrigger(Trigger object) {
+				return createTriggerAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -116,30 +136,44 @@ public class CardsAdapterFactory extends AdapterFactoryImpl {
 
 
 	/**
-	 * Creates a new adapter for an object of class '{@link net.mmyumu.docdoc.model.Cards.CardsType <em>Type</em>}'.
+	 * Creates a new adapter for an object of class '{@link net.mmyumu.docdoc.model.Cards.Card <em>Card</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see net.mmyumu.docdoc.model.Cards.CardsType
+	 * @see net.mmyumu.docdoc.model.Cards.Card
 	 * @generated
 	 */
-	public Adapter createCardsTypeAdapter() {
+	public Adapter createCardAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link net.mmyumu.docdoc.model.Cards.CardType <em>Card Type</em>}'.
+	 * Creates a new adapter for an object of class '{@link net.mmyumu.docdoc.model.Cards.CardFilter <em>Card Filter</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see net.mmyumu.docdoc.model.Cards.CardType
+	 * @see net.mmyumu.docdoc.model.Cards.CardFilter
 	 * @generated
 	 */
-	public Adapter createCardTypeAdapter() {
+	public Adapter createCardFilterAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link net.mmyumu.docdoc.model.Cards.Cards <em>Cards</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see net.mmyumu.docdoc.model.Cards.Cards
+	 * @generated
+	 */
+	public Adapter createCardsAdapter() {
 		return null;
 	}
 
@@ -158,58 +192,114 @@ public class CardsAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link net.mmyumu.docdoc.model.Cards.EffectType <em>Effect Type</em>}'.
+	 * Creates a new adapter for an object of class '{@link net.mmyumu.docdoc.model.Cards.Effect <em>Effect</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see net.mmyumu.docdoc.model.Cards.EffectType
+	 * @see net.mmyumu.docdoc.model.Cards.Effect
 	 * @generated
 	 */
-	public Adapter createEffectTypeAdapter() {
+	public Adapter createEffectAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link net.mmyumu.docdoc.model.Cards.PlayabilityConditionType <em>Playability Condition Type</em>}'.
+	 * Creates a new adapter for an object of class '{@link net.mmyumu.docdoc.model.Cards.OnGoing <em>On Going</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see net.mmyumu.docdoc.model.Cards.PlayabilityConditionType
+	 * @see net.mmyumu.docdoc.model.Cards.OnGoing
 	 * @generated
 	 */
-	public Adapter createPlayabilityConditionTypeAdapter() {
+	public Adapter createOnGoingAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link net.mmyumu.docdoc.model.Cards.TargetType <em>Target Type</em>}'.
+	 * Creates a new adapter for an object of class '{@link net.mmyumu.docdoc.model.Cards.Option <em>Option</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see net.mmyumu.docdoc.model.Cards.TargetType
+	 * @see net.mmyumu.docdoc.model.Cards.Option
 	 * @generated
 	 */
-	public Adapter createTargetTypeAdapter() {
+	public Adapter createOptionAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link net.mmyumu.docdoc.model.Cards.VariableType <em>Variable Type</em>}'.
+	 * Creates a new adapter for an object of class '{@link net.mmyumu.docdoc.model.Cards.School <em>School</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see net.mmyumu.docdoc.model.Cards.VariableType
+	 * @see net.mmyumu.docdoc.model.Cards.School
 	 * @generated
 	 */
-	public Adapter createVariableTypeAdapter() {
+	public Adapter createSchoolAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link net.mmyumu.docdoc.model.Cards.Subgroup <em>Subgroup</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see net.mmyumu.docdoc.model.Cards.Subgroup
+	 * @generated
+	 */
+	public Adapter createSubgroupAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link net.mmyumu.docdoc.model.Cards.Target <em>Target</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see net.mmyumu.docdoc.model.Cards.Target
+	 * @generated
+	 */
+	public Adapter createTargetAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link net.mmyumu.docdoc.model.Cards.TemplateEffect <em>Template Effect</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see net.mmyumu.docdoc.model.Cards.TemplateEffect
+	 * @generated
+	 */
+	public Adapter createTemplateEffectAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link net.mmyumu.docdoc.model.Cards.Trigger <em>Trigger</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see net.mmyumu.docdoc.model.Cards.Trigger
+	 * @generated
+	 */
+	public Adapter createTriggerAdapter() {
 		return null;
 	}
 

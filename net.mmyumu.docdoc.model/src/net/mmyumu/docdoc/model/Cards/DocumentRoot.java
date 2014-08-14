@@ -90,13 +90,13 @@ public interface DocumentRoot extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Cards</em>' containment reference.
-	 * @see #setCards(CardsType)
+	 * @see #setCards(Cards)
 	 * @see net.mmyumu.docdoc.model.Cards.CardsPackage#getDocumentRoot_Cards()
 	 * @model containment="true" upper="-2" transient="true" volatile="true" derived="true"
 	 *        extendedMetaData="kind='element' name='Cards' namespace='##targetNamespace'"
 	 * @generated
 	 */
-	CardsType getCards();
+	Cards getCards();
 
 	/**
 	 * Sets the value of the '{@link net.mmyumu.docdoc.model.Cards.DocumentRoot#getCards <em>Cards</em>}' containment reference.
@@ -106,6 +106,6 @@ public interface DocumentRoot extends EObject {
 	 * @see #getCards()
 	 * @generated
 	 */
-	void setCards(CardsType value);
+	void setCards(Cards value);
 
 } // DocumentRoot

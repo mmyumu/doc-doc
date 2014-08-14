@@ -7,25 +7,31 @@
   <genAnnotations source="http://www.eclipse.org/emf/2002/GenModel/importer/org.eclipse.xsd.ecore.importer">
     <details key="createMap" value="true"/>
   </genAnnotations>
-  <foreignModel>../../net.mmyumu.docdoc.xml/resources/xsd/cards.xsd</foreignModel>
+  <foreignModel>../resources/xsd/cards.xsd</foreignModel>
   <genPackages prefix="Cards" basePackage="net.mmyumu.docdoc.model" resource="XML"
       disposableProviderFactory="true" ecorePackage="Cards.ecore#/">
-    <genClasses ecoreClass="Cards.ecore#//CardsType">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Cards.ecore#//CardsType/card"/>
+    <genClasses ecoreClass="Cards.ecore#//Card">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Cards.ecore#//Card/school"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cards.ecore#//Card/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Cards.ecore#//Card/ongoing"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Cards.ecore#//Card/target"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cards.ecore#//Card/destinyLevel"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cards.ecore#//Card/displayName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cards.ecore#//Card/faction"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cards.ecore#//Card/hP"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cards.ecore#//Card/iD"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cards.ecore#//Card/magicLevel"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cards.ecore#//Card/mightLevel"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cards.ecore#//Card/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cards.ecore#//Card/rarity"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cards.ecore#//Card/type"/>
     </genClasses>
-    <genClasses ecoreClass="Cards.ecore#//CardType">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Cards.ecore#//CardType/variable"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Cards.ecore#//CardType/playabilityCondition"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Cards.ecore#//CardType/target"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cards.ecore#//CardType/description"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cards.ecore#//CardType/cost"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cards.ecore#//CardType/destinyLevel"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cards.ecore#//CardType/displayName"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cards.ecore#//CardType/faction"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cards.ecore#//CardType/iD"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cards.ecore#//CardType/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cards.ecore#//CardType/rarity"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cards.ecore#//CardType/type"/>
+    <genClasses ecoreClass="Cards.ecore#//CardFilter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cards.ecore#//CardFilter/includeUnitType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cards.ecore#//CardFilter/side"/>
+    </genClasses>
+    <genClasses ecoreClass="Cards.ecore#//Cards">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Cards.ecore#//Cards/card"/>
     </genClasses>
     <genClasses ecoreClass="Cards.ecore#//DocumentRoot">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute Cards.ecore#//DocumentRoot/mixed"/>
@@ -33,24 +39,41 @@
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Cards.ecore#//DocumentRoot/xSISchemaLocation"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Cards.ecore#//DocumentRoot/cards"/>
     </genClasses>
-    <genClasses ecoreClass="Cards.ecore#//EffectType">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cards.ecore#//EffectType/type"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cards.ecore#//EffectType/value"/>
+    <genClasses ecoreClass="Cards.ecore#//Effect">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cards.ecore#//Effect/duration"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cards.ecore#//Effect/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cards.ecore#//Effect/value"/>
     </genClasses>
-    <genClasses ecoreClass="Cards.ecore#//PlayabilityConditionType">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cards.ecore#//PlayabilityConditionType/operator"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cards.ecore#//PlayabilityConditionType/valueA"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cards.ecore#//PlayabilityConditionType/valueB"/>
+    <genClasses ecoreClass="Cards.ecore#//OnGoing">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cards.ecore#//OnGoing/duration"/>
     </genClasses>
-    <genClasses ecoreClass="Cards.ecore#//TargetType">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Cards.ecore#//TargetType/effect"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cards.ecore#//TargetType/amount"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cards.ecore#//TargetType/side"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cards.ecore#//TargetType/zone"/>
+    <genClasses ecoreClass="Cards.ecore#//Option">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cards.ecore#//Option/displayText"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cards.ecore#//Option/value"/>
     </genClasses>
-    <genClasses ecoreClass="Cards.ecore#//VariableType">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cards.ecore#//VariableType/side"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cards.ecore#//VariableType/type"/>
+    <genClasses ecoreClass="Cards.ecore#//School">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cards.ecore#//School/name"/>
+    </genClasses>
+    <genClasses ecoreClass="Cards.ecore#//Subgroup">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Cards.ecore#//Subgroup/templateEffect"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Cards.ecore#//Subgroup/target"/>
+    </genClasses>
+    <genClasses ecoreClass="Cards.ecore#//Target">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Cards.ecore#//Target/option"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Cards.ecore#//Target/trigger"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Cards.ecore#//Target/effect"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Cards.ecore#//Target/subgroup"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cards.ecore#//Target/amount"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cards.ecore#//Target/side"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cards.ecore#//Target/zone"/>
+    </genClasses>
+    <genClasses ecoreClass="Cards.ecore#//TemplateEffect">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cards.ecore#//TemplateEffect/name"/>
+    </genClasses>
+    <genClasses ecoreClass="Cards.ecore#//Trigger">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Cards.ecore#//Trigger/cardFilter"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Cards.ecore#//Trigger/target"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cards.ecore#//Trigger/type"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

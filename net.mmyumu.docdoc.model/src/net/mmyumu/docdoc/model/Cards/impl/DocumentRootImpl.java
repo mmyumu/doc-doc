@@ -2,8 +2,8 @@
  */
 package net.mmyumu.docdoc.model.Cards.impl;
 
+import net.mmyumu.docdoc.model.Cards.Cards;
 import net.mmyumu.docdoc.model.Cards.CardsPackage;
-import net.mmyumu.docdoc.model.Cards.CardsType;
 import net.mmyumu.docdoc.model.Cards.DocumentRoot;
 
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -130,8 +130,8 @@ public class DocumentRootImpl extends MinimalEObjectImpl.Container implements Do
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CardsType getCards() {
-		return (CardsType)getMixed().get(CardsPackage.Literals.DOCUMENT_ROOT__CARDS, true);
+	public Cards getCards() {
+		return (Cards)getMixed().get(CardsPackage.Literals.DOCUMENT_ROOT__CARDS, true);
 	}
 
 	/**
@@ -139,7 +139,7 @@ public class DocumentRootImpl extends MinimalEObjectImpl.Container implements Do
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetCards(CardsType newCards, NotificationChain msgs) {
+	public NotificationChain basicSetCards(Cards newCards, NotificationChain msgs) {
 		return ((FeatureMap.Internal)getMixed()).basicAdd(CardsPackage.Literals.DOCUMENT_ROOT__CARDS, newCards, msgs);
 	}
 
@@ -148,7 +148,7 @@ public class DocumentRootImpl extends MinimalEObjectImpl.Container implements Do
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setCards(CardsType newCards) {
+	public void setCards(Cards newCards) {
 		((FeatureMap.Internal)getMixed()).set(CardsPackage.Literals.DOCUMENT_ROOT__CARDS, newCards);
 	}
 
@@ -213,7 +213,7 @@ public class DocumentRootImpl extends MinimalEObjectImpl.Container implements Do
 				((EStructuralFeature.Setting)getXSISchemaLocation()).set(newValue);
 				return;
 			case CardsPackage.DOCUMENT_ROOT__CARDS:
-				setCards((CardsType)newValue);
+				setCards((Cards)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -237,7 +237,7 @@ public class DocumentRootImpl extends MinimalEObjectImpl.Container implements Do
 				getXSISchemaLocation().clear();
 				return;
 			case CardsPackage.DOCUMENT_ROOT__CARDS:
-				setCards((CardsType)null);
+				setCards((Cards)null);
 				return;
 		}
 		super.eUnset(featureID);
