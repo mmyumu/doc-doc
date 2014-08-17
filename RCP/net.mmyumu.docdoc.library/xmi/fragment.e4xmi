@@ -7,9 +7,9 @@
     <elements xsi:type="commands:Handler" xmi:id="_7xDPcCMREeSFxKED0k8MVw" elementId="net.mmyumu.docdoc.library.handler.0" contributionURI="bundleclass://net.mmyumu.docdoc.library/net.mmyumu.docdoc.library.handlers.RefreshHandler" command="_nKHAoCMREeSFxKED0k8MVw"/>
   </fragments>
   <fragments xsi:type="fragment:StringModelFragment" xmi:id="_QPThYBNxEeSIjYTP9w9y5w" featurename="children" parentElementId="net.mmyumu.docdoc.partstack.left">
-    <elements xsi:type="basic:Part" xmi:id="_RKQtwBNxEeSIjYTP9w9y5w" elementId="net.mmyumu.docdoc.library.part.cards" containerData="" contributionURI="bundleclass://net.mmyumu.docdoc.library/net.mmyumu.docdoc.library.parts.CardsPart" label="Cards">
+    <elements xsi:type="basic:Part" xmi:id="_RKQtwBNxEeSIjYTP9w9y5w" elementId="net.mmyumu.docdoc.library.part.cards" containerData="" contributionURI="bundleclass://net.mmyumu.docdoc.library/net.mmyumu.docdoc.library.parts.CardsPart" label="Cards" iconURI="">
       <toolbar xmi:id="_UaKakCMPEeSFxKED0k8MVw" elementId="net.mmyumu.docdoc.library.toolbar.0">
-        <children xsi:type="menu:HandledToolItem" xmi:id="_VhrcQCMPEeSFxKED0k8MVw" elementId="net.mmyumu.docdoc.library.handledtoolitem.0" accessibilityPhrase="Refresh the library" label="Refresh" command="_nKHAoCMREeSFxKED0k8MVw"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_VhrcQCMPEeSFxKED0k8MVw" elementId="net.mmyumu.docdoc.library.handledtoolitem.0" accessibilityPhrase="Refresh the library" label="Refresh" iconURI="platform:/plugin/net.mmyumu.docdoc.library/icons/view-refresh-6.png" command="_nKHAoCMREeSFxKED0k8MVw"/>
       </toolbar>
     </elements>
   </fragments>

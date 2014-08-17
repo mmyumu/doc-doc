@@ -20,4 +20,12 @@
             type="cards"
             class="net.mmyumu.docdoc.model.Cards.util.CardsResourceFactoryImpl"/>
    </extension>
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated library -->
+      <package
+            uri="platform:/resource/net.mmyumu.docdoc.model/model/Library.ecore"
+            class="net.mmyumu.docdoc.model.Library.LibraryPackage"
+            genModel="model/library.genmodel"/>
+   </extension>
+
 </plugin>

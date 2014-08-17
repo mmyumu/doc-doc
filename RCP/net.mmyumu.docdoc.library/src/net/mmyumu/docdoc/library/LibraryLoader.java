@@ -3,11 +3,14 @@ package net.mmyumu.docdoc.library;
 import java.io.File;
 import java.io.IOException;
 
+import javax.inject.Inject;
+
 import net.mmyumu.docdoc.library.exceptions.LibraryException;
+import net.mmyumu.docdoc.model.Cards.DocumentRoot;
 import net.mmyumu.docdoc.model.Cards.util.CardsResourceFactoryImpl;
 
+import org.eclipse.e4.core.services.log.Logger;
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.impl.ResourceFactoryImpl;
 
@@ -17,13 +20,26 @@ public class LibraryLoader {
 
 	private final static String SET_EXTENSION = ".xml";
 
+	@Inject
+	private Logger logger;
+
 	private String gameLocation;
 
 	private ResourceFactoryImpl resourceFactory;
 
+	/**
+	 * Instantiates a new library loader. Needed for injection.
+	 */
+	public LibraryLoader() {
+	}
+
 	public LibraryLoader(String gameLocation) {
 		this.gameLocation = gameLocation;
 		this.resourceFactory = new CardsResourceFactoryImpl();
+	}
+
+	public void setGameLocation(String gameLocation) {
+		this.gameLocation = gameLocation;
 	}
 
 	public void load() throws LibraryException {
@@ -62,7 +78,8 @@ public class LibraryLoader {
 		Resource resource = resourceFactory.createResource(URI
 				.createFileURI(setPath));
 		resource.load(null);
-		EObject object = resource.getContents().get(0);
-		System.out.println("OK=" + setPath);
+		DocumentRoot documentRoot = (DocumentRoot) resource.getContents()
+				.get(0);
+		logger.info("Loaded: " + setPath);
 	}
 }

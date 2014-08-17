@@ -3,7 +3,7 @@
   <children xsi:type="basic:TrimmedWindow" xmi:id="_LI57MRNkEeSIjYTP9w9y5w" label="Doc doc" width="1024" height="768">
     <children xsi:type="advanced:PerspectiveStack" xmi:id="_LI6iVxNkEeSIjYTP9w9y5w">
       <children xsi:type="advanced:Perspective" xmi:id="_LI6iWBNkEeSIjYTP9w9y5w">
-        <children xsi:type="basic:PartSashContainer" xmi:id="_Nufw4CJsEeSFxKED0k8MVw" elementId="net.mmyumu.docdoc.partsashcontainer.left" containerData="" selectedElement="_20gPcCJtEeSFxKED0k8MVw" horizontal="true">
+        <children xsi:type="basic:PartSashContainer" xmi:id="_Nufw4CJsEeSFxKED0k8MVw" elementId="net.mmyumu.docdoc.partsashcontainer.left" containerData="" selectedElement="_eMkroCMWEeSFxKED0k8MVw" horizontal="true">
           <children xsi:type="basic:PartStack" xmi:id="_20gPcCJtEeSFxKED0k8MVw" elementId="net.mmyumu.docdoc.partstack.left" containerData="20"/>
           <children xsi:type="basic:PartStack" xmi:id="_eMkroCMWEeSFxKED0k8MVw" elementId="net.mmyumu.docdoc.partstack.main" containerData="80"/>
         </children>

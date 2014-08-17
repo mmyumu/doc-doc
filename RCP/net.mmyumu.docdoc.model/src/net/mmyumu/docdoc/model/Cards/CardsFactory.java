@@ -22,6 +22,33 @@ public interface CardsFactory extends EFactory {
 	CardsFactory eINSTANCE = net.mmyumu.docdoc.model.Cards.impl.CardsFactoryImpl.init();
 
 	/**
+	 * Returns a new object of class '<em>Ability</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Ability</em>'.
+	 * @generated
+	 */
+	Ability createAbility();
+
+	/**
+	 * Returns a new object of class '<em>Additional Cost</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Additional Cost</em>'.
+	 * @generated
+	 */
+	AdditionalCost createAdditionalCost();
+
+	/**
+	 * Returns a new object of class '<em>Battleground Filter</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Battleground Filter</em>'.
+	 * @generated
+	 */
+	BattlegroundFilter createBattlegroundFilter();
+
+	/**
 	 * Returns a new object of class '<em>Card</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -49,6 +76,24 @@ public interface CardsFactory extends EFactory {
 	Cards createCards();
 
 	/**
+	 * Returns a new object of class '<em>Card Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Card Type</em>'.
+	 * @generated
+	 */
+	CardType createCardType();
+
+	/**
+	 * Returns a new object of class '<em>Condition</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Condition</em>'.
+	 * @generated
+	 */
+	Condition createCondition();
+
+	/**
 	 * Returns a new object of class '<em>Document Root</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -65,6 +110,15 @@ public interface CardsFactory extends EFactory {
 	 * @generated
 	 */
 	Effect createEffect();
+
+	/**
+	 * Returns a new object of class '<em>Existing Card</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Existing Card</em>'.
+	 * @generated
+	 */
+	ExistingCard createExistingCard();
 
 	/**
 	 * Returns a new object of class '<em>On Going</em>'.
@@ -128,6 +182,15 @@ public interface CardsFactory extends EFactory {
 	 * @generated
 	 */
 	Trigger createTrigger();
+
+	/**
+	 * Returns a new object of class '<em>Variable</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Variable</em>'.
+	 * @generated
+	 */
+	Variable createVariable();
 
 	/**
 	 * Returns the package supported by this factory.

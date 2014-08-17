@@ -56,11 +56,17 @@ public class CardsFactoryImpl extends EFactoryImpl implements CardsFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
+			case CardsPackage.ABILITY: return createAbility();
+			case CardsPackage.ADDITIONAL_COST: return createAdditionalCost();
+			case CardsPackage.BATTLEGROUND_FILTER: return createBattlegroundFilter();
 			case CardsPackage.CARD: return createCard();
 			case CardsPackage.CARD_FILTER: return createCardFilter();
 			case CardsPackage.CARDS: return createCards();
+			case CardsPackage.CARD_TYPE: return createCardType();
+			case CardsPackage.CONDITION: return createCondition();
 			case CardsPackage.DOCUMENT_ROOT: return createDocumentRoot();
 			case CardsPackage.EFFECT: return createEffect();
+			case CardsPackage.EXISTING_CARD: return createExistingCard();
 			case CardsPackage.ON_GOING: return createOnGoing();
 			case CardsPackage.OPTION: return createOption();
 			case CardsPackage.SCHOOL: return createSchool();
@@ -68,9 +74,40 @@ public class CardsFactoryImpl extends EFactoryImpl implements CardsFactory {
 			case CardsPackage.TARGET: return createTarget();
 			case CardsPackage.TEMPLATE_EFFECT: return createTemplateEffect();
 			case CardsPackage.TRIGGER: return createTrigger();
+			case CardsPackage.VARIABLE: return createVariable();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Ability createAbility() {
+		AbilityImpl ability = new AbilityImpl();
+		return ability;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AdditionalCost createAdditionalCost() {
+		AdditionalCostImpl additionalCost = new AdditionalCostImpl();
+		return additionalCost;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BattlegroundFilter createBattlegroundFilter() {
+		BattlegroundFilterImpl battlegroundFilter = new BattlegroundFilterImpl();
+		return battlegroundFilter;
 	}
 
 	/**
@@ -108,6 +145,26 @@ public class CardsFactoryImpl extends EFactoryImpl implements CardsFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public CardType createCardType() {
+		CardTypeImpl cardType = new CardTypeImpl();
+		return cardType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Condition createCondition() {
+		ConditionImpl condition = new ConditionImpl();
+		return condition;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public DocumentRoot createDocumentRoot() {
 		DocumentRootImpl documentRoot = new DocumentRootImpl();
 		return documentRoot;
@@ -121,6 +178,16 @@ public class CardsFactoryImpl extends EFactoryImpl implements CardsFactory {
 	public Effect createEffect() {
 		EffectImpl effect = new EffectImpl();
 		return effect;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ExistingCard createExistingCard() {
+		ExistingCardImpl existingCard = new ExistingCardImpl();
+		return existingCard;
 	}
 
 	/**
@@ -191,6 +258,16 @@ public class CardsFactoryImpl extends EFactoryImpl implements CardsFactory {
 	public Trigger createTrigger() {
 		TriggerImpl trigger = new TriggerImpl();
 		return trigger;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Variable createVariable() {
+		VariableImpl variable = new VariableImpl();
+		return variable;
 	}
 
 	/**

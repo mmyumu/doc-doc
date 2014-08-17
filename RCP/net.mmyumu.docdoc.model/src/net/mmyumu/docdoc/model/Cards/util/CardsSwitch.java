@@ -66,6 +66,24 @@ public class CardsSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
+			case CardsPackage.ABILITY: {
+				Ability ability = (Ability)theEObject;
+				T result = caseAbility(ability);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CardsPackage.ADDITIONAL_COST: {
+				AdditionalCost additionalCost = (AdditionalCost)theEObject;
+				T result = caseAdditionalCost(additionalCost);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CardsPackage.BATTLEGROUND_FILTER: {
+				BattlegroundFilter battlegroundFilter = (BattlegroundFilter)theEObject;
+				T result = caseBattlegroundFilter(battlegroundFilter);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case CardsPackage.CARD: {
 				Card card = (Card)theEObject;
 				T result = caseCard(card);
@@ -84,6 +102,18 @@ public class CardsSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case CardsPackage.CARD_TYPE: {
+				CardType cardType = (CardType)theEObject;
+				T result = caseCardType(cardType);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CardsPackage.CONDITION: {
+				Condition condition = (Condition)theEObject;
+				T result = caseCondition(condition);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case CardsPackage.DOCUMENT_ROOT: {
 				DocumentRoot documentRoot = (DocumentRoot)theEObject;
 				T result = caseDocumentRoot(documentRoot);
@@ -93,6 +123,12 @@ public class CardsSwitch<T> extends Switch<T> {
 			case CardsPackage.EFFECT: {
 				Effect effect = (Effect)theEObject;
 				T result = caseEffect(effect);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CardsPackage.EXISTING_CARD: {
+				ExistingCard existingCard = (ExistingCard)theEObject;
+				T result = caseExistingCard(existingCard);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -138,8 +174,59 @@ public class CardsSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case CardsPackage.VARIABLE: {
+				Variable variable = (Variable)theEObject;
+				T result = caseVariable(variable);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Ability</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Ability</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAbility(Ability object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Additional Cost</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Additional Cost</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAdditionalCost(AdditionalCost object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Battleground Filter</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Battleground Filter</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseBattlegroundFilter(BattlegroundFilter object) {
+		return null;
 	}
 
 	/**
@@ -188,6 +275,36 @@ public class CardsSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Card Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Card Type</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCardType(CardType object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Condition</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Condition</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCondition(Condition object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Document Root</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -214,6 +331,21 @@ public class CardsSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseEffect(Effect object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Existing Card</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Existing Card</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseExistingCard(ExistingCard object) {
 		return null;
 	}
 
@@ -319,6 +451,21 @@ public class CardsSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseTrigger(Trigger object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Variable</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Variable</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseVariable(Variable object) {
 		return null;
 	}
 

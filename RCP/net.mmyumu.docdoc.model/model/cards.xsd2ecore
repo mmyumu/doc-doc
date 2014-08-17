@@ -2,116 +2,475 @@
 <xsd2ecore:XSD2EcoreMappingRoot xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsd2ecore="http://www.eclipse.org/emf/2002/XSD2Ecore" inputs="../resources/xsd/cards.xsd#/" outputs="Cards.ecore#/"
     topToBottom="true">
-  <nested inputs="bundleentry://454.fwk1730595945/cache/www.w3.org/2001/XMLSchema.xsd#//anyType;XSDComplexTypeDefinition=28"
-      outputs="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
-  <nested inputs="bundleentry://454.fwk1730595945/cache/www.w3.org/2001/XMLSchema.xsd#//string;XSDSimpleTypeDefinition=9"
+  <nested inputs="bundleentry://454.fwk347572726/cache/www.w3.org/2001/XMLSchema.xsd#//string;XSDSimpleTypeDefinition=9"
       outputs="http://www.eclipse.org/emf/2003/XMLType#//String"/>
-  <nested inputs="bundleentry://454.fwk1730595945/cache/www.w3.org/2001/XMLSchema.xsd#//int;XSDSimpleTypeDefinition=44"
+  <nested inputs="../resources/xsd/cards.xsd#//Ability;XSDComplexTypeDefinition=12"
+      outputs="Cards.ecore#//Ability">
+    <nested inputs="../resources/xsd/cards.xsd#//Ability;XSDComplexTypeDefinition=12/XSDAttributeUse"
+        outputs="Cards.ecore#//Ability/type"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Ability;XSDComplexTypeDefinition=12/XSDAttributeUse=1"
+        outputs="Cards.ecore#//Ability/value"/>
+  </nested>
+  <nested inputs="../resources/xsd/cards.xsd#//School;XSDComplexTypeDefinition=3"
+      outputs="Cards.ecore#//School">
+    <nested inputs="../resources/xsd/cards.xsd#//School;XSDComplexTypeDefinition=3/XSDAttributeUse"
+        outputs="Cards.ecore#//School/name"/>
+  </nested>
+  <nested inputs="../resources/xsd/cards.xsd#//Condition;XSDComplexTypeDefinition=14"
+      outputs="Cards.ecore#//Condition">
+    <nested inputs="../resources/xsd/cards.xsd#//Condition;XSDComplexTypeDefinition=14/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="Cards.ecore#//Condition/condition"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Condition;XSDComplexTypeDefinition=14/XSDAttributeUse"
+        outputs="Cards.ecore#//Condition/operator"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Condition;XSDComplexTypeDefinition=14/XSDAttributeUse=1"
+        outputs="Cards.ecore#//Condition/valueA"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Condition;XSDComplexTypeDefinition=14/XSDAttributeUse=2"
+        outputs="Cards.ecore#//Condition/valueB"/>
+  </nested>
+  <nested inputs="../resources/xsd/cards.xsd#//OnGoing;XSDComplexTypeDefinition=4"
+      outputs="Cards.ecore#//OnGoing">
+    <nested inputs="../resources/xsd/cards.xsd#//OnGoing;XSDComplexTypeDefinition=4/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="Cards.ecore#//OnGoing/condition"/>
+    <nested inputs="../resources/xsd/cards.xsd#//OnGoing;XSDComplexTypeDefinition=4/XSDAttributeUse"
+        outputs="Cards.ecore#//OnGoing/duration"/>
+    <nested inputs="../resources/xsd/cards.xsd#//OnGoing;XSDComplexTypeDefinition=4/XSDAttributeUse=1"
+        outputs="Cards.ecore#//OnGoing/suicideParent"/>
+  </nested>
+  <nested inputs="../resources/xsd/cards.xsd#//CardFilter;XSDComplexTypeDefinition=10"
+      outputs="Cards.ecore#//CardFilter">
+    <nested inputs="../resources/xsd/cards.xsd#//CardFilter;XSDComplexTypeDefinition=10/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="Cards.ecore#//CardFilter/variable"/>
+    <nested inputs="../resources/xsd/cards.xsd#//CardFilter;XSDComplexTypeDefinition=10/XSDAttributeUse=18"
+        outputs="Cards.ecore#//CardFilter/attackHeroLastTurn"/>
+    <nested inputs="../resources/xsd/cards.xsd#//CardFilter;XSDComplexTypeDefinition=10/XSDAttributeUse=28"
+        outputs="Cards.ecore#//CardFilter/baseMaxCost"/>
+    <nested inputs="../resources/xsd/cards.xsd#//CardFilter;XSDComplexTypeDefinition=10/XSDAttributeUse=14"
+        outputs="Cards.ecore#//CardFilter/dealDamageToHeroLastTurn"/>
+    <nested inputs="../resources/xsd/cards.xsd#//CardFilter;XSDComplexTypeDefinition=10/XSDAttributeUse=21"
+        outputs="Cards.ecore#//CardFilter/excludeFaction"/>
+    <nested inputs="../resources/xsd/cards.xsd#//CardFilter;XSDComplexTypeDefinition=10/XSDAttributeUse=23"
+        outputs="Cards.ecore#//CardFilter/excludeRaces"/>
+    <nested inputs="../resources/xsd/cards.xsd#//CardFilter;XSDComplexTypeDefinition=10/XSDAttributeUse=30"
+        outputs="Cards.ecore#//CardFilter/excludeSchool"/>
+    <nested inputs="../resources/xsd/cards.xsd#//CardFilter;XSDComplexTypeDefinition=10/XSDAttributeUse=32"
+        outputs="Cards.ecore#//CardFilter/excludeToken"/>
+    <nested inputs="../resources/xsd/cards.xsd#//CardFilter;XSDComplexTypeDefinition=10/XSDAttributeUse=9"
+        outputs="Cards.ecore#//CardFilter/excludeUnique"/>
+    <nested inputs="../resources/xsd/cards.xsd#//CardFilter;XSDComplexTypeDefinition=10/XSDAttributeUse=8"
+        outputs="Cards.ecore#//CardFilter/excludeUnitType"/>
+    <nested inputs="../resources/xsd/cards.xsd#//CardFilter;XSDComplexTypeDefinition=10/XSDAttributeUse=1"
+        outputs="Cards.ecore#//CardFilter/includeAbility"/>
+    <nested inputs="../resources/xsd/cards.xsd#//CardFilter;XSDComplexTypeDefinition=10/XSDAttributeUse=4"
+        outputs="Cards.ecore#//CardFilter/includeCardID"/>
+    <nested inputs="../resources/xsd/cards.xsd#//CardFilter;XSDComplexTypeDefinition=10/XSDAttributeUse=2"
+        outputs="Cards.ecore#//CardFilter/includeCardType"/>
+    <nested inputs="../resources/xsd/cards.xsd#//CardFilter;XSDComplexTypeDefinition=10/XSDAttributeUse=31"
+        outputs="Cards.ecore#//CardFilter/includeColumn"/>
+    <nested inputs="../resources/xsd/cards.xsd#//CardFilter;XSDComplexTypeDefinition=10/XSDAttributeUse=15"
+        outputs="Cards.ecore#//CardFilter/includeCounter"/>
+    <nested inputs="../resources/xsd/cards.xsd#//CardFilter;XSDComplexTypeDefinition=10/XSDAttributeUse=19"
+        outputs="Cards.ecore#//CardFilter/includeEnchantUnit"/>
+    <nested inputs="../resources/xsd/cards.xsd#//CardFilter;XSDComplexTypeDefinition=10/XSDAttributeUse=16"
+        outputs="Cards.ecore#//CardFilter/includeFaction"/>
+    <nested inputs="../resources/xsd/cards.xsd#//CardFilter;XSDComplexTypeDefinition=10/XSDAttributeUse=17"
+        outputs="Cards.ecore#//CardFilter/includeFrontLine"/>
+    <nested inputs="../resources/xsd/cards.xsd#//CardFilter;XSDComplexTypeDefinition=10/XSDAttributeUse=26"
+        outputs="Cards.ecore#//CardFilter/includeOccupant"/>
+    <nested inputs="../resources/xsd/cards.xsd#//CardFilter;XSDComplexTypeDefinition=10/XSDAttributeUse=5"
+        outputs="Cards.ecore#//CardFilter/includeOngoingType"/>
+    <nested inputs="../resources/xsd/cards.xsd#//CardFilter;XSDComplexTypeDefinition=10/XSDAttributeUse=22"
+        outputs="Cards.ecore#//CardFilter/includeRaces"/>
+    <nested inputs="../resources/xsd/cards.xsd#//CardFilter;XSDComplexTypeDefinition=10/XSDAttributeUse=6"
+        outputs="Cards.ecore#//CardFilter/includeSchool"/>
+    <nested inputs="../resources/xsd/cards.xsd#//CardFilter;XSDComplexTypeDefinition=10/XSDAttributeUse=3"
+        outputs="Cards.ecore#//CardFilter/includeStatus"/>
+    <nested inputs="../resources/xsd/cards.xsd#//CardFilter;XSDComplexTypeDefinition=10/XSDAttributeUse=7"
+        outputs="Cards.ecore#//CardFilter/includeUnique"/>
+    <nested inputs="../resources/xsd/cards.xsd#//CardFilter;XSDComplexTypeDefinition=10/XSDAttributeUse"
+        outputs="Cards.ecore#//CardFilter/includeUnitType"/>
+    <nested inputs="../resources/xsd/cards.xsd#//CardFilter;XSDComplexTypeDefinition=10/XSDAttributeUse=25"
+        outputs="Cards.ecore#//CardFilter/levelType"/>
+    <nested inputs="../resources/xsd/cards.xsd#//CardFilter;XSDComplexTypeDefinition=10/XSDAttributeUse=27"
+        outputs="Cards.ecore#//CardFilter/maxAttack"/>
+    <nested inputs="../resources/xsd/cards.xsd#//CardFilter;XSDComplexTypeDefinition=10/XSDAttributeUse=12"
+        outputs="Cards.ecore#//CardFilter/maxCost"/>
+    <nested inputs="../resources/xsd/cards.xsd#//CardFilter;XSDComplexTypeDefinition=10/XSDAttributeUse=24"
+        outputs="Cards.ecore#//CardFilter/maxLevel"/>
+    <nested inputs="../resources/xsd/cards.xsd#//CardFilter;XSDComplexTypeDefinition=10/XSDAttributeUse=20"
+        outputs="Cards.ecore#//CardFilter/sameCardType"/>
+    <nested inputs="../resources/xsd/cards.xsd#//CardFilter;XSDComplexTypeDefinition=10/XSDAttributeUse=11"
+        outputs="Cards.ecore#//CardFilter/sameGPID"/>
+    <nested inputs="../resources/xsd/cards.xsd#//CardFilter;XSDComplexTypeDefinition=10/XSDAttributeUse=29"
+        outputs="Cards.ecore#//CardFilter/shareRaces"/>
+    <nested inputs="../resources/xsd/cards.xsd#//CardFilter;XSDComplexTypeDefinition=10/XSDAttributeUse=33"
+        outputs="Cards.ecore#//CardFilter/shareRacesWithOccupant"/>
+    <nested inputs="../resources/xsd/cards.xsd#//CardFilter;XSDComplexTypeDefinition=10/XSDAttributeUse=10"
+        outputs="Cards.ecore#//CardFilter/side"/>
+    <nested inputs="../resources/xsd/cards.xsd#//CardFilter;XSDComplexTypeDefinition=10/XSDAttributeUse=13"
+        outputs="Cards.ecore#//CardFilter/value"/>
+  </nested>
+  <nested inputs="../resources/xsd/cards.xsd#//Variable;XSDComplexTypeDefinition=13"
+      outputs="Cards.ecore#//Variable">
+    <nested inputs="../resources/xsd/cards.xsd#//Variable;XSDComplexTypeDefinition=13/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="Cards.ecore#//Variable/target"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Variable;XSDComplexTypeDefinition=13/XSDParticle/XSDModelGroup/XSDParticle=1"
+        outputs="Cards.ecore#//Variable/cardFilter"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Variable;XSDComplexTypeDefinition=13/XSDAttributeUse=2"
+        outputs="Cards.ecore#//Variable/ability"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Variable;XSDComplexTypeDefinition=13/XSDAttributeUse=1"
+        outputs="Cards.ecore#//Variable/counterType"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Variable;XSDComplexTypeDefinition=13/XSDAttributeUse=10"
+        outputs="Cards.ecore#//Variable/fromTrigger"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Variable;XSDComplexTypeDefinition=13/XSDAttributeUse=9"
+        outputs="Cards.ecore#//Variable/includeSchool"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Variable;XSDComplexTypeDefinition=13/XSDAttributeUse=7"
+        outputs="Cards.ecore#//Variable/levelType"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Variable;XSDComplexTypeDefinition=13/XSDAttributeUse=12"
+        outputs="Cards.ecore#//Variable/mustBeTargetable"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Variable;XSDComplexTypeDefinition=13/XSDAttributeUse=5"
+        outputs="Cards.ecore#//Variable/side"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Variable;XSDComplexTypeDefinition=13/XSDAttributeUse"
+        outputs="Cards.ecore#//Variable/type"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Variable;XSDComplexTypeDefinition=13/XSDAttributeUse=8"
+        outputs="Cards.ecore#//Variable/unitType"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Variable;XSDComplexTypeDefinition=13/XSDAttributeUse=3"
+        outputs="Cards.ecore#//Variable/useCurrentTarget"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Variable;XSDComplexTypeDefinition=13/XSDAttributeUse=4"
+        outputs="Cards.ecore#//Variable/useLastTarget"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Variable;XSDComplexTypeDefinition=13/XSDAttributeUse=11"
+        outputs="Cards.ecore#//Variable/useParent"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Variable;XSDComplexTypeDefinition=13/XSDAttributeUse=6"
+        outputs="Cards.ecore#//Variable/valueModifier"/>
+  </nested>
+  <nested inputs="bundleentry://454.fwk347572726/cache/www.w3.org/2001/XMLSchema.xsd#//int;XSDSimpleTypeDefinition=44"
       outputs="http://www.eclipse.org/emf/2003/XMLType#//Int"/>
+  <nested inputs="../resources/xsd/cards.xsd#//Option;XSDComplexTypeDefinition=8"
+      outputs="Cards.ecore#//Option">
+    <nested inputs="../resources/xsd/cards.xsd#//Option;XSDComplexTypeDefinition=8/XSDAttributeUse=1"
+        outputs="Cards.ecore#//Option/displayText"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Option;XSDComplexTypeDefinition=8/XSDAttributeUse"
+        outputs="Cards.ecore#//Option/value"/>
+  </nested>
+  <nested inputs="../resources/xsd/cards.xsd#//CardType;XSDComplexTypeDefinition=15"
+      outputs="Cards.ecore#//CardType">
+    <nested inputs="../resources/xsd/cards.xsd#//CardType;XSDComplexTypeDefinition=15/XSDAttributeUse=1"
+        outputs="Cards.ecore#//CardType/exclude"/>
+    <nested inputs="../resources/xsd/cards.xsd#//CardType;XSDComplexTypeDefinition=15/XSDAttributeUse"
+        outputs="Cards.ecore#//CardType/include"/>
+  </nested>
+  <nested inputs="../resources/xsd/cards.xsd#//Trigger;XSDComplexTypeDefinition=9"
+      outputs="Cards.ecore#//Trigger">
+    <nested inputs="../resources/xsd/cards.xsd#//Trigger;XSDComplexTypeDefinition=9/XSDParticle"
+        outputs="Cards.ecore#//Trigger/group"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Trigger;XSDComplexTypeDefinition=9/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="Cards.ecore#//Trigger/cardFilter"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Trigger;XSDComplexTypeDefinition=9/XSDParticle/XSDModelGroup/XSDParticle=1"
+        outputs="Cards.ecore#//Trigger/target"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Trigger;XSDComplexTypeDefinition=9/XSDParticle/XSDModelGroup/XSDParticle=2"
+        outputs="Cards.ecore#//Trigger/condition"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Trigger;XSDComplexTypeDefinition=9/XSDAttributeUse=6"
+        outputs="Cards.ecore#//Trigger/damageIncludeFlags"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Trigger;XSDComplexTypeDefinition=9/XSDAttributeUse=7"
+        outputs="Cards.ecore#//Trigger/duration"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Trigger;XSDComplexTypeDefinition=9/XSDAttributeUse=2"
+        outputs="Cards.ecore#//Trigger/executeOncePerTransaction"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Trigger;XSDComplexTypeDefinition=9/XSDAttributeUse=3"
+        outputs="Cards.ecore#//Trigger/executeOncePerTurn"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Trigger;XSDComplexTypeDefinition=9/XSDAttributeUse=4"
+        outputs="Cards.ecore#//Trigger/location"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Trigger;XSDComplexTypeDefinition=9/XSDAttributeUse=1"
+        outputs="Cards.ecore#//Trigger/side"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Trigger;XSDComplexTypeDefinition=9/XSDAttributeUse"
+        outputs="Cards.ecore#//Trigger/type"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Trigger;XSDComplexTypeDefinition=9/XSDAttributeUse=5"
+        outputs="Cards.ecore#//Trigger/useTriggererAsInitiator"/>
+  </nested>
+  <nested inputs="../resources/xsd/cards.xsd#//Effect;XSDComplexTypeDefinition=11"
+      outputs="Cards.ecore#//Effect">
+    <nested inputs="../resources/xsd/cards.xsd#//Effect;XSDComplexTypeDefinition=11/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="Cards.ecore#//Effect/cardFilter"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Effect;XSDComplexTypeDefinition=11/XSDParticle/XSDModelGroup/XSDParticle=1"
+        outputs="Cards.ecore#//Effect/condition"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Effect;XSDComplexTypeDefinition=11/XSDAttributeUse=6"
+        outputs="Cards.ecore#//Effect/ability"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Effect;XSDComplexTypeDefinition=11/XSDAttributeUse=18"
+        outputs="Cards.ecore#//Effect/bottom"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Effect;XSDComplexTypeDefinition=11/XSDAttributeUse=14"
+        outputs="Cards.ecore#//Effect/cancelDestination"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Effect;XSDComplexTypeDefinition=11/XSDAttributeUse=25"
+        outputs="Cards.ecore#//Effect/cantTargetParent"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Effect;XSDComplexTypeDefinition=11/XSDAttributeUse=10"
+        outputs="Cards.ecore#//Effect/cardHolder"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Effect;XSDComplexTypeDefinition=11/XSDAttributeUse=3"
+        outputs="Cards.ecore#//Effect/counterType"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Effect;XSDComplexTypeDefinition=11/XSDAttributeUse=34"
+        outputs="Cards.ecore#//Effect/damageExcludeFlags"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Effect;XSDComplexTypeDefinition=11/XSDAttributeUse=26"
+        outputs="Cards.ecore#//Effect/damageFlags"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Effect;XSDComplexTypeDefinition=11/XSDAttributeUse=11"
+        outputs="Cards.ecore#//Effect/damageIncludeFlags"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Effect;XSDComplexTypeDefinition=11/XSDAttributeUse=31"
+        outputs="Cards.ecore#//Effect/damageLethalSchools"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Effect;XSDComplexTypeDefinition=11/XSDAttributeUse=4"
+        outputs="Cards.ecore#//Effect/destination"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Effect;XSDComplexTypeDefinition=11/XSDAttributeUse=29"
+        outputs="Cards.ecore#//Effect/dontGenerateTargetPosition"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Effect;XSDComplexTypeDefinition=11/XSDAttributeUse=9"
+        outputs="Cards.ecore#//Effect/duration"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Effect;XSDComplexTypeDefinition=11/XSDAttributeUse=35"
+        outputs="Cards.ecore#//Effect/epicEnrage"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Effect;XSDComplexTypeDefinition=11/XSDAttributeUse=17"
+        outputs="Cards.ecore#//Effect/evaluationOrder"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Effect;XSDComplexTypeDefinition=11/XSDAttributeUse=8"
+        outputs="Cards.ecore#//Effect/fakeAdditionalCost"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Effect;XSDComplexTypeDefinition=11/XSDAttributeUse=7"
+        outputs="Cards.ecore#//Effect/force"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Effect;XSDComplexTypeDefinition=11/XSDAttributeUse=13"
+        outputs="Cards.ecore#//Effect/free"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Effect;XSDComplexTypeDefinition=11/XSDAttributeUse=2"
+        outputs="Cards.ecore#//Effect/globalEffectType"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Effect;XSDComplexTypeDefinition=11/XSDAttributeUse=12"
+        outputs="Cards.ecore#//Effect/levelType"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Effect;XSDComplexTypeDefinition=11/XSDAttributeUse=23"
+        outputs="Cards.ecore#//Effect/moveFromLastKnownParent"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Effect;XSDComplexTypeDefinition=11/XSDAttributeUse=28"
+        outputs="Cards.ecore#//Effect/name"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Effect;XSDComplexTypeDefinition=11/XSDAttributeUse=24"
+        outputs="Cards.ecore#//Effect/newDuration"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Effect;XSDComplexTypeDefinition=11/XSDAttributeUse=33"
+        outputs="Cards.ecore#//Effect/ownerAbility"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Effect;XSDComplexTypeDefinition=11/XSDAttributeUse=21"
+        outputs="Cards.ecore#//Effect/persistent"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Effect;XSDComplexTypeDefinition=11/XSDAttributeUse=15"
+        outputs="Cards.ecore#//Effect/playEffectType"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Effect;XSDComplexTypeDefinition=11/XSDAttributeUse=16"
+        outputs="Cards.ecore#//Effect/remove"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Effect;XSDComplexTypeDefinition=11/XSDAttributeUse=20"
+        outputs="Cards.ecore#//Effect/requireLevel"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Effect;XSDComplexTypeDefinition=11/XSDAttributeUse=19"
+        outputs="Cards.ecore#//Effect/revealToOther"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Effect;XSDComplexTypeDefinition=11/XSDAttributeUse=32"
+        outputs="Cards.ecore#//Effect/reverse"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Effect;XSDComplexTypeDefinition=11/XSDAttributeUse=22"
+        outputs="Cards.ecore#//Effect/shuffle"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Effect;XSDComplexTypeDefinition=11/XSDAttributeUse=1"
+        outputs="Cards.ecore#//Effect/side"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Effect;XSDComplexTypeDefinition=11/XSDAttributeUse=27"
+        outputs="Cards.ecore#//Effect/subType"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Effect;XSDComplexTypeDefinition=11/XSDAttributeUse"
+        outputs="Cards.ecore#//Effect/type"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Effect;XSDComplexTypeDefinition=11/XSDAttributeUse=30"
+        outputs="Cards.ecore#//Effect/unfreeze"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Effect;XSDComplexTypeDefinition=11/XSDAttributeUse=5"
+        outputs="Cards.ecore#//Effect/value"/>
+  </nested>
+  <nested inputs="../resources/xsd/cards.xsd#//TemplateEffect;XSDComplexTypeDefinition=7"
+      outputs="Cards.ecore#//TemplateEffect">
+    <nested inputs="../resources/xsd/cards.xsd#//TemplateEffect;XSDComplexTypeDefinition=7/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="Cards.ecore#//TemplateEffect/target"/>
+    <nested inputs="../resources/xsd/cards.xsd#//TemplateEffect;XSDComplexTypeDefinition=7/XSDParticle/XSDModelGroup/XSDParticle=1"
+        outputs="Cards.ecore#//TemplateEffect/trigger"/>
+    <nested inputs="../resources/xsd/cards.xsd#//TemplateEffect;XSDComplexTypeDefinition=7/XSDAttributeUse"
+        outputs="Cards.ecore#//TemplateEffect/name"/>
+  </nested>
+  <nested inputs="../resources/xsd/cards.xsd#//Subgroup;XSDComplexTypeDefinition=6"
+      outputs="Cards.ecore#//Subgroup">
+    <nested inputs="../resources/xsd/cards.xsd#//Subgroup;XSDComplexTypeDefinition=6/XSDParticle"
+        outputs="Cards.ecore#//Subgroup/group"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Subgroup;XSDComplexTypeDefinition=6/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="Cards.ecore#//Subgroup/templateEffect"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Subgroup;XSDComplexTypeDefinition=6/XSDParticle/XSDModelGroup/XSDParticle=1"
+        outputs="Cards.ecore#//Subgroup/target"/>
+  </nested>
+  <nested inputs="../resources/xsd/cards.xsd#//BattlegroundFilter;XSDComplexTypeDefinition=16"
+      outputs="Cards.ecore#//BattlegroundFilter">
+    <nested inputs="../resources/xsd/cards.xsd#//BattlegroundFilter;XSDComplexTypeDefinition=16/XSDAttributeUse"
+        outputs="Cards.ecore#//BattlegroundFilter/line"/>
+  </nested>
+  <nested inputs="../resources/xsd/cards.xsd#//Target;XSDComplexTypeDefinition=5"
+      outputs="Cards.ecore#//Target">
+    <nested inputs="../resources/xsd/cards.xsd#//Target;XSDComplexTypeDefinition=5/XSDParticle"
+        outputs="Cards.ecore#//Target/group"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Target;XSDComplexTypeDefinition=5/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="Cards.ecore#//Target/variable"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Target;XSDComplexTypeDefinition=5/XSDParticle/XSDModelGroup/XSDParticle=1"
+        outputs="Cards.ecore#//Target/variable2"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Target;XSDComplexTypeDefinition=5/XSDParticle/XSDModelGroup/XSDParticle=2"
+        outputs="Cards.ecore#//Target/condition"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Target;XSDComplexTypeDefinition=5/XSDParticle/XSDModelGroup/XSDParticle=3"
+        outputs="Cards.ecore#//Target/option"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Target;XSDComplexTypeDefinition=5/XSDParticle/XSDModelGroup/XSDParticle=4"
+        outputs="Cards.ecore#//Target/cardType"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Target;XSDComplexTypeDefinition=5/XSDParticle/XSDModelGroup/XSDParticle=5"
+        outputs="Cards.ecore#//Target/cardFilter"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Target;XSDComplexTypeDefinition=5/XSDParticle/XSDModelGroup/XSDParticle=6"
+        outputs="Cards.ecore#//Target/trigger"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Target;XSDComplexTypeDefinition=5/XSDParticle/XSDModelGroup/XSDParticle=7"
+        outputs="Cards.ecore#//Target/effect"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Target;XSDComplexTypeDefinition=5/XSDParticle/XSDModelGroup/XSDParticle=8"
+        outputs="Cards.ecore#//Target/subgroup"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Target;XSDComplexTypeDefinition=5/XSDParticle/XSDModelGroup/XSDParticle=9"
+        outputs="Cards.ecore#//Target/battlegroundFilter"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Target;XSDComplexTypeDefinition=5/XSDAttributeUse=24"
+        outputs="Cards.ecore#//Target/allowDuplicate"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Target;XSDComplexTypeDefinition=5/XSDAttributeUse"
+        outputs="Cards.ecore#//Target/amount"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Target;XSDComplexTypeDefinition=5/XSDAttributeUse=21"
+        outputs="Cards.ecore#//Target/amountVisible"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Target;XSDComplexTypeDefinition=5/XSDAttributeUse=22"
+        outputs="Cards.ecore#//Target/autoTakeFirstInputs"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Target;XSDComplexTypeDefinition=5/XSDAttributeUse=18"
+        outputs="Cards.ecore#//Target/battlegroundPositionState"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Target;XSDComplexTypeDefinition=5/XSDAttributeUse=23"
+        outputs="Cards.ecore#//Target/cancelable"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Target;XSDComplexTypeDefinition=5/XSDAttributeUse=26"
+        outputs="Cards.ecore#//Target/cantTargetOccupant"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Target;XSDComplexTypeDefinition=5/XSDAttributeUse=14"
+        outputs="Cards.ecore#//Target/cantTargetParent"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Target;XSDComplexTypeDefinition=5/XSDAttributeUse=8"
+        outputs="Cards.ecore#//Target/cantTargetPrevious"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Target;XSDComplexTypeDefinition=5/XSDAttributeUse=13"
+        outputs="Cards.ecore#//Target/cantTargetSelf"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Target;XSDComplexTypeDefinition=5/XSDAttributeUse=4"
+        outputs="Cards.ecore#//Target/cardType1"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Target;XSDComplexTypeDefinition=5/XSDAttributeUse=6"
+        outputs="Cards.ecore#//Target/dontUpdateAfterExecution"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Target;XSDComplexTypeDefinition=5/XSDAttributeUse=27"
+        outputs="Cards.ecore#//Target/exceptFromTrigger"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Target;XSDComplexTypeDefinition=5/XSDAttributeUse=12"
+        outputs="Cards.ecore#//Target/excludeUnique"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Target;XSDComplexTypeDefinition=5/XSDAttributeUse=7"
+        outputs="Cards.ecore#//Target/forceExecute"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Target;XSDComplexTypeDefinition=5/XSDAttributeUse=20"
+        outputs="Cards.ecore#//Target/ignoreWard"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Target;XSDComplexTypeDefinition=5/XSDAttributeUse=16"
+        outputs="Cards.ecore#//Target/inputOnExec"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Target;XSDComplexTypeDefinition=5/XSDAttributeUse=1"
+        outputs="Cards.ecore#//Target/minAmount"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Target;XSDComplexTypeDefinition=5/XSDAttributeUse=5"
+        outputs="Cards.ecore#//Target/needActivation"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Target;XSDComplexTypeDefinition=5/XSDAttributeUse=9"
+        outputs="Cards.ecore#//Target/option1"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Target;XSDComplexTypeDefinition=5/XSDAttributeUse=17"
+        outputs="Cards.ecore#//Target/persistent"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Target;XSDComplexTypeDefinition=5/XSDAttributeUse=10"
+        outputs="Cards.ecore#//Target/random"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Target;XSDComplexTypeDefinition=5/XSDAttributeUse=15"
+        outputs="Cards.ecore#//Target/revealToOther"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Target;XSDComplexTypeDefinition=5/XSDAttributeUse=19"
+        outputs="Cards.ecore#//Target/shape"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Target;XSDComplexTypeDefinition=5/XSDAttributeUse=3"
+        outputs="Cards.ecore#//Target/side"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Target;XSDComplexTypeDefinition=5/XSDAttributeUse=11"
+        outputs="Cards.ecore#//Target/skipNextTargetValidation"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Target;XSDComplexTypeDefinition=5/XSDAttributeUse=25"
+        outputs="Cards.ecore#//Target/skipSubTargetValidation"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Target;XSDComplexTypeDefinition=5/XSDAttributeUse=2"
+        outputs="Cards.ecore#//Target/zone"/>
+  </nested>
+  <nested inputs="../resources/xsd/cards.xsd#//AdditionalCost;XSDComplexTypeDefinition=17"
+      outputs="Cards.ecore#//AdditionalCost">
+    <nested inputs="../resources/xsd/cards.xsd#//AdditionalCost;XSDComplexTypeDefinition=17/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="Cards.ecore#//AdditionalCost/target"/>
+  </nested>
   <nested inputs="../resources/xsd/cards.xsd#//Card;XSDComplexTypeDefinition=1" outputs="Cards.ecore#//Card">
+    <nested inputs="../resources/xsd/cards.xsd#//Card;XSDComplexTypeDefinition=1/XSDParticle"
+        outputs="Cards.ecore#//Card/group"/>
     <nested inputs="../resources/xsd/cards.xsd#//Card;XSDComplexTypeDefinition=1/XSDParticle/XSDModelGroup/XSDParticle"
-        outputs="Cards.ecore#//Card/school"/>
+        outputs="Cards.ecore#//Card/ability"/>
     <nested inputs="../resources/xsd/cards.xsd#//Card;XSDComplexTypeDefinition=1/XSDParticle/XSDModelGroup/XSDParticle=1"
-        outputs="Cards.ecore#//Card/description"/>
+        outputs="Cards.ecore#//Card/school"/>
     <nested inputs="../resources/xsd/cards.xsd#//Card;XSDComplexTypeDefinition=1/XSDParticle/XSDModelGroup/XSDParticle=2"
         outputs="Cards.ecore#//Card/ongoing"/>
     <nested inputs="../resources/xsd/cards.xsd#//Card;XSDComplexTypeDefinition=1/XSDParticle/XSDModelGroup/XSDParticle=3"
         outputs="Cards.ecore#//Card/target"/>
-    <nested inputs="../resources/xsd/cards.xsd#//Card;XSDComplexTypeDefinition=1/XSDAttributeUse=7"
+    <nested inputs="../resources/xsd/cards.xsd#//Card;XSDComplexTypeDefinition=1/XSDParticle/XSDModelGroup/XSDParticle=4"
+        outputs="Cards.ecore#//Card/description"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Card;XSDComplexTypeDefinition=1/XSDParticle/XSDModelGroup/XSDParticle=5"
+        outputs="Cards.ecore#//Card/extraDescription"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Card;XSDComplexTypeDefinition=1/XSDParticle/XSDModelGroup/XSDParticle=6"
+        outputs="Cards.ecore#//Card/variable"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Card;XSDComplexTypeDefinition=1/XSDParticle/XSDModelGroup/XSDParticle=7"
+        outputs="Cards.ecore#//Card/variable2"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Card;XSDComplexTypeDefinition=1/XSDParticle/XSDModelGroup/XSDParticle=8"
+        outputs="Cards.ecore#//Card/variable3"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Card;XSDComplexTypeDefinition=1/XSDParticle/XSDModelGroup/XSDParticle=9"
+        outputs="Cards.ecore#//Card/variable4"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Card;XSDComplexTypeDefinition=1/XSDParticle/XSDModelGroup/XSDParticle=10"
+        outputs="Cards.ecore#//Card/variable5"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Card;XSDComplexTypeDefinition=1/XSDParticle/XSDModelGroup/XSDParticle=11"
+        outputs="Cards.ecore#//Card/variable6"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Card;XSDComplexTypeDefinition=1/XSDParticle/XSDModelGroup/XSDParticle=12"
+        outputs="Cards.ecore#//Card/variable7"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Card;XSDComplexTypeDefinition=1/XSDParticle/XSDModelGroup/XSDParticle=13"
+        outputs="Cards.ecore#//Card/playabilityCondition"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Card;XSDComplexTypeDefinition=1/XSDParticle/XSDModelGroup/XSDParticle=14"
+        outputs="Cards.ecore#//Card/attackCondition"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Card;XSDComplexTypeDefinition=1/XSDParticle/XSDModelGroup/XSDParticle=15"
+        outputs="Cards.ecore#//Card/trigger"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Card;XSDComplexTypeDefinition=1/XSDParticle/XSDModelGroup/XSDParticle=16"
+        outputs="Cards.ecore#//Card/additionalCost"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Card;XSDComplexTypeDefinition=1/XSDAttributeUse=15"
+        outputs="Cards.ecore#//Card/attack"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Card;XSDComplexTypeDefinition=1/XSDAttributeUse=11"
+        outputs="Cards.ecore#//Card/cost"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Card;XSDComplexTypeDefinition=1/XSDAttributeUse=14"
         outputs="Cards.ecore#//Card/destinyLevel"/>
-    <nested inputs="../resources/xsd/cards.xsd#//Card;XSDComplexTypeDefinition=1/XSDAttributeUse=3"
-        outputs="Cards.ecore#//Card/displayName"/>
-    <nested inputs="../resources/xsd/cards.xsd#//Card;XSDComplexTypeDefinition=1/XSDAttributeUse=4"
-        outputs="Cards.ecore#//Card/faction"/>
-    <nested inputs="../resources/xsd/cards.xsd#//Card;XSDComplexTypeDefinition=1/XSDAttributeUse=8"
-        outputs="Cards.ecore#//Card/hP"/>
-    <nested inputs="../resources/xsd/cards.xsd#//Card;XSDComplexTypeDefinition=1/XSDAttributeUse=9"
-        outputs="Cards.ecore#//Card/iD"/>
-    <nested inputs="../resources/xsd/cards.xsd#//Card;XSDComplexTypeDefinition=1/XSDAttributeUse=6"
-        outputs="Cards.ecore#//Card/magicLevel"/>
     <nested inputs="../resources/xsd/cards.xsd#//Card;XSDComplexTypeDefinition=1/XSDAttributeUse=5"
+        outputs="Cards.ecore#//Card/displayName"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Card;XSDComplexTypeDefinition=1/XSDAttributeUse=6"
+        outputs="Cards.ecore#//Card/faction"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Card;XSDComplexTypeDefinition=1/XSDAttributeUse=17"
+        outputs="Cards.ecore#//Card/hP"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Card;XSDComplexTypeDefinition=1/XSDAttributeUse=21"
+        outputs="Cards.ecore#//Card/iD"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Card;XSDComplexTypeDefinition=1/XSDAttributeUse=13"
+        outputs="Cards.ecore#//Card/magicLevel"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Card;XSDComplexTypeDefinition=1/XSDAttributeUse=12"
         outputs="Cards.ecore#//Card/mightLevel"/>
-    <nested inputs="../resources/xsd/cards.xsd#//Card;XSDComplexTypeDefinition=1/XSDAttributeUse=2"
+    <nested inputs="../resources/xsd/cards.xsd#//Card;XSDComplexTypeDefinition=1/XSDAttributeUse=3"
         outputs="Cards.ecore#//Card/name"/>
     <nested inputs="../resources/xsd/cards.xsd#//Card;XSDComplexTypeDefinition=1/XSDAttributeUse"
-        outputs="Cards.ecore#//Card/rarity"/>
+        outputs="Cards.ecore#//Card/notLocalized"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Card;XSDComplexTypeDefinition=1/XSDAttributeUse=9"
+        outputs="Cards.ecore#//Card/race"/>
     <nested inputs="../resources/xsd/cards.xsd#//Card;XSDComplexTypeDefinition=1/XSDAttributeUse=1"
+        outputs="Cards.ecore#//Card/rarity"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Card;XSDComplexTypeDefinition=1/XSDAttributeUse=4"
+        outputs="Cards.ecore#//Card/resourceName"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Card;XSDComplexTypeDefinition=1/XSDAttributeUse=16"
+        outputs="Cards.ecore#//Card/retaliate"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Card;XSDComplexTypeDefinition=1/XSDAttributeUse=7"
+        outputs="Cards.ecore#//Card/school1"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Card;XSDComplexTypeDefinition=1/XSDAttributeUse=19"
+        outputs="Cards.ecore#//Card/schoolsAligned"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Card;XSDComplexTypeDefinition=1/XSDAttributeUse=8"
+        outputs="Cards.ecore#//Card/subType"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Card;XSDComplexTypeDefinition=1/XSDAttributeUse=20"
+        outputs="Cards.ecore#//Card/token"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Card;XSDComplexTypeDefinition=1/XSDAttributeUse=2"
         outputs="Cards.ecore#//Card/type"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Card;XSDComplexTypeDefinition=1/XSDAttributeUse=10"
+        outputs="Cards.ecore#//Card/unique"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Card;XSDComplexTypeDefinition=1/XSDAttributeUse=18"
+        outputs="Cards.ecore#//Card/zone"/>
+  </nested>
+  <nested inputs="../resources/xsd/cards.xsd#//ExistingCard;XSDComplexTypeDefinition=2"
+      outputs="Cards.ecore#//ExistingCard">
+    <nested inputs="../resources/xsd/cards.xsd#//ExistingCard;XSDComplexTypeDefinition=2/XSDAttributeUse"
+        outputs="Cards.ecore#//ExistingCard/name"/>
+    <nested inputs="../resources/xsd/cards.xsd#//ExistingCard;XSDComplexTypeDefinition=2/XSDAttributeUse=1"
+        outputs="Cards.ecore#//ExistingCard/rarity"/>
   </nested>
   <nested inputs="../resources/xsd/cards.xsd#//Cards;XSDComplexTypeDefinition" outputs="Cards.ecore#//Cards">
+    <nested inputs="../resources/xsd/cards.xsd#//Cards;XSDComplexTypeDefinition/XSDParticle"
+        outputs="Cards.ecore#//Cards/group"/>
     <nested inputs="../resources/xsd/cards.xsd#//Cards;XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle"
         outputs="Cards.ecore#//Cards/card"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Cards;XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=1"
+        outputs="Cards.ecore#//Cards/existingCard"/>
+    <nested inputs="../resources/xsd/cards.xsd#//Cards;XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=2"
+        outputs="Cards.ecore#//Cards/templateEffect"/>
   </nested>
   <nested inputs="../resources/xsd/cards.xsd#//Cards;XSDElementDeclaration" outputs="Cards.ecore#//DocumentRoot/cards"/>
-  <nested inputs="../resources/xsd/cards.xsd#//CardFilter;XSDComplexTypeDefinition=9"
-      outputs="Cards.ecore#//CardFilter">
-    <nested inputs="../resources/xsd/cards.xsd#//CardFilter;XSDComplexTypeDefinition=9/XSDAttributeUse"
-        outputs="Cards.ecore#//CardFilter/includeUnitType"/>
-    <nested inputs="../resources/xsd/cards.xsd#//CardFilter;XSDComplexTypeDefinition=9/XSDAttributeUse=1"
-        outputs="Cards.ecore#//CardFilter/side"/>
-  </nested>
-  <nested inputs="../resources/xsd/cards.xsd#//Effect;XSDComplexTypeDefinition=10"
-      outputs="Cards.ecore#//Effect">
-    <nested inputs="../resources/xsd/cards.xsd#//Effect;XSDComplexTypeDefinition=10/XSDAttributeUse=2"
-        outputs="Cards.ecore#//Effect/duration"/>
-    <nested inputs="../resources/xsd/cards.xsd#//Effect;XSDComplexTypeDefinition=10/XSDAttributeUse"
-        outputs="Cards.ecore#//Effect/type"/>
-    <nested inputs="../resources/xsd/cards.xsd#//Effect;XSDComplexTypeDefinition=10/XSDAttributeUse=1"
-        outputs="Cards.ecore#//Effect/value"/>
-  </nested>
-  <nested inputs="../resources/xsd/cards.xsd#//OnGoing;XSDComplexTypeDefinition=3"
-      outputs="Cards.ecore#//OnGoing">
-    <nested inputs="../resources/xsd/cards.xsd#//OnGoing;XSDComplexTypeDefinition=3/XSDAttributeUse"
-        outputs="Cards.ecore#//OnGoing/duration"/>
-  </nested>
-  <nested inputs="../resources/xsd/cards.xsd#//Option;XSDComplexTypeDefinition=7"
-      outputs="Cards.ecore#//Option">
-    <nested inputs="../resources/xsd/cards.xsd#//Option;XSDComplexTypeDefinition=7/XSDAttributeUse=1"
-        outputs="Cards.ecore#//Option/displayText"/>
-    <nested inputs="../resources/xsd/cards.xsd#//Option;XSDComplexTypeDefinition=7/XSDAttributeUse"
-        outputs="Cards.ecore#//Option/value"/>
-  </nested>
-  <nested inputs="../resources/xsd/cards.xsd#//School;XSDComplexTypeDefinition=2"
-      outputs="Cards.ecore#//School">
-    <nested inputs="../resources/xsd/cards.xsd#//School;XSDComplexTypeDefinition=2/XSDAttributeUse"
-        outputs="Cards.ecore#//School/name"/>
-  </nested>
-  <nested inputs="../resources/xsd/cards.xsd#//Subgroup;XSDComplexTypeDefinition=5"
-      outputs="Cards.ecore#//Subgroup">
-    <nested inputs="../resources/xsd/cards.xsd#//Subgroup;XSDComplexTypeDefinition=5/XSDParticle/XSDModelGroup/XSDParticle"
-        outputs="Cards.ecore#//Subgroup/templateEffect"/>
-    <nested inputs="../resources/xsd/cards.xsd#//Subgroup;XSDComplexTypeDefinition=5/XSDParticle/XSDModelGroup/XSDParticle=1"
-        outputs="Cards.ecore#//Subgroup/target"/>
-  </nested>
-  <nested inputs="../resources/xsd/cards.xsd#//Target;XSDComplexTypeDefinition=4"
-      outputs="Cards.ecore#//Target">
-    <nested inputs="../resources/xsd/cards.xsd#//Target;XSDComplexTypeDefinition=4/XSDParticle/XSDModelGroup/XSDParticle"
-        outputs="Cards.ecore#//Target/option"/>
-    <nested inputs="../resources/xsd/cards.xsd#//Target;XSDComplexTypeDefinition=4/XSDParticle/XSDModelGroup/XSDParticle=1"
-        outputs="Cards.ecore#//Target/trigger"/>
-    <nested inputs="../resources/xsd/cards.xsd#//Target;XSDComplexTypeDefinition=4/XSDParticle/XSDModelGroup/XSDParticle=2"
-        outputs="Cards.ecore#//Target/effect"/>
-    <nested inputs="../resources/xsd/cards.xsd#//Target;XSDComplexTypeDefinition=4/XSDParticle/XSDModelGroup/XSDParticle=3"
-        outputs="Cards.ecore#//Target/subgroup"/>
-    <nested inputs="../resources/xsd/cards.xsd#//Target;XSDComplexTypeDefinition=4/XSDAttributeUse"
-        outputs="Cards.ecore#//Target/amount"/>
-    <nested inputs="../resources/xsd/cards.xsd#//Target;XSDComplexTypeDefinition=4/XSDAttributeUse=2"
-        outputs="Cards.ecore#//Target/side"/>
-    <nested inputs="../resources/xsd/cards.xsd#//Target;XSDComplexTypeDefinition=4/XSDAttributeUse=1"
-        outputs="Cards.ecore#//Target/zone"/>
-  </nested>
-  <nested inputs="../resources/xsd/cards.xsd#//TemplateEffect;XSDComplexTypeDefinition=6"
-      outputs="Cards.ecore#//TemplateEffect">
-    <nested inputs="../resources/xsd/cards.xsd#//TemplateEffect;XSDComplexTypeDefinition=6/XSDAttributeUse"
-        outputs="Cards.ecore#//TemplateEffect/name"/>
-  </nested>
-  <nested inputs="../resources/xsd/cards.xsd#//Trigger;XSDComplexTypeDefinition=8"
-      outputs="Cards.ecore#//Trigger">
-    <nested inputs="../resources/xsd/cards.xsd#//Trigger;XSDComplexTypeDefinition=8/XSDParticle/XSDModelGroup/XSDParticle"
-        outputs="Cards.ecore#//Trigger/cardFilter"/>
-    <nested inputs="../resources/xsd/cards.xsd#//Trigger;XSDComplexTypeDefinition=8/XSDParticle/XSDModelGroup/XSDParticle=1"
-        outputs="Cards.ecore#//Trigger/target"/>
-    <nested inputs="../resources/xsd/cards.xsd#//Trigger;XSDComplexTypeDefinition=8/XSDAttributeUse"
-        outputs="Cards.ecore#//Trigger/type"/>
-  </nested>
 </xsd2ecore:XSD2EcoreMappingRoot>

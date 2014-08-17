@@ -7,59 +7,132 @@
 	<xs:element name="Cards" type="Cards" />
 
 	<xs:complexType name="Cards">
-		<xs:sequence>
+		<xs:choice maxOccurs="unbounded">
 			<xs:element name="Card" type="Card" maxOccurs="unbounded" />
-		</xs:sequence>
+			<xs:element name="ExistingCard" type="ExistingCard" />
+			<xs:element name="TemplateEffect" type="TemplateEffect" />
+		</xs:choice>
 	</xs:complexType>
 
-	<xs:complexType name="Card">
-		<xs:sequence>
-			<xs:element name="School" maxOccurs="unbounded" />
-			<xs:element name="Description" type="xs:string" />
-			<xs:element name="Ongoing" minOccurs="0" />
-			<xs:element name="Target" maxOccurs="unbounded" />
-		</xs:sequence>
-		<xs:attribute name="Rarity" type="xs:string"></xs:attribute>
-		<xs:attribute name="Type" type="xs:string"></xs:attribute>
-		<xs:attribute name="Name" type="xs:string"></xs:attribute>
-		<xs:attribute name="DisplayName" type="xs:string"></xs:attribute>
-		<xs:attribute name="Faction" type="xs:string"></xs:attribute>
-		<xs:attribute name="MightLevel" type="xs:int"></xs:attribute>
-		<xs:attribute name="MagicLevel" type="xs:int"></xs:attribute>
-		<xs:attribute name="DestinyLevel" type="xs:int"></xs:attribute>
-		<xs:attribute name="HP" type="xs:int"></xs:attribute>
-		<xs:attribute name="ID" type="xs:int"></xs:attribute>
+	<xs:complexType name="Card" mixed="true">
+		<xs:choice minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="Ability" type="Ability" minOccurs="1" />
+			<xs:element name="School" type="School" minOccurs="1" />
+			<xs:element name="Ongoing" type="OnGoing" />
+			<xs:element name="Target" type="Target" minOccurs="0" />
+			<xs:element name="Description" type="xs:string" minOccurs="0" />
+			<xs:element name="ExtraDescription" type="xs:string" />
+			<xs:element name="Variable" type="Variable" />
+			<xs:element name="Variable2" type="Variable" />
+			<xs:element name="Variable3" type="Variable" />
+			<xs:element name="Variable4" type="Variable" />
+			<xs:element name="Variable5" type="Variable" />
+			<xs:element name="Variable6" type="Variable" />
+			<xs:element name="Variable7" type="Variable" />
+			<xs:element name="PlayabilityCondition" type="Condition" />
+			<xs:element name="AttackCondition" type="Condition" />
+			<xs:element name="Trigger" type="Trigger" />
+			<xs:element name="AdditionalCost" type="AdditionalCost" />
+		</xs:choice>
+		<xs:attribute name="NotLocalized" type="xs:string" />
+		<xs:attribute name="Rarity" type="xs:string" />
+		<xs:attribute name="Type" type="xs:string" />
+		<xs:attribute name="Name" type="xs:string" />
+		<xs:attribute name="ResourceName" type="xs:string" />
+		<xs:attribute name="DisplayName" type="xs:string" />
+		<xs:attribute name="Faction" type="xs:string" />
+		<xs:attribute name="School" type="xs:string" />
+		<xs:attribute name="SubType" type="xs:string" />
+		<xs:attribute name="Race" type="xs:string" />
+		<xs:attribute name="Unique" type="xs:string" />
+		<xs:attribute name="Cost" type="xs:int" />
+		<xs:attribute name="MightLevel" type="xs:int" />
+		<xs:attribute name="MagicLevel" type="xs:int" />
+		<xs:attribute name="DestinyLevel" type="xs:int" />
+		<xs:attribute name="Attack" type="xs:int" />
+		<xs:attribute name="Retaliate" type="xs:int" />
+		<xs:attribute name="HP" type="xs:int" />
+		<xs:attribute name="Zone" type="xs:string" />
+		<xs:attribute name="SchoolsAligned" type="xs:string" />
+		<xs:attribute name="Token" type="xs:string" />
+		<xs:attribute name="ID" type="xs:int" />
+	</xs:complexType>
+
+	<xs:complexType name="ExistingCard">
+		<xs:attribute name="Name" type="xs:string" />
+		<xs:attribute name="Rarity" type="xs:string" />
 	</xs:complexType>
 
 	<xs:complexType name="School">
-		<xs:attribute name="Name" type="xs:string"></xs:attribute>
+		<xs:attribute name="Name" type="xs:string" />
 	</xs:complexType>
 
 	<xs:complexType name="OnGoing">
-		<xs:attribute name="Duration" type="xs:string"></xs:attribute>
+		<xs:choice>
+			<xs:element name="Condition" type="Condition" minOccurs="0" />
+		</xs:choice>
+		<xs:attribute name="Duration" type="xs:string" />
+		<xs:attribute name="SuicideParent" type="xs:string" />
 	</xs:complexType>
 
 	<xs:complexType name="Target">
-		<xs:sequence>
-			<xs:element name="Option" />
-			<xs:element name="Trigger" />
-			<xs:element name="Effect" />
-			<xs:element name="Subgroup" />
-		</xs:sequence>
+		<xs:choice minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="Variable" type="Variable" />
+			<xs:element name="Variable2" type="Variable" />
+			<xs:element name="Condition" type="Condition" />
+			<xs:element name="Option" type="Option" />
+			<xs:element name="CardType" type="CardType" />
+			<xs:element name="CardFilter" type="CardFilter" />
+			<xs:element name="Trigger" type="Trigger" />
+			<xs:element name="Effect" type="Effect" />
+			<xs:element name="Subgroup" type="Subgroup" />
+			<xs:element name="BattlegroundFilter" type="BattlegroundFilter" />
+		</xs:choice>
 		<xs:attribute name="Amount" type="xs:string" />
+		<xs:attribute name="MinAmount" type="xs:string" />
 		<xs:attribute name="Zone" type="xs:string" />
 		<xs:attribute name="Side" type="xs:string" />
+		<xs:attribute name="CardType" type="xs:string" />
+		<xs:attribute name="NeedActivation" type="xs:string" />
+		<xs:attribute name="DontUpdateAfterExecution" type="xs:string" />
+		<xs:attribute name="ForceExecute" type="xs:string" />
+		<xs:attribute name="CantTargetPrevious" type="xs:string" />
+		<xs:attribute name="Option" type="xs:string" />
+		<xs:attribute name="Random" type="xs:string" />
+		<xs:attribute name="SkipNextTargetValidation" type="xs:string" />
+		<xs:attribute name="ExcludeUnique" type="xs:string" />
+		<xs:attribute name="CantTargetSelf" type="xs:string" />
+		<xs:attribute name="CantTargetParent" type="xs:string" />
+		<xs:attribute name="RevealToOther" type="xs:string" />
+		<xs:attribute name="InputOnExec" type="xs:string" />
+		<xs:attribute name="Persistent" type="xs:string" />
+		<xs:attribute name="BattlegroundPositionState" type="xs:string" />
+		<xs:attribute name="Shape" type="xs:string" />
+		<xs:attribute name="IgnoreWard" type="xs:string" />
+		<xs:attribute name="AmountVisible" type="xs:string" />
+		<xs:attribute name="AutoTakeFirstInputs" type="xs:string" />
+		<xs:attribute name="Cancelable" type="xs:string" />
+		<xs:attribute name="AllowDuplicate" type="xs:string" />
+		<xs:attribute name="SkipSubTargetValidation" type="xs:string" />
+		<xs:attribute name="CantTargetOccupant" type="xs:string" />
+		<xs:attribute name="ExceptFromTrigger" type="xs:string" />
 	</xs:complexType>
 
 	<xs:complexType name="Subgroup">
-		<xs:sequence>
-			<xs:element name="TemplateEffect" />
-			<xs:element name="Target" minOccurs="0" />
-		</xs:sequence>
+		<xs:choice minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="TemplateEffect" type="TemplateEffect" />
+			<xs:element name="Target" type="Target" />
+		</xs:choice>
 	</xs:complexType>
 
 	<xs:complexType name="TemplateEffect">
-		<xs:attribute name="Name" type="xs:string"></xs:attribute>
+		<xs:choice>
+			<xs:element name="Target" type="Target" minOccurs="0"
+				maxOccurs="unbounded" />
+			<xs:element name="Trigger" type="Trigger" minOccurs="0"
+				maxOccurs="unbounded" />
+		</xs:choice>
+		<xs:attribute name="Name" type="xs:string" />
 	</xs:complexType>
 
 	<xs:complexType name="Option">
@@ -68,21 +141,150 @@
 	</xs:complexType>
 
 	<xs:complexType name="Trigger">
-		<xs:sequence>
-			<xs:element name="CardFilter" />
-			<xs:element name="Target" />
-		</xs:sequence>
-		<xs:attribute name="Type" type="xs:string"></xs:attribute>
+		<xs:choice minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="CardFilter" type="CardFilter" />
+			<xs:element name="Target" type="Target" />
+			<xs:element name="Condition" type="Condition" />
+		</xs:choice>
+		<xs:attribute name="Type" type="xs:string" />
+		<xs:attribute name="Side" type="xs:string" />
+		<xs:attribute name="ExecuteOncePerTransaction" type="xs:string" />
+		<xs:attribute name="ExecuteOncePerTurn" type="xs:string" />
+		<xs:attribute name="Location" type="xs:string" />
+		<xs:attribute name="UseTriggererAsInitiator" type="xs:string" />
+		<xs:attribute name="DamageIncludeFlags" type="xs:string" />
+		<xs:attribute name="Duration" type="xs:string" />
 	</xs:complexType>
 
 	<xs:complexType name="CardFilter">
+		<xs:choice>
+			<xs:element name="Variable" type="Variable" minOccurs="0" />
+		</xs:choice>
 		<xs:attribute name="IncludeUnitType" type="xs:string" />
+		<xs:attribute name="IncludeAbility" type="xs:string" />
+		<xs:attribute name="IncludeCardType" type="xs:string" />
+		<xs:attribute name="IncludeStatus" type="xs:string" />
+		<xs:attribute name="IncludeCardID" type="xs:string" />
+		<xs:attribute name="IncludeOngoingType" type="xs:string" />
+		<xs:attribute name="IncludeSchool" type="xs:string" />
+		<xs:attribute name="IncludeUnique" type="xs:string" />
+		<xs:attribute name="ExcludeUnitType" type="xs:string" />
+		<xs:attribute name="ExcludeUnique" type="xs:string" />
 		<xs:attribute name="Side" type="xs:string" />
+		<xs:attribute name="SameGPID" type="xs:string" />
+		<xs:attribute name="MaxCost" type="xs:string" />
+		<xs:attribute name="Value" type="xs:string" />
+		<xs:attribute name="DealDamageToHeroLastTurn" type="xs:string" />
+		<xs:attribute name="IncludeCounter" type="xs:string" />
+		<xs:attribute name="IncludeFaction" type="xs:string" />
+		<xs:attribute name="IncludeFrontLine" type="xs:string" />
+		<xs:attribute name="AttackHeroLastTurn" type="xs:string" />
+		<xs:attribute name="IncludeEnchantUnit" type="xs:string" />
+		<xs:attribute name="SameCardType" type="xs:string" />
+		<xs:attribute name="ExcludeFaction" type="xs:string" />
+		<xs:attribute name="IncludeRaces" type="xs:string" />
+		<xs:attribute name="ExcludeRaces" type="xs:string" />
+		<xs:attribute name="MaxLevel" type="xs:string" />
+		<xs:attribute name="LevelType" type="xs:string" />
+		<xs:attribute name="IncludeOccupant" type="xs:string" />
+		<xs:attribute name="MaxAttack" type="xs:string" />
+		<xs:attribute name="BaseMaxCost" type="xs:string" />
+		<xs:attribute name="ShareRaces" type="xs:string" />
+		<xs:attribute name="ExcludeSchool" type="xs:string" />
+		<xs:attribute name="IncludeColumn" type="xs:string" />
+		<xs:attribute name="ExcludeToken" type="xs:string" />
+		<xs:attribute name="ShareRacesWithOccupant" type="xs:string" />
 	</xs:complexType>
 
 	<xs:complexType name="Effect">
+		<xs:choice>
+			<xs:element name="CardFilter" type="CardFilter" minOccurs="0" />
+			<xs:element name="Condition" type="Condition" minOccurs="0" />
+		</xs:choice>
 		<xs:attribute name="Type" type="xs:string" />
-		<xs:attribute name="Value" type="xs:int" />
+		<xs:attribute name="Side" type="xs:string" />
+		<xs:attribute name="GlobalEffectType" type="xs:string" />
+		<xs:attribute name="CounterType" type="xs:string" />
+		<xs:attribute name="Destination" type="xs:string" />
+		<xs:attribute name="Value" type="xs:string" />
+		<xs:attribute name="Ability" type="xs:string" />
+		<xs:attribute name="Force" type="xs:string" />
+		<xs:attribute name="FakeAdditionalCost" type="xs:string" />
 		<xs:attribute name="Duration" type="xs:string" />
+		<xs:attribute name="CardHolder" type="xs:string" />
+		<xs:attribute name="DamageIncludeFlags" type="xs:string" />
+		<xs:attribute name="LevelType" type="xs:string" />
+		<xs:attribute name="Free" type="xs:string" />
+		<xs:attribute name="CancelDestination" type="xs:string" />
+		<xs:attribute name="PlayEffectType" type="xs:string" />
+		<xs:attribute name="Remove" type="xs:string" />
+		<xs:attribute name="EvaluationOrder" type="xs:string" />
+		<xs:attribute name="Bottom" type="xs:string" />
+		<xs:attribute name="RevealToOther" type="xs:string" />
+		<xs:attribute name="RequireLevel" type="xs:string" />
+		<xs:attribute name="Persistent" type="xs:string" />
+		<xs:attribute name="Shuffle" type="xs:string" />
+		<xs:attribute name="MoveFromLastKnownParent" type="xs:string" />
+		<xs:attribute name="NewDuration" type="xs:string" />
+		<xs:attribute name="CantTargetParent" type="xs:string" />
+		<xs:attribute name="DamageFlags" type="xs:string" />
+		<xs:attribute name="SubType" type="xs:string" />
+		<xs:attribute name="Name" type="xs:string" />
+		<xs:attribute name="DontGenerateTargetPosition" type="xs:string" />
+		<xs:attribute name="Unfreeze" type="xs:string" />
+		<xs:attribute name="DamageLethalSchools" type="xs:string" />
+		<xs:attribute name="Reverse" type="xs:string" />
+		<xs:attribute name="OwnerAbility" type="xs:string" />
+		<xs:attribute name="DamageExcludeFlags" type="xs:string" />
+		<xs:attribute name="EpicEnrage" type="xs:string" />
+	</xs:complexType>
+
+	<xs:complexType name="Ability">
+		<xs:attribute name="Type" type="xs:string" />
+		<xs:attribute name="Value" type="xs:string" />
+	</xs:complexType>
+
+	<xs:complexType name="Variable">
+		<xs:choice minOccurs="0">
+			<xs:element name="Target" type="Target" />
+			<xs:element name="CardFilter" type="CardFilter" />
+		</xs:choice>
+		<xs:attribute name="Type" type="xs:string" />
+		<xs:attribute name="CounterType" type="xs:string" />
+		<xs:attribute name="Ability" type="xs:string" />
+		<xs:attribute name="UseCurrentTarget" type="xs:string" />
+		<xs:attribute name="UseLastTarget" type="xs:string" />
+		<xs:attribute name="Side" type="xs:string" />
+		<xs:attribute name="ValueModifier" type="xs:string" />
+		<xs:attribute name="LevelType" type="xs:string" />
+		<xs:attribute name="UnitType" type="xs:string" />
+		<xs:attribute name="IncludeSchool" type="xs:string" />
+		<xs:attribute name="FromTrigger" type="xs:string" />
+		<xs:attribute name="UseParent" type="xs:string" />
+		<xs:attribute name="MustBeTargetable" type="xs:string" />
+	</xs:complexType>
+
+	<xs:complexType name="Condition">
+		<xs:choice minOccurs="0">
+			<xs:element name="Condition" type="Condition" maxOccurs="unbounded" />
+		</xs:choice>
+		<xs:attribute name="Operator" type="xs:string" />
+		<xs:attribute name="ValueA" type="xs:string" />
+		<xs:attribute name="ValueB" type="xs:string" />
+	</xs:complexType>
+
+	<xs:complexType name="CardType">
+		<xs:attribute name="Include" type="xs:string" />
+		<xs:attribute name="Exclude" type="xs:string" />
+	</xs:complexType>
+
+	<xs:complexType name="BattlegroundFilter">
+		<xs:attribute name="Line" type="xs:string" />
+	</xs:complexType>
+
+	<xs:complexType name="AdditionalCost">
+		<xs:sequence>
+			<xs:element name="Target" type="Target" />
+		</xs:sequence>
 	</xs:complexType>
 </xs:schema>

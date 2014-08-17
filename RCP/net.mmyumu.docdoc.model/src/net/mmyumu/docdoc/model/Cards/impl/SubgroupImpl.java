@@ -2,18 +2,25 @@
  */
 package net.mmyumu.docdoc.model.Cards.impl;
 
+import java.util.Collection;
+
 import net.mmyumu.docdoc.model.Cards.CardsPackage;
 import net.mmyumu.docdoc.model.Cards.Subgroup;
+import net.mmyumu.docdoc.model.Cards.Target;
+import net.mmyumu.docdoc.model.Cards.TemplateEffect;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.BasicFeatureMap;
+import org.eclipse.emf.ecore.util.FeatureMap;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,6 +29,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link net.mmyumu.docdoc.model.Cards.impl.SubgroupImpl#getGroup <em>Group</em>}</li>
  *   <li>{@link net.mmyumu.docdoc.model.Cards.impl.SubgroupImpl#getTemplateEffect <em>Template Effect</em>}</li>
  *   <li>{@link net.mmyumu.docdoc.model.Cards.impl.SubgroupImpl#getTarget <em>Target</em>}</li>
  * </ul>
@@ -31,24 +39,14 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  */
 public class SubgroupImpl extends MinimalEObjectImpl.Container implements Subgroup {
 	/**
-	 * The cached value of the '{@link #getTemplateEffect() <em>Template Effect</em>}' containment reference.
+	 * The cached value of the '{@link #getGroup() <em>Group</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTemplateEffect()
+	 * @see #getGroup()
 	 * @generated
 	 * @ordered
 	 */
-	protected EObject templateEffect;
-
-	/**
-	 * The cached value of the '{@link #getTarget() <em>Target</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTarget()
-	 * @generated
-	 * @ordered
-	 */
-	protected EObject target;
+	protected FeatureMap group;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -74,23 +72,11 @@ public class SubgroupImpl extends MinimalEObjectImpl.Container implements Subgro
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObject getTemplateEffect() {
-		return templateEffect;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetTemplateEffect(EObject newTemplateEffect, NotificationChain msgs) {
-		EObject oldTemplateEffect = templateEffect;
-		templateEffect = newTemplateEffect;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CardsPackage.SUBGROUP__TEMPLATE_EFFECT, oldTemplateEffect, newTemplateEffect);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+	public FeatureMap getGroup() {
+		if (group == null) {
+			group = new BasicFeatureMap(this, CardsPackage.SUBGROUP__GROUP);
 		}
-		return msgs;
+		return group;
 	}
 
 	/**
@@ -98,18 +84,8 @@ public class SubgroupImpl extends MinimalEObjectImpl.Container implements Subgro
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setTemplateEffect(EObject newTemplateEffect) {
-		if (newTemplateEffect != templateEffect) {
-			NotificationChain msgs = null;
-			if (templateEffect != null)
-				msgs = ((InternalEObject)templateEffect).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CardsPackage.SUBGROUP__TEMPLATE_EFFECT, null, msgs);
-			if (newTemplateEffect != null)
-				msgs = ((InternalEObject)newTemplateEffect).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CardsPackage.SUBGROUP__TEMPLATE_EFFECT, null, msgs);
-			msgs = basicSetTemplateEffect(newTemplateEffect, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CardsPackage.SUBGROUP__TEMPLATE_EFFECT, newTemplateEffect, newTemplateEffect));
+	public EList<TemplateEffect> getTemplateEffect() {
+		return getGroup().list(CardsPackage.Literals.SUBGROUP__TEMPLATE_EFFECT);
 	}
 
 	/**
@@ -117,42 +93,8 @@ public class SubgroupImpl extends MinimalEObjectImpl.Container implements Subgro
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObject getTarget() {
-		return target;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetTarget(EObject newTarget, NotificationChain msgs) {
-		EObject oldTarget = target;
-		target = newTarget;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CardsPackage.SUBGROUP__TARGET, oldTarget, newTarget);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setTarget(EObject newTarget) {
-		if (newTarget != target) {
-			NotificationChain msgs = null;
-			if (target != null)
-				msgs = ((InternalEObject)target).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CardsPackage.SUBGROUP__TARGET, null, msgs);
-			if (newTarget != null)
-				msgs = ((InternalEObject)newTarget).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CardsPackage.SUBGROUP__TARGET, null, msgs);
-			msgs = basicSetTarget(newTarget, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CardsPackage.SUBGROUP__TARGET, newTarget, newTarget));
+	public EList<Target> getTarget() {
+		return getGroup().list(CardsPackage.Literals.SUBGROUP__TARGET);
 	}
 
 	/**
@@ -163,10 +105,12 @@ public class SubgroupImpl extends MinimalEObjectImpl.Container implements Subgro
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case CardsPackage.SUBGROUP__GROUP:
+				return ((InternalEList<?>)getGroup()).basicRemove(otherEnd, msgs);
 			case CardsPackage.SUBGROUP__TEMPLATE_EFFECT:
-				return basicSetTemplateEffect(null, msgs);
+				return ((InternalEList<?>)getTemplateEffect()).basicRemove(otherEnd, msgs);
 			case CardsPackage.SUBGROUP__TARGET:
-				return basicSetTarget(null, msgs);
+				return ((InternalEList<?>)getTarget()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -179,6 +123,9 @@ public class SubgroupImpl extends MinimalEObjectImpl.Container implements Subgro
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case CardsPackage.SUBGROUP__GROUP:
+				if (coreType) return getGroup();
+				return ((FeatureMap.Internal)getGroup()).getWrapper();
 			case CardsPackage.SUBGROUP__TEMPLATE_EFFECT:
 				return getTemplateEffect();
 			case CardsPackage.SUBGROUP__TARGET:
@@ -192,14 +139,20 @@ public class SubgroupImpl extends MinimalEObjectImpl.Container implements Subgro
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case CardsPackage.SUBGROUP__GROUP:
+				((FeatureMap.Internal)getGroup()).set(newValue);
+				return;
 			case CardsPackage.SUBGROUP__TEMPLATE_EFFECT:
-				setTemplateEffect((EObject)newValue);
+				getTemplateEffect().clear();
+				getTemplateEffect().addAll((Collection<? extends TemplateEffect>)newValue);
 				return;
 			case CardsPackage.SUBGROUP__TARGET:
-				setTarget((EObject)newValue);
+				getTarget().clear();
+				getTarget().addAll((Collection<? extends Target>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -213,11 +166,14 @@ public class SubgroupImpl extends MinimalEObjectImpl.Container implements Subgro
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case CardsPackage.SUBGROUP__GROUP:
+				getGroup().clear();
+				return;
 			case CardsPackage.SUBGROUP__TEMPLATE_EFFECT:
-				setTemplateEffect((EObject)null);
+				getTemplateEffect().clear();
 				return;
 			case CardsPackage.SUBGROUP__TARGET:
-				setTarget((EObject)null);
+				getTarget().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -231,12 +187,30 @@ public class SubgroupImpl extends MinimalEObjectImpl.Container implements Subgro
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case CardsPackage.SUBGROUP__GROUP:
+				return group != null && !group.isEmpty();
 			case CardsPackage.SUBGROUP__TEMPLATE_EFFECT:
-				return templateEffect != null;
+				return !getTemplateEffect().isEmpty();
 			case CardsPackage.SUBGROUP__TARGET:
-				return target != null;
+				return !getTarget().isEmpty();
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (group: ");
+		result.append(group);
+		result.append(')');
+		return result.toString();
 	}
 
 } //SubgroupImpl

@@ -21,6 +21,8 @@ import net.mmyumu.docdoc.game.location.GameLocationUtils;
 import net.mmyumu.docdoc.library.LibraryLoader;
 import net.mmyumu.docdoc.library.exceptions.LibraryException;
 
+import org.eclipse.e4.core.contexts.ContextInjectionFactory;
+import org.eclipse.e4.core.contexts.IEclipseContext;
 import org.eclipse.e4.core.services.log.Logger;
 import org.eclipse.e4.ui.di.Focus;
 import org.eclipse.e4.ui.di.Persist;
@@ -49,6 +51,9 @@ public class CardsPart {
 	@Inject
 	private GameLocationUtils gameLocationUtils;
 
+	@Inject
+	private IEclipseContext eclipseContext;
+
 	@PostConstruct
 	public void createComposite(Composite parent) {
 		parent.setLayout(new GridLayout(1, false));
@@ -75,7 +80,7 @@ public class CardsPart {
 		tableViewer = new CardsTableViewer(parent);
 	}
 
-	private void addData() {
+	public void addData() {
 		loadLibrary();
 		List<String> datas = new ArrayList<>();
 		datas.add("test 2");
@@ -83,8 +88,12 @@ public class CardsPart {
 	}
 
 	private void loadLibrary() {
-		LibraryLoader libraryLoader = new LibraryLoader(
-				gameLocationUtils.getGameFolder());
+		// LibraryLoader libraryLoader = new LibraryLoader(
+		// gameLocationUtils.getGameFolder());
+
+		LibraryLoader libraryLoader = ContextInjectionFactory.make(
+				LibraryLoader.class, eclipseContext);
+		libraryLoader.setGameLocation(gameLocationUtils.getGameFolder());
 		try {
 			libraryLoader.load();
 		} catch (LibraryException e) {
