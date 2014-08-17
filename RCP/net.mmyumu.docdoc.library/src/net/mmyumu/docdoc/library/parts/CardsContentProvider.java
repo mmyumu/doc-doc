@@ -1,5 +1,7 @@
 package net.mmyumu.docdoc.library.parts;
 
+import net.mmyumu.docdoc.model.Library.Library;
+
 import org.eclipse.jface.viewers.IStructuredContentProvider;
 import org.eclipse.jface.viewers.Viewer;
 
@@ -7,20 +9,18 @@ public class CardsContentProvider implements IStructuredContentProvider {
 
 	@Override
 	public void dispose() {
-		// TODO Auto-generated method stub
-
 	}
 
 	@Override
 	public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
-		// TODO Auto-generated method stub
-
 	}
 
 	@Override
 	public Object[] getElements(Object inputElement) {
-		// TODO Auto-generated method stub
+		if (inputElement instanceof Library) {
+			Library library = (Library) inputElement;
+			return library.getAllCard().toArray();
+		}
 		return null;
 	}
-
 }

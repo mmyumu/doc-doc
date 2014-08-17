@@ -2,25 +2,23 @@
  */
 package net.mmyumu.docdoc.model.Library.impl;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
+import net.mmyumu.docdoc.model.Cards.Card;
 import net.mmyumu.docdoc.model.Cards.Cards;
-
 import net.mmyumu.docdoc.model.Library.Library;
 import net.mmyumu.docdoc.model.Library.LibraryPackage;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Library</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '
+ * <em><b>Library</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
@@ -30,11 +28,11 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  *
  * @generated
  */
-public class LibraryImpl extends MinimalEObjectImpl.Container implements Library {
+public class LibraryImpl extends MinimalEObjectImpl.Container implements
+		Library {
 	/**
 	 * The cached value of the '{@link #getCards() <em>Cards</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getCards()
 	 * @generated
 	 * @ordered
@@ -42,8 +40,7 @@ public class LibraryImpl extends MinimalEObjectImpl.Container implements Library
 	protected EList<Cards> cards;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected LibraryImpl() {
@@ -51,8 +48,7 @@ public class LibraryImpl extends MinimalEObjectImpl.Container implements Library
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -61,8 +57,7 @@ public class LibraryImpl extends MinimalEObjectImpl.Container implements Library
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public EList<Cards> getCards() {
@@ -73,8 +68,7 @@ public class LibraryImpl extends MinimalEObjectImpl.Container implements Library
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -87,8 +81,7 @@ public class LibraryImpl extends MinimalEObjectImpl.Container implements Library
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -104,8 +97,7 @@ public class LibraryImpl extends MinimalEObjectImpl.Container implements Library
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -119,8 +111,7 @@ public class LibraryImpl extends MinimalEObjectImpl.Container implements Library
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -132,4 +123,17 @@ public class LibraryImpl extends MinimalEObjectImpl.Container implements Library
 		return super.eIsSet(featureID);
 	}
 
-} //LibraryImpl
+	/**
+	 * Get a list of all the Card of the library.
+	 * 
+	 * @generated not
+	 */
+	public List<Card> getAllCard() {
+		List<Card> allCardFromLibrary = new ArrayList<>();
+		for (Cards cards : getCards()) {
+			allCardFromLibrary.addAll(cards.getCard());
+		}
+		return allCardFromLibrary;
+	}
+
+} // LibraryImpl

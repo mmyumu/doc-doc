@@ -20,6 +20,7 @@ import javax.inject.Inject;
 import net.mmyumu.docdoc.game.location.GameLocationUtils;
 import net.mmyumu.docdoc.library.LibraryLoader;
 import net.mmyumu.docdoc.library.exceptions.LibraryException;
+import net.mmyumu.docdoc.model.Library.Library;
 
 import org.eclipse.e4.core.contexts.ContextInjectionFactory;
 import org.eclipse.e4.core.contexts.IEclipseContext;
@@ -81,25 +82,23 @@ public class CardsPart {
 	}
 
 	public void addData() {
-		loadLibrary();
+		Library library = loadLibrary();
 		List<String> datas = new ArrayList<>();
 		datas.add("test 2");
-		tableViewer.setInput(datas);
+		tableViewer.setInput(library);
 	}
 
-	private void loadLibrary() {
-		// LibraryLoader libraryLoader = new LibraryLoader(
-		// gameLocationUtils.getGameFolder());
-
+	private Library loadLibrary() {
 		LibraryLoader libraryLoader = ContextInjectionFactory.make(
 				LibraryLoader.class, eclipseContext);
 		libraryLoader.setGameLocation(gameLocationUtils.getGameFolder());
 		try {
-			libraryLoader.load();
+			return libraryLoader.load();
 		} catch (LibraryException e) {
 			logger.error(e, "Error while loading cards library");
 			displayLoadingErrorMessage();
 		}
+		return null;
 	}
 
 	private void displayLoadingErrorMessage() {

@@ -2,21 +2,22 @@
  */
 package net.mmyumu.docdoc.model.Library;
 
+import java.util.List;
+
+import net.mmyumu.docdoc.model.Cards.Card;
 import net.mmyumu.docdoc.model.Cards.Cards;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
- * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Library</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> A representation of the model object '
+ * <em><b>Library</b></em>'. <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link net.mmyumu.docdoc.model.Library.Library#getCards <em>Cards</em>}</li>
+ * <li>{@link net.mmyumu.docdoc.model.Library.Library#getCards <em>Cards</em>}</li>
  * </ul>
  * </p>
  *
@@ -26,19 +27,28 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Library extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Cards</b></em>' reference list.
-	 * The list contents are of type {@link net.mmyumu.docdoc.model.Cards.Cards}.
-	 * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Cards</b></em>' reference list. The list
+	 * contents are of type {@link net.mmyumu.docdoc.model.Cards.Cards}. <!--
+	 * begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Cards</em>' reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Cards</em>' reference list isn't clear, there
+	 * really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Cards</em>' reference list.
 	 * @see net.mmyumu.docdoc.model.Library.LibraryPackage#getLibrary_Cards()
 	 * @model
 	 * @generated
 	 */
 	EList<Cards> getCards();
+
+	/**
+	 * Get all the Card of the library.
+	 * 
+	 * @generated not
+	 * @return
+	 */
+	List<Card> getAllCard();
 
 } // Library

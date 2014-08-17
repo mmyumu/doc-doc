@@ -8,6 +8,8 @@ import javax.inject.Inject;
 import net.mmyumu.docdoc.library.exceptions.LibraryException;
 import net.mmyumu.docdoc.model.Cards.DocumentRoot;
 import net.mmyumu.docdoc.model.Cards.util.CardsResourceFactoryImpl;
+import net.mmyumu.docdoc.model.Library.Library;
+import net.mmyumu.docdoc.model.Library.LibraryFactory;
 
 import org.eclipse.e4.core.services.log.Logger;
 import org.eclipse.emf.common.util.URI;
@@ -27,24 +29,26 @@ public class LibraryLoader {
 
 	private ResourceFactoryImpl resourceFactory;
 
+	private Library library;
+
 	/**
 	 * Instantiates a new library loader. Needed for injection.
 	 */
 	public LibraryLoader() {
-	}
-
-	public LibraryLoader(String gameLocation) {
-		this.gameLocation = gameLocation;
 		this.resourceFactory = new CardsResourceFactoryImpl();
+		if (library == null) {
+			library = LibraryFactory.eINSTANCE.createLibrary();
+		}
 	}
 
 	public void setGameLocation(String gameLocation) {
 		this.gameLocation = gameLocation;
 	}
 
-	public void load() throws LibraryException {
+	public Library load() throws LibraryException {
 		if (gameLocation != null) {
 			loadLibrary(gameLocation);
+			return library;
 		} else {
 			throw new LibraryException("The game location is not valid");
 		}
@@ -74,12 +78,12 @@ public class LibraryLoader {
 	}
 
 	private void loadSetWithErrors(String setPath) throws IOException {
-		this.resourceFactory = new CardsResourceFactoryImpl();
 		Resource resource = resourceFactory.createResource(URI
 				.createFileURI(setPath));
 		resource.load(null);
 		DocumentRoot documentRoot = (DocumentRoot) resource.getContents()
 				.get(0);
+		library.getCards().add(documentRoot.getCards());
 		logger.info("Loaded: " + setPath);
 	}
 }

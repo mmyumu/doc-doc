@@ -21,4 +21,5 @@ Require-Bundle: org.eclipse.e4.ui.workbench,
  org.eclipse.e4.core.di.extensions,
  org.eclipse.e4.core.di,
  org.eclipse.e4.core.services,
- org.eclipse.e4.core.contexts
+ org.eclipse.e4.core.contexts,
+ org.eclipse.ui.workbench
