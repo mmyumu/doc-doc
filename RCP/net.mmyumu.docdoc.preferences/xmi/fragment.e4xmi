@@ -7,10 +7,10 @@
     <elements xsi:type="commands:Handler" xmi:id="__qXyoBN0EeSIjYTP9w9y5w" elementId="net.mmyumu.docdoc.preferences.handler.preferences" contributionURI="bundleclass://com.opcoach.e4.preferences/com.opcoach.e4.preferences.handlers.E4PreferencesHandler" command="_I8kWwBN1EeSIjYTP9w9y5w"/>
   </fragments>
   <fragments xsi:type="fragment:StringModelFragment" xmi:id="_ajjbkBN1EeSIjYTP9w9y5w" featurename="children" parentElementId="net.mmyumu.docdoc.menu.window" positionInList="first">
-    <elements xsi:type="menu:HandledMenuItem" xmi:id="_f-30wBN1EeSIjYTP9w9y5w" elementId="net.mmyumu.docdoc.preferences.handledmenuitem.preferences" label="Open preferences" iconURI="" mnemonics="" command="_I8kWwBN1EeSIjYTP9w9y5w"/>
+    <elements xsi:type="menu:HandledMenuItem" xmi:id="_f-30wBN1EeSIjYTP9w9y5w" elementId="net.mmyumu.docdoc.preferences.handledmenuitem.preferences" label="Open preferences" iconURI="platform:/plugin/net.mmyumu.docdoc.preferences/icons/preferences-system-4.png" tooltip="Open preferences" mnemonics="" command="_I8kWwBN1EeSIjYTP9w9y5w"/>
   </fragments>
   <fragments xsi:type="fragment:StringModelFragment" xmi:id="_5eZ1wBTLEeSprfDkWBcP9w" featurename="children" parentElementId="toolbar:org.eclipse.ui.main.toolbar" positionInList="first">
-    <elements xsi:type="menu:HandledToolItem" xmi:id="_HScX8BTNEeSprfDkWBcP9w" elementId="net.mmyumu.docdoc.preferences.handledtoolitem.preferences" label="Open preferences" iconURI="" command="_I8kWwBN1EeSIjYTP9w9y5w"/>
+    <elements xsi:type="menu:HandledToolItem" xmi:id="_HScX8BTNEeSprfDkWBcP9w" elementId="net.mmyumu.docdoc.preferences.handledtoolitem.preferences" accessibilityPhrase="Open preferences" label="Open preferences" iconURI="platform:/plugin/net.mmyumu.docdoc.preferences/icons/preferences-system-4.png" tooltip="Open preferences" command="_I8kWwBN1EeSIjYTP9w9y5w"/>
   </fragments>
   <fragments xsi:type="fragment:StringModelFragment" xmi:id="_jd4rQBTTEeSprfDkWBcP9w" featurename="bindingContext" parentElementId="net.mmyumu.docdoc.application">
     <elements xsi:type="commands:BindingContext" xmi:id="_d7GYIBTTEeSprfDkWBcP9w" elementId="org.eclipse.ui.contexts.dialogAndWindow" name="In UI Windows And Dialog"/>
